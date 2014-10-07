@@ -548,17 +548,17 @@
 			</f>
 			<haxe_doc>Your update loop. Called every frame for you. The dt value depends on the timing configuration (see the {App Guide})</haxe_doc>
 		</update>
-		<destroyed public="1" set="method" line="65">
+		<ondestroy public="1" set="method" line="65">
 			<f a=""><x path="Void"/></f>
 			<haxe_doc>Your exit point. Called for you when you should shut down your application</haxe_doc>
-		</destroyed>
-		<on_event public="1" set="method" line="67">
+		</ondestroy>
+		<onevent public="1" set="method" line="67">
 			<f a="event">
 				<t path="snow.types.SystemEvent"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>Low level event handler from snow core. Often handled by the subsystems so check there first.</haxe_doc>
-		</on_event>
+		</onevent>
 		<onkeydown public="1" set="method" line="70">
 			<f a="keycode:scancode:repeat:mod:timestamp:window_id">
 				<x path="Int"/>
@@ -781,16 +781,17 @@
 	<t path="snow.types.AppConfig"/>
 	<t path="snow.types.AppConfig"/>
 </f></config>
-		<on_event public="1" set="method" line="76" override="1"><f a="_event">
+		<onevent public="1" set="method" line="76" override="1"><f a="_event">
 	<t path="snow.types.SystemEvent"/>
 	<x path="Void"/>
-</f></on_event>
+</f></onevent>
 		<ready public="1" set="method" line="85" override="1"><f a=""><x path="Void"/></f></ready>
 		<vsync><x path="Bool"/></vsync>
 		<cursor><x path="Bool"/></cursor>
 		<window2><c path="snow.window.Window"/></window2>
 		<loope><x path="Bool"/></loope>
-		<onkeydown public="1" set="method" line="196" override="1"><f a="keycode:_:_:_:_:_">
+		<showing_keyboard><x path="Bool"/></showing_keyboard>
+		<onkeydown public="1" set="method" line="198" override="1"><f a="keycode:_:_:_:_:_">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Bool"/>
@@ -799,7 +800,7 @@
 	<x path="Int"/>
 	<x path="Void"/>
 </f></onkeydown>
-		<onkeyup public="1" set="method" line="302" override="1"><f a="keycode:_:_:mod:_:_">
+		<onkeyup public="1" set="method" line="313" override="1"><f a="keycode:_:_:mod:_:_">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Bool"/>
@@ -809,7 +810,7 @@
 	<x path="Void"/>
 </f></onkeyup>
 		<noclamp><x path="Bool"/></noclamp>
-		<ontextinput public="1" set="method" line="329" override="1"><f a="text:start:length:type:timestamp:window_id">
+		<ontextinput public="1" set="method" line="340" override="1"><f a="text:start:length:type:timestamp:window_id">
 	<c path="String"/>
 	<x path="Int"/>
 	<x path="Int"/>
@@ -818,21 +819,21 @@
 	<x path="Int"/>
 	<x path="Void"/>
 </f></ontextinput>
-		<ontouchdown public="1" set="method" line="333" override="1"><f a="x:y:touch_id:timestamp">
+		<ontouchdown public="1" set="method" line="344" override="1"><f a="x:y:touch_id:timestamp">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Int"/>
 	<x path="Float"/>
 	<x path="Void"/>
 </f></ontouchdown>
-		<ontouchup public="1" set="method" line="337" override="1"><f a="x:y:touch_id:timestamp">
+		<ontouchup public="1" set="method" line="348" override="1"><f a="x:y:touch_id:timestamp">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Int"/>
 	<x path="Float"/>
 	<x path="Void"/>
 </f></ontouchup>
-		<ontouchmove public="1" set="method" line="346" override="1"><f a="x:y:dx:dy:touch_id:timestamp">
+		<ontouchmove public="1" set="method" line="357" override="1"><f a="x:y:dx:dy:touch_id:timestamp">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
@@ -841,7 +842,7 @@
 	<x path="Float"/>
 	<x path="Void"/>
 </f></ontouchmove>
-		<onmousemove public="1" set="method" line="357" override="1"><f a="x:y:xrel:yrel:timestamp:window_id">
+		<onmousemove public="1" set="method" line="379" override="1"><f a="x:y:xrel:yrel:timestamp:window_id">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
@@ -850,7 +851,7 @@
 	<x path="Int"/>
 	<x path="Void"/>
 </f></onmousemove>
-		<onmouseup public="1" set="method" line="369" override="1"><f a="x:y:button:timestamp:window_id">
+		<onmouseup public="1" set="method" line="391" override="1"><f a="x:y:button:timestamp:window_id">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
@@ -858,7 +859,7 @@
 	<x path="Int"/>
 	<x path="Void"/>
 </f></onmouseup>
-		<onmousedown public="1" set="method" line="381" override="1"><f a="x:y:button:timestamp:window_id">
+		<onmousedown public="1" set="method" line="403" override="1"><f a="x:y:button:timestamp:window_id">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Int"/>
@@ -866,35 +867,35 @@
 	<x path="Int"/>
 	<x path="Void"/>
 </f></onmousedown>
-		<onmousewheel public="1" set="method" line="385" override="1"><f a="x:y:timestamp:window_id">
+		<onmousewheel public="1" set="method" line="407" override="1"><f a="x:y:timestamp:window_id">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 	<x path="Int"/>
 	<x path="Void"/>
 </f></onmousewheel>
-		<ongamepadaxis public="1" set="method" line="390" override="1"><f a="gamepad:axis:value:timestamp">
+		<ongamepadaxis public="1" set="method" line="412" override="1"><f a="gamepad:axis:value:timestamp">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Void"/>
 </f></ongamepadaxis>
-		<ongamepadup public="1" set="method" line="396" override="1"><f a="gamepad:button:value:timestamp">
+		<ongamepadup public="1" set="method" line="418" override="1"><f a="gamepad:button:value:timestamp">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Void"/>
 </f></ongamepadup>
-		<ongamepaddown public="1" set="method" line="400" override="1"><f a="gamepad:button:value:timestamp">
+		<ongamepaddown public="1" set="method" line="422" override="1"><f a="gamepad:button:value:timestamp">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Void"/>
 </f></ongamepaddown>
-		<ongamepaddevice public="1" set="method" line="404" override="1"><f a="gamepad:type:timestamp">
+		<ongamepaddevice public="1" set="method" line="426" override="1"><f a="gamepad:type:timestamp">
 	<x path="Int"/>
 	<e path="snow.types.GamepadDeviceEventType"/>
 	<x path="Float"/>
@@ -902,22 +903,22 @@
 </f></ongamepaddevice>
 		<next_tex_tick><x path="Float"/></next_tex_tick>
 		<phys_posx><x path="Float"/></phys_posx>
-		<update public="1" set="method" line="412" override="1"><f a="delta">
+		<update public="1" set="method" line="434" override="1"><f a="delta">
 	<x path="Float"/>
 	<x path="Void"/>
 </f></update>
-		<onrender set="method" line="467"><f a="window">
+		<onrender set="method" line="489"><f a="window">
 	<c path="snow.window.Window"/>
 	<x path="Void"/>
 </f></onrender>
-		<createTexture set="method" line="492"><f a="asset">
+		<createTexture set="method" line="514"><f a="asset">
 	<c path="snow.assets.AssetImage"/>
 	<t path="snow.render.opengl.GLTexture"/>
 </f></createTexture>
-		<initializeShaders set="method" line="506"><f a=""><x path="Void"/></f></initializeShaders>
-		<createBuffers set="method" line="597"><f a=""><x path="Void"/></f></createBuffers>
-		<render set="method" line="629"><f a=""><x path="Void"/></f></render>
-		<createOrthoMatrix set="method" line="669"><f a="x0:x1:y0:y1:zNear:zFar">
+		<initializeShaders set="method" line="528"><f a=""><x path="Void"/></f></initializeShaders>
+		<createBuffers set="method" line="619"><f a=""><x path="Void"/></f></createBuffers>
+		<render set="method" line="651"><f a=""><x path="Void"/></f></render>
+		<createOrthoMatrix set="method" line="691"><f a="x0:x1:y0:y1:zNear:zFar">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
@@ -926,7 +927,7 @@
 	<x path="Float"/>
 	<t path="snow.utils.Float32Array"/>
 </f></createOrthoMatrix>
-		<create2DMatrix set="method" line="684"><f a="x:y:?scale:?rotation" v="::1:0">
+		<create2DMatrix set="method" line="706"><f a="x:y:?scale:?rotation" v="::1:0">
 	<x path="Float"/>
 	<x path="Float"/>
 	<x path="Float"/>
@@ -1324,18 +1325,6 @@
 
 		Otherwise, including if `v` is null, the result is false.]]></haxe_doc>
 		</isObject>
-		<isEnumValue public="1" set="method" line="83" static="1">
-			<f a="v">
-				<d/>
-				<x path="Bool"/>
-			</f>
-			<haxe_doc>Tells if `v` is an enum value.
-
-		The result is true if `v` is of type EnumValue, i.e. an enum
-		constructor.
-
-		Otherwise, including if `v` is null, the result is false.</haxe_doc>
-		</isEnumValue>
 		<haxe_doc>The Reflect API is a way to manipulate values dynamicly through an
 	abstract interface in an untyped manner. Use with care.</haxe_doc>
 		<meta>
@@ -1838,20 +1827,6 @@
 
 		In general, type parameter information cannot be obtained at runtime.</haxe_doc>
 		</getClass>
-		<enumParameters public="1" set="method" line="136" static="1">
-			<f a="e">
-				<x path="EnumValue"/>
-				<c path="Array"><d/></c>
-			</f>
-			<haxe_doc>Returns a list of the constructor arguments of enum instance `e`.
-
-		If `e` has no arguments, the result is [].
-
-		Otherwise the result are the values that were used as arguments to `e`,
-		in the order of their declaration.
-
-		If `e` is null, the result is unspecified.</haxe_doc>
-		</enumParameters>
 		<haxe_doc>The haxe Reflection API allows retrieval of type information at runtime.
 
 	This class complements the more lightweight Reflect class, with a focus on
@@ -2354,37 +2329,6 @@
 	<x path="Int"/>
 	<x path="Void"/>
 </f></new>
-		<meta><m n=":keep"/></meta>
-	</class>
-	<class path="haxe.ds.EnumValueMap" params="K:V" file="/usr/lib/haxe/std/haxe/ds/EnumValueMap.hx">
-		<extends path="haxe.ds.BalancedTree">
-			<c path="haxe.ds.EnumValueMap.K"/>
-			<c path="haxe.ds.EnumValueMap.V"/>
-		</extends>
-		<implements path="IMap">
-			<c path="haxe.ds.EnumValueMap.K"/>
-			<c path="haxe.ds.EnumValueMap.V"/>
-		</implements>
-		<compare set="method" line="33" override="1"><f a="k1:k2">
-	<x path="EnumValue"/>
-	<x path="EnumValue"/>
-	<x path="Int"/>
-</f></compare>
-		<compareArgs set="method" line="42"><f a="a1:a2">
-	<c path="Array"><d/></c>
-	<c path="Array"><d/></c>
-	<x path="Int"/>
-</f></compareArgs>
-		<compareArg set="method" line="52"><f a="v1:v2">
-	<d/>
-	<d/>
-	<x path="Int"/>
-</f></compareArg>
-		<new public="1" set="method" line="31"><f a=""><x path="Void"/></f></new>
-		<haxe_doc>EnumValueMap allows mapping of enum value keys to arbitrary values.
-
-	Keys are compared by value and recursively over their parameters. If any
-	parameter is not an enum value, `Reflect.compare` is used to compare them.</haxe_doc>
 		<meta><m n=":keep"/></meta>
 	</class>
 	<abstract path="haxe.ds.HashMap" params="K:V" file="/usr/lib/haxe/std/haxe/ds/HashMap.hx">
@@ -3354,7 +3298,7 @@
 			<t path="snow.Core"/>
 			<meta><m n=":noCompletion"/></meta>
 		</core>
-		<load public="1" set="method" line="448" static="1">
+		<load public="1" set="method" line="445" static="1">
 			<f a="library:method:?args" v="::0">
 				<c path="String"/>
 				<c path="String"/>
@@ -3364,7 +3308,7 @@
 			<haxe_doc>Loads a function out of a library</haxe_doc>
 		</load>
 		<next_list static="1"><c path="Array"><f a=""><x path="Void"/></f></c></next_list>
-		<next public="1" set="method" line="458" static="1">
+		<next public="1" set="method" line="455" static="1">
 			<f a="func">
 				<f a=""><x path="Void"/></f>
 				<x path="Void"/>
@@ -3461,20 +3405,20 @@
 	<t path="snow.types.SystemEvent"/>
 	<x path="Void"/>
 </f></on_event>
-		<default_runtime_config set="method" line="344">
+		<default_runtime_config set="method" line="341">
 			<f a=""><d/></f>
 			<haxe_doc>handles the default method of parsing a runtime config json,
             To change this behavior override `get_runtime_config`. This is called by default in get_runtime_config.</haxe_doc>
 		</default_runtime_config>
-		<default_asset_list set="method" line="373">
+		<default_asset_list set="method" line="370">
 			<f a=""><c path="Array"><t path="snow.types.AssetInfo"/></c></f>
 			<haxe_doc>handles the default method of parsing the file manifest list as json, stored in an array and returned.</haxe_doc>
 		</default_asset_list>
-		<default_window_config set="method" line="407">
+		<default_window_config set="method" line="404">
 			<f a=""><t path="snow.types.WindowConfig"/></f>
 			<haxe_doc>returns a default configured window config</haxe_doc>
 		</default_window_config>
-		<get_uniqueid set="method" line="441"><f a=""><c path="String"/></f></get_uniqueid>
+		<get_uniqueid set="method" line="438"><f a=""><c path="String"/></f></get_uniqueid>
 		<new public="1" set="method" line="73">
 			<f a=""><x path="Void"/></f>
 			<meta><m n=":noCompletion"/></meta>
@@ -3880,10 +3824,7 @@
 			<haxe_doc>for external access to the library by the systems</haxe_doc>
 		</lib>
 		<handles public="1">
-			<x path="Map">
-				<t path="snow.types.AudioHandle"/>
-				<t path="snow.audio.Sound"/>
-			</x>
+			<c path="snow.audio._Audio.AudioHandleMap"/>
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>for mapping native handles to Sound instances. Use the `app.audio` to manipulate preferably.</haxe_doc>
 		</handles>
@@ -3903,7 +3844,7 @@
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>for mapping named streams to SoundStream instances. Use the `app.audio` to manipulate preferably.</haxe_doc>
 		</stream_list>
-		<create public="1" set="method" line="55">
+		<create public="1" set="method" line="57">
 			<f a="_id:?_name:?streaming" v=":'':false">
 				<c path="String"/>
 				<c path="String"/>
@@ -3912,14 +3853,14 @@
 			</f>
 			<haxe_doc>Create a sound for playing. If no name is given, a unique id is assigned. Use the sound instance or the public api by name.</haxe_doc>
 		</create>
-		<uncreate public="1" set="method" line="106">
+		<uncreate public="1" set="method" line="108">
 			<f a="_name">
 				<c path="String"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>Destroy a sound instance by name. Use sound_instance.destroy() if you have an instance already.</haxe_doc>
 		</uncreate>
-		<on public="1" set="method" line="120">
+		<on public="1" set="method" line="122">
 			<f a="_name:_event:_handler">
 				<c path="String"/>
 				<c path="String"/>
@@ -3931,7 +3872,7 @@
 			</f>
 			<haxe_doc>Listen for a event on a named sound. `load` and `end` are valid events.</haxe_doc>
 		</on>
-		<off public="1" set="method" line="128">
+		<off public="1" set="method" line="130">
 			<f a="_name:_event:_handler">
 				<c path="String"/>
 				<c path="String"/>
@@ -3943,14 +3884,14 @@
 			</f>
 			<haxe_doc>Remove a listener for a event on a named sound. see `on`</haxe_doc>
 		</off>
-		<get public="1" set="method" line="136">
+		<get public="1" set="method" line="138">
 			<f a="_name">
 				<c path="String"/>
 				<t path="snow.audio.Sound"/>
 			</f>
 			<haxe_doc>Get a sound instance by name</haxe_doc>
 		</get>
-		<volume public="1" set="method" line="150">
+		<volume public="1" set="method" line="152">
 			<f a="_name:?_volume" v=":null">
 				<c path="String"/>
 				<x path="Float"/>
@@ -3959,7 +3900,7 @@
 			<haxe_doc>Get/Set the volume of a sound instance by name.
             Leave the second argument blank to return the current value.</haxe_doc>
 		</volume>
-		<pan public="1" set="method" line="164">
+		<pan public="1" set="method" line="166">
 			<f a="_name:?_pan" v=":null">
 				<c path="String"/>
 				<x path="Float"/>
@@ -3968,7 +3909,7 @@
 			<haxe_doc>Get/Set the pan of a sound instance by name
             Leave the second argument blank to return the current value.</haxe_doc>
 		</pan>
-		<pitch public="1" set="method" line="178">
+		<pitch public="1" set="method" line="180">
 			<f a="_name:?_pitch" v=":null">
 				<c path="String"/>
 				<x path="Float"/>
@@ -3977,7 +3918,7 @@
 			<haxe_doc>Get/Set the pitch of a sound instance by name
             Leave the second argument blank to return the current value.</haxe_doc>
 		</pitch>
-		<position public="1" set="method" line="192">
+		<position public="1" set="method" line="194">
 			<f a="_name:?_position" v=":null">
 				<c path="String"/>
 				<x path="Float"/>
@@ -3986,7 +3927,7 @@
 			<haxe_doc>Get/Set the position **in seconds** of a sound instance by name.
             Leave the second argument blank to return the current value.</haxe_doc>
 		</position>
-		<duration public="1" set="method" line="206">
+		<duration public="1" set="method" line="208">
 			<f a="_name">
 				<c path="String"/>
 				<x path="Float"/>
@@ -3994,42 +3935,42 @@
 			<haxe_doc>Get the duration of a sound instance by name.
             Duration is set from the sound instance, so it is read only.</haxe_doc>
 		</duration>
-		<play public="1" set="method" line="215">
+		<play public="1" set="method" line="217">
 			<f a="_name">
 				<c path="String"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>Play a sound instance by name</haxe_doc>
 		</play>
-		<loop public="1" set="method" line="228">
+		<loop public="1" set="method" line="230">
 			<f a="_name">
 				<c path="String"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>Loop a sound instance by name, indefinitely. Use stop to end it</haxe_doc>
 		</loop>
-		<pause public="1" set="method" line="241">
+		<pause public="1" set="method" line="243">
 			<f a="_name">
 				<c path="String"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>Pause a sound instance by name</haxe_doc>
 		</pause>
-		<stop public="1" set="method" line="254">
+		<stop public="1" set="method" line="256">
 			<f a="_name">
 				<c path="String"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>Stop a sound instance by name</haxe_doc>
 		</stop>
-		<toggle public="1" set="method" line="267">
+		<toggle public="1" set="method" line="269">
 			<f a="_name">
 				<c path="String"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>Toggle a sound instance by name, pausing the sound</haxe_doc>
 		</toggle>
-		<kill public="1" set="method" line="283">
+		<kill public="1" set="method" line="285">
 			<f a="_sound">
 				<t path="snow.audio.Sound"/>
 				<x path="Void"/>
@@ -4037,7 +3978,7 @@
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>Stop managing a sound instance</haxe_doc>
 		</kill>
-		<on_event public="1" set="method" line="292">
+		<on_event public="1" set="method" line="294">
 			<f a="_event">
 				<t path="snow.types.SystemEvent"/>
 				<x path="Void"/>
@@ -4045,17 +3986,17 @@
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>Called by Snow when a system event is dispatched</haxe_doc>
 		</on_event>
-		<destroy public="1" set="method" line="319">
+		<destroy public="1" set="method" line="321">
 			<f a=""><x path="Void"/></f>
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>Called by Snow, cleans up sounds/system</haxe_doc>
 		</destroy>
-		<update public="1" set="method" line="332">
+		<update public="1" set="method" line="334">
 			<f a=""><x path="Void"/></f>
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>Called by Snow, update any sounds / streams</haxe_doc>
 		</update>
-		<new public="1" set="method" line="34">
+		<new public="1" set="method" line="36">
 			<f a="_lib">
 				<c path="snow.Snow"/>
 				<x path="Void"/>
@@ -4063,6 +4004,19 @@
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>constructed internally, use `app.audio`</haxe_doc>
 		</new>
+		<meta><m n=":keep"/></meta>
+	</class>
+	<class path="snow.audio._Audio.AudioHandleMap" params="" file="/Users/sven/dev/snow/snow/audio/Audio.hx" private="1" module="snow.audio.Audio">
+		<extends path="haxe.ds.BalancedTree">
+			<t path="snow.types.AudioHandle"/>
+			<t path="snow.audio.Sound"/>
+		</extends>
+		<compare set="method" line="362" override="1"><f a="k1:k2">
+	<t path="snow.types.AudioHandle"/>
+	<t path="snow.types.AudioHandle"/>
+	<x path="Int"/>
+</f></compare>
+		<new public="1" set="method" line="360"><f a=""><x path="Void"/></f></new>
 		<meta><m n=":keep"/></meta>
 	</class>
 	<typedef path="snow.audio.AudioSystem" params="" file="/Users/sven/dev/snow/snow/audio/AudioSystem.hx">
@@ -4691,21 +4645,39 @@
 			</f>
 			<haxe_doc>Called when the input manager forwards an event to this system</haxe_doc>
 		</on_event>
-		<gamepad_add public="1" set="method" line="40">
+		<text_input_start public="1" set="method" line="41">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>Start a system text input state, this includes soft keyboard on mobile. on some platforms like web this does nothing (yet?)</haxe_doc>
+		</text_input_start>
+		<text_input_stop public="1" set="method" line="43">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>End a system text input state, this includes soft keyboard on mobile. on some platforms like web this does nothing (yet?)</haxe_doc>
+		</text_input_stop>
+		<text_input_rect public="1" set="method" line="45">
+			<f a="x:y:w:h">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>In a system text input state, this determines the area that is accepting input.</haxe_doc>
+		</text_input_rect>
+		<gamepad_add public="1" set="method" line="48">
 			<f a="id">
 				<x path="Int"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>Open a gamepad with this id</haxe_doc>
 		</gamepad_add>
-		<gamepad_remove public="1" set="method" line="42">
+		<gamepad_remove public="1" set="method" line="50">
 			<f a="id">
 				<x path="Int"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>Close a gamepad with this id</haxe_doc>
 		</gamepad_remove>
-		<listen public="1" set="method" line="44">
+		<listen public="1" set="method" line="52">
 			<f a="window">
 				<c path="snow.window.Window"/>
 				<x path="Void"/>
@@ -4713,7 +4685,7 @@
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>Listen for input events on the given window</haxe_doc>
 		</listen>
-		<unlisten public="1" set="method" line="46">
+		<unlisten public="1" set="method" line="54">
 			<f a="window">
 				<c path="snow.window.Window"/>
 				<x path="Void"/>
@@ -6042,16 +6014,16 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 		<meta><m n=":keep"/></meta>
 	</class>
 	<abstract path="snow.platform.native.audio.openal.Context" params="" file="/Users/sven/dev/snow/snow/platform/native/audio/openal/AL.hx" module="snow.platform.native.audio.openal.AL">
-		<from><icast><d/></icast></from>
-		<this><d/></this>
-		<to><icast><d/></icast></to>
+		<from><icast><t path="Null"><x path="Float"/></t></icast></from>
+		<this><t path="Null"><x path="Float"/></t></this>
+		<to><icast><t path="Null"><x path="Float"/></t></icast></to>
 		<impl><class path="snow.platform.native.audio.openal._AL.Context_Impl_" params="" file="/Users/sven/dev/snow/snow/platform/native/audio/openal/AL.hx" private="1" module="snow.platform.native.audio.openal.AL" extern="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
 	<class path="snow.platform.native.audio.openal._AL.Context_Impl_" params="" file="/Users/sven/dev/snow/snow/platform/native/audio/openal/AL.hx" private="1" module="snow.platform.native.audio.openal.AL" extern="1"><meta><m n=":keep"/></meta></class>
 	<abstract path="snow.platform.native.audio.openal.Device" params="" file="/Users/sven/dev/snow/snow/platform/native/audio/openal/AL.hx" module="snow.platform.native.audio.openal.AL">
-		<from><icast><d/></icast></from>
-		<this><d/></this>
-		<to><icast><d/></icast></to>
+		<from><icast><t path="Null"><x path="Float"/></t></icast></from>
+		<this><t path="Null"><x path="Float"/></t></this>
+		<to><icast><t path="Null"><x path="Float"/></t></icast></to>
 		<impl><class path="snow.platform.native.audio.openal._AL.Device_Impl_" params="" file="/Users/sven/dev/snow/snow/platform/native/audio/openal/AL.hx" private="1" module="snow.platform.native.audio.openal.AL" extern="1"><meta><m n=":keep"/></meta></class></impl>
 	</abstract>
 	<class path="snow.platform.native.audio.openal._AL.Device_Impl_" params="" file="/Users/sven/dev/snow/snow/platform/native/audio/openal/AL.hx" private="1" module="snow.platform.native.audio.openal.AL" extern="1"><meta><m n=":keep"/></meta></class>
@@ -7128,11 +7100,20 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 	</class>
 	<class path="snow.platform.native.input.InputSystem" params="" file="/Users/sven/dev/snow/snow/platform/native/input/InputSystem.hx">
 		<extends path="snow.input.InputSystemBinding"/>
-		<snow_gamepad_open line="47" static="1"><f a="">
+		<snow_input_text_start line="63" static="1"><f a=""><unknown/></f></snow_input_text_start>
+		<snow_input_text_stop line="64" static="1"><f a=""><unknown/></f></snow_input_text_stop>
+		<snow_input_text_rect line="65" static="1"><f a=":::">
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<x path="Int"/>
+	<unknown/>
+</f></snow_input_text_rect>
+		<snow_gamepad_open line="67" static="1"><f a="">
 	<x path="Int"/>
 	<unknown/>
 </f></snow_gamepad_open>
-		<snow_gamepad_close line="48" static="1"><f a="">
+		<snow_gamepad_close line="68" static="1"><f a="">
 	<x path="Int"/>
 	<unknown/>
 </f></snow_gamepad_close>
@@ -7157,11 +7138,29 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 	<t path="snow.types.InputEvent"/>
 	<x path="Void"/>
 </f></on_event>
-		<gamepad_add public="1" set="method" line="39" override="1"><f a="id">
+		<text_input_start public="1" set="method" line="41" override="1">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>Start a system text input state, this includes soft keyboard on mobile. on some platforms like web this does nothing (yet?)</haxe_doc>
+		</text_input_start>
+		<text_input_stop public="1" set="method" line="46" override="1">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>End a system text input state, this includes soft keyboard on mobile. on some platforms like web this does nothing (yet?)</haxe_doc>
+		</text_input_stop>
+		<text_input_rect public="1" set="method" line="51" override="1">
+			<f a="x:y:w:h">
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Int"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>In a system text input state, this determines the area that is accepting input.</haxe_doc>
+		</text_input_rect>
+		<gamepad_add public="1" set="method" line="55" override="1"><f a="id">
 	<x path="Int"/>
 	<x path="Void"/>
 </f></gamepad_add>
-		<gamepad_remove public="1" set="method" line="43" override="1"><f a="id">
+		<gamepad_remove public="1" set="method" line="59" override="1"><f a="id">
 	<x path="Int"/>
 	<x path="Void"/>
 </f></gamepad_remove>
@@ -7209,128 +7208,145 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			<m n=":noCompletion"/>
 		</meta>
 	</class>
-	<enum path="snow.platform.native.input.sdl.KeyEventType" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
-		<unknown/>
-		<down/>
-		<up/>
-		<textedit/>
-		<textinput/>
-		<meta>
-			<m n=":flatEnum"/>
-			<m n=":noCompletion"/>
-		</meta>
-	</enum>
-	<enum path="snow.platform.native.input.sdl.MouseEventType" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
-		<unknown/>
-		<move/>
-		<down/>
-		<up/>
-		<wheel/>
-		<meta>
-			<m n=":flatEnum"/>
-			<m n=":noCompletion"/>
-		</meta>
-	</enum>
-	<enum path="snow.platform.native.input.sdl.ControllerEventType" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
-		<unknown/>
-		<button_up/>
-		<button_down/>
-		<axis/>
-		<added/>
-		<removed/>
-		<remapped/>
-		<meta>
-			<m n=":flatEnum"/>
-			<m n=":noCompletion"/>
-		</meta>
-	</enum>
-	<enum path="snow.platform.native.input.sdl.TouchState" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
-		<unknown/>
-		<down/>
-		<up/>
-		<move/>
-		<meta>
-			<m n=":flatEnum"/>
-			<m n=":noCompletion"/>
-		</meta>
-	</enum>
-	<class path="snow.platform.native.input.sdl.KeyEventTypes" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
-		<ke_down line="333" static="1"><x path="Int"/></ke_down>
-		<ke_up line="334" static="1"><x path="Int"/></ke_up>
-		<ke_textedit line="335" static="1"><x path="Int"/></ke_textedit>
-		<ke_textinput line="336" static="1"><x path="Int"/></ke_textinput>
-		<typed public="1" set="method" line="338" static="1"><f a="ke_type">
+	<class path="snow.platform.native.input.sdl.KeyEventType" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
+		<down public="1" get="inline" set="null" line="279" static="1">
+			<x path="Int"/>
+			<haxe_doc>A key down event</haxe_doc>
+		</down>
+		<up public="1" get="inline" set="null" line="281" static="1">
+			<x path="Int"/>
+			<haxe_doc>A key up event</haxe_doc>
+		</up>
+		<textedit public="1" get="inline" set="null" line="283" static="1">
+			<x path="Int"/>
+			<haxe_doc>A text input text edit event</haxe_doc>
+		</textedit>
+		<textinput public="1" get="inline" set="null" line="285" static="1">
+			<x path="Int"/>
+			<haxe_doc>A text input typing event</haxe_doc>
+		</textinput>
+		<names line="287" static="1"><c path="Array"><c path="String"/></c></names>
+		<to_string public="1" set="method" line="291" static="1"><f a="_type">
 	<x path="Int"/>
-	<e path="snow.platform.native.input.sdl.KeyEventType"/>
-</f></typed>
+	<c path="String"/>
+</f></to_string>
 		<meta>
 			<m n=":keep"/>
 			<m n=":noCompletion"/>
 		</meta>
 	</class>
-	<class path="snow.platform.native.input.sdl.GamepadEventTypes" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
-		<ge_axis line="353" static="1"><x path="Int"/></ge_axis>
-		<ge_button_down line="354" static="1"><x path="Int"/></ge_button_down>
-		<ge_button_up line="355" static="1"><x path="Int"/></ge_button_up>
-		<ge_added line="356" static="1"><x path="Int"/></ge_added>
-		<ge_removed line="357" static="1"><x path="Int"/></ge_removed>
-		<ge_remapped line="358" static="1"><x path="Int"/></ge_remapped>
-		<typed public="1" set="method" line="360" static="1"><f a="ge_type">
+	<class path="snow.platform.native.input.sdl.ControllerEventType" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
+		<axis public="1" get="inline" set="null" line="300" static="1">
+			<x path="Int"/>
+			<haxe_doc>a gamepad axis movement event</haxe_doc>
+		</axis>
+		<button_down public="1" get="inline" set="null" line="302" static="1">
+			<x path="Int"/>
+			<haxe_doc>a gamepad button pressed event</haxe_doc>
+		</button_down>
+		<button_up public="1" get="inline" set="null" line="304" static="1">
+			<x path="Int"/>
+			<haxe_doc>a gamepad button released event</haxe_doc>
+		</button_up>
+		<added public="1" get="inline" set="null" line="306" static="1">
+			<x path="Int"/>
+			<haxe_doc>a gamepad connected event</haxe_doc>
+		</added>
+		<removed public="1" get="inline" set="null" line="308" static="1">
+			<x path="Int"/>
+			<haxe_doc>a gamepad disconnected event</haxe_doc>
+		</removed>
+		<remapped public="1" get="inline" set="null" line="310" static="1">
+			<x path="Int"/>
+			<haxe_doc>a gamepad remapped event</haxe_doc>
+		</remapped>
+		<names line="312" static="1"><c path="Array"><c path="String"/></c></names>
+		<to_string public="1" set="method" line="316" static="1"><f a="_type">
 	<x path="Int"/>
-	<e path="snow.platform.native.input.sdl.ControllerEventType"/>
-</f></typed>
+	<c path="String"/>
+</f></to_string>
 		<meta>
 			<m n=":keep"/>
 			<m n=":noCompletion"/>
 		</meta>
 	</class>
-	<class path="snow.platform.native.input.sdl.TouchEventTypes" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
-		<te_down line="377" static="1"><x path="Int"/></te_down>
-		<te_up line="378" static="1"><x path="Int"/></te_up>
-		<te_move line="379" static="1"><x path="Int"/></te_move>
-		<typed public="1" set="method" line="381" static="1"><f a="te_type">
+	<class path="snow.platform.native.input.sdl.TouchEventType" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
+		<down public="1" get="inline" set="null" line="325" static="1">
+			<x path="Int"/>
+			<haxe_doc>A touch has begun</haxe_doc>
+		</down>
+		<up public="1" get="inline" set="null" line="327" static="1">
+			<x path="Int"/>
+			<haxe_doc>A touch has ended</haxe_doc>
+		</up>
+		<move public="1" get="inline" set="null" line="329" static="1">
+			<x path="Int"/>
+			<haxe_doc>A touch is moving</haxe_doc>
+		</move>
+		<names line="331" static="1"><c path="Array"><c path="String"/></c></names>
+		<to_string public="1" set="method" line="335" static="1"><f a="_type">
 	<x path="Int"/>
-	<e path="snow.platform.native.input.sdl.TouchState"/>
-</f></typed>
+	<c path="String"/>
+</f></to_string>
 		<meta>
 			<m n=":keep"/>
 			<m n=":noCompletion"/>
 		</meta>
 	</class>
-	<class path="snow.platform.native.input.sdl.MouseEventTypes" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
-		<me_move line="395" static="1"><x path="Int"/></me_move>
-		<me_down line="396" static="1"><x path="Int"/></me_down>
-		<me_up line="397" static="1"><x path="Int"/></me_up>
-		<me_wheel line="398" static="1"><x path="Int"/></me_wheel>
-		<typed public="1" set="method" line="400" static="1"><f a="me_type">
+	<class path="snow.platform.native.input.sdl.MouseEventType" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
+		<move public="1" get="inline" set="null" line="344" static="1">
+			<x path="Int"/>
+			<haxe_doc>A mouse moved event</haxe_doc>
+		</move>
+		<down public="1" get="inline" set="null" line="346" static="1">
+			<x path="Int"/>
+			<haxe_doc>A mouse button pressed event</haxe_doc>
+		</down>
+		<up public="1" get="inline" set="null" line="348" static="1">
+			<x path="Int"/>
+			<haxe_doc>A mouse button released event</haxe_doc>
+		</up>
+		<wheel public="1" get="inline" set="null" line="350" static="1">
+			<x path="Int"/>
+			<haxe_doc>A mouse wheel or scroll event</haxe_doc>
+		</wheel>
+		<names line="352" static="1"><c path="Array"><c path="String"/></c></names>
+		<to_string public="1" set="method" line="356" static="1"><f a="_type">
 	<x path="Int"/>
-	<e path="snow.platform.native.input.sdl.MouseEventType"/>
-</f></typed>
+	<c path="String"/>
+</f></to_string>
 		<meta>
 			<m n=":keep"/>
 			<m n=":noCompletion"/>
 		</meta>
 	</class>
 	<class path="snow.platform.native.input.sdl.ModValue" params="" file="/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx" module="snow.platform.native.input.sdl.InputSystem">
-		<NONE public="1" line="415" static="1"><x path="Int"/></NONE>
-		<LSHIFT public="1" line="416" static="1"><x path="Int"/></LSHIFT>
-		<RSHIFT public="1" line="417" static="1"><x path="Int"/></RSHIFT>
-		<LCTRL public="1" line="418" static="1"><x path="Int"/></LCTRL>
-		<RCTRL public="1" line="419" static="1"><x path="Int"/></RCTRL>
-		<LALT public="1" line="420" static="1"><x path="Int"/></LALT>
-		<RALT public="1" line="421" static="1"><x path="Int"/></RALT>
-		<LMETA public="1" line="422" static="1"><x path="Int"/></LMETA>
-		<RMETA public="1" line="423" static="1"><x path="Int"/></RMETA>
-		<NUM public="1" line="424" static="1"><x path="Int"/></NUM>
-		<CAPS public="1" line="425" static="1"><x path="Int"/></CAPS>
-		<MODE public="1" line="426" static="1"><x path="Int"/></MODE>
+		<NONE public="1" line="364" static="1"><x path="Int"/></NONE>
+		<LSHIFT public="1" line="365" static="1"><x path="Int"/></LSHIFT>
+		<RSHIFT public="1" line="366" static="1"><x path="Int"/></RSHIFT>
+		<LCTRL public="1" line="367" static="1"><x path="Int"/></LCTRL>
+		<RCTRL public="1" line="368" static="1"><x path="Int"/></RCTRL>
+		<LALT public="1" line="369" static="1"><x path="Int"/></LALT>
+		<RALT public="1" line="370" static="1"><x path="Int"/></RALT>
+		<LMETA public="1" line="371" static="1"><x path="Int"/></LMETA>
+		<RMETA public="1" line="372" static="1"><x path="Int"/></RMETA>
+		<NUM public="1" line="373" static="1"><x path="Int"/></NUM>
+		<CAPS public="1" line="374" static="1"><x path="Int"/></CAPS>
+		<MODE public="1" line="375" static="1"><x path="Int"/></MODE>
 		<meta>
 			<m n=":keep"/>
 			<m n=":noCompletion"/>
 		</meta>
 	</class>
+	<abstract path="snow.platform.native.io.IOFileHandle" params="" file="/Users/sven/dev/snow/snow/platform/native/io/IOFile.hx" module="snow.platform.native.io.IOFile">
+		<from><icast><x path="Float"/></icast></from>
+		<this><x path="Float"/></this>
+		<to><icast><x path="Float"/></icast></to>
+		<impl><class path="snow.platform.native.io._IOFile.IOFileHandle_Impl_" params="" file="/Users/sven/dev/snow/snow/platform/native/io/IOFile.hx" private="1" module="snow.platform.native.io.IOFile" extern="1"><meta><m n=":keep"/></meta></class></impl>
+	</abstract>
+	<class path="snow.platform.native.io._IOFile.IOFileHandle_Impl_" params="" file="/Users/sven/dev/snow/snow/platform/native/io/IOFile.hx" private="1" module="snow.platform.native.io.IOFile" extern="1"><meta><m n=":keep"/></meta></class>
 	<class path="snow.platform.native.io.IOFile" params="" file="/Users/sven/dev/snow/snow/platform/native/io/IOFile.hx">
-		<from_file public="1" set="method" line="46" static="1">
+		<from_file public="1" set="method" line="48" static="1">
 			<f a="_id:?_mode" v=":'rb'">
 				<c path="String"/>
 				<c path="String"/>
@@ -7338,44 +7354,44 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			</f>
 			<haxe_doc>Create an `IOFile` from a file path `_id`, this bypasses the `Asset` system path helpers.</haxe_doc>
 		</from_file>
-		<snow_iosrc_from_file line="51" static="1"><f a=":">
+		<snow_iosrc_from_file line="53" static="1"><f a=":">
 	<c path="String"/>
 	<c path="String"/>
-	<unknown/>
+	<x path="snow.platform.native.io.IOFileHandle"/>
 </f></snow_iosrc_from_file>
-		<snow_iosrc_file_read line="52" static="1"><f a=":::">
-	<d/>
+		<snow_iosrc_file_read line="54" static="1"><f a=":::">
+	<x path="snow.platform.native.io.IOFileHandle"/>
 	<t path="snow.utils.ByteArray"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<unknown/>
 </f></snow_iosrc_file_read>
-		<snow_iosrc_file_write line="53" static="1"><f a=":::">
-	<d/>
+		<snow_iosrc_file_write line="55" static="1"><f a=":::">
+	<x path="snow.platform.native.io.IOFileHandle"/>
 	<t path="snow.utils.ByteArray"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<unknown/>
 </f></snow_iosrc_file_write>
-		<snow_iosrc_file_seek line="54" static="1"><f a="::">
-	<d/>
+		<snow_iosrc_file_seek line="56" static="1"><f a="::">
+	<x path="snow.platform.native.io.IOFileHandle"/>
 	<x path="Int"/>
 	<x path="Int"/>
 	<unknown/>
 </f></snow_iosrc_file_seek>
-		<snow_iosrc_file_tell line="55" static="1"><f a="">
-	<d/>
+		<snow_iosrc_file_tell line="57" static="1"><f a="">
+	<x path="snow.platform.native.io.IOFileHandle"/>
 	<unknown/>
 </f></snow_iosrc_file_tell>
-		<snow_iosrc_file_close line="56" static="1"><f a="">
-	<d/>
+		<snow_iosrc_file_close line="58" static="1"><f a="">
+	<x path="snow.platform.native.io.IOFileHandle"/>
 	<unknown/>
 </f></snow_iosrc_file_close>
 		<handle public="1">
-			<d/>
+			<x path="snow.platform.native.io.IOFileHandle"/>
 			<haxe_doc>The internal native file handle</haxe_doc>
 		</handle>
-		<read public="1" set="method" line="20">
+		<read public="1" set="method" line="22">
 			<f a="dest:size:maxnum">
 				<t path="snow.utils.ByteArray"/>
 				<x path="Int"/>
@@ -7384,7 +7400,7 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			</f>
 			<haxe_doc>Read a `maxnum` of items of `size` in bytes, into `dest`. Same signature/returns as `fread`</haxe_doc>
 		</read>
-		<write public="1" set="method" line="25">
+		<write public="1" set="method" line="27">
 			<f a="src:size:num">
 				<t path="snow.utils.ByteArray"/>
 				<x path="Int"/>
@@ -7393,7 +7409,7 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			</f>
 			<haxe_doc>Write `num` of items of `size` in bytes, from `src` into this file. Same signature/returns as `fwrite`</haxe_doc>
 		</write>
-		<seek public="1" set="method" line="30">
+		<seek public="1" set="method" line="32">
 			<f a="offset:whence">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -7401,17 +7417,17 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			</f>
 			<haxe_doc>Seek `offset` from `whence`, where whence is an int matching `set=0`, `cur=1`, `end=2`. Same signature/returns as `fseek`</haxe_doc>
 		</seek>
-		<tell public="1" set="method" line="35">
+		<tell public="1" set="method" line="37">
 			<f a=""><unknown/></f>
 			<haxe_doc>Tell the current position in the file, in bytes</haxe_doc>
 		</tell>
-		<close public="1" set="method" line="40">
+		<close public="1" set="method" line="42">
 			<f a=""><unknown/></f>
 			<haxe_doc>Close the file</haxe_doc>
 		</close>
-		<new public="1" set="method" line="15">
+		<new public="1" set="method" line="17">
 			<f a="_handle">
-				<d/>
+				<x path="snow.platform.native.io.IOFileHandle"/>
 				<x path="Void"/>
 			</f>
 			<meta><m n=":noCompletion"/></meta>
@@ -11518,9 +11534,9 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 				<haxe_doc>If type is `window` this will be populated, otherwise null</haxe_doc>
 			</window>
 			<type>
-				<e path="snow.types.SystemEventType"/>
+				<t path="Null"><x path="Int"/></t>
 				<meta><m n=":optional"/></meta>
-				<haxe_doc>The type of system event this event is.</haxe_doc>
+				<haxe_doc>The type of system event this event is. SystemEventType</haxe_doc>
 			</type>
 			<input>
 				<t path="Null"><t path="snow.types.InputEvent"/></t>
@@ -11543,9 +11559,9 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 				<haxe_doc>The window id from which this event originated</haxe_doc>
 			</window_id>
 			<type>
-				<e path="snow.types.WindowEventType"/>
+				<t path="Null"><x path="Int"/></t>
 				<meta><m n=":optional"/></meta>
-				<haxe_doc>The type of window event this was</haxe_doc>
+				<haxe_doc>The type of window event this was. Use WindowEventType</haxe_doc>
 			</type>
 			<timestamp>
 				<t path="Null"><x path="Float"/></t>
@@ -11564,9 +11580,9 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 	<typedef path="snow.types.FileEvent" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
 		<a>
 			<type>
-				<e path="snow.types.FileEventType"/>
+				<t path="Null"><x path="Int"/></t>
 				<meta><m n=":optional"/></meta>
-				<haxe_doc>The type of file watch event, modify/create/delete</haxe_doc>
+				<haxe_doc>The type of file watch event, modify/create/delete. Use FileEventType</haxe_doc>
 			</type>
 			<timestamp>
 				<t path="Null"><x path="Float"/></t>
@@ -11589,9 +11605,9 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 				<haxe_doc>The window id from which this event originated</haxe_doc>
 			</window_id>
 			<type>
-				<e path="snow.types.InputEventType"/>
+				<t path="Null"><x path="Int"/></t>
 				<meta><m n=":optional"/></meta>
-				<haxe_doc>The type of input event this was</haxe_doc>
+				<haxe_doc>The type of input event this was. Use InputEventType</haxe_doc>
 			</type>
 			<timestamp>
 				<t path="Null"><x path="Float"/></t>
@@ -11617,71 +11633,13 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 		<haxe_doc>Information about a display mode</haxe_doc>
 	</typedef>
 	<typedef path="snow.types.WindowHandle" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
-		<d/>
+		<t path="Null"><x path="Float"/></t>
 		<haxe_doc>A platform window handle</haxe_doc>
 	</typedef>
 	<typedef path="snow.types.AudioHandle" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
-		<d/>
+		<t path="Null"><x path="Float"/></t>
 		<haxe_doc>A platform window handle</haxe_doc>
 	</typedef>
-	<enum path="snow.types.SystemEventType" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
-		<unknown><haxe_doc>An unknown system event</haxe_doc></unknown>
-		<init><haxe_doc>An internal system init event</haxe_doc></init>
-		<ready><haxe_doc>An internal system ready event</haxe_doc></ready>
-		<update><haxe_doc>An internal system update event</haxe_doc></update>
-		<shutdown><haxe_doc>An system shutdown event</haxe_doc></shutdown>
-		<window><haxe_doc>An system window event</haxe_doc></window>
-		<input><haxe_doc>An system input event</haxe_doc></input>
-		<quit><haxe_doc>An system quit event. Initiated by user, can be cancelled/ignored</haxe_doc></quit>
-		<app_terminating><haxe_doc>An system terminating event, called by the OS (mobile specific)</haxe_doc></app_terminating>
-		<app_lowmemory><haxe_doc>An system low memory event, clear memory if you can. Called by the OS (mobile specific)</haxe_doc></app_lowmemory>
-		<app_willenterbackground><haxe_doc>An event for just before the app enters the background, called by the OS (mobile specific)</haxe_doc></app_willenterbackground>
-		<app_didenterbackground><haxe_doc>An event for when the app enters the background, called by the OS (mobile specific)</haxe_doc></app_didenterbackground>
-		<app_willenterforeground><haxe_doc>An event for just before the app enters the foreground, called by the OS (mobile specific)</haxe_doc></app_willenterforeground>
-		<app_didenterforeground><haxe_doc>An event for when the app enters the foreground, called by the OS (mobile specific)</haxe_doc></app_didenterforeground>
-		<file><haxe_doc>An event for when the a file watch notification occurs</haxe_doc></file>
-		<haxe_doc>A typed system event</haxe_doc>
-		<meta><m n=":flatEnum"/></meta>
-	</enum>
-	<enum path="snow.types.FileEventType" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
-		<unknown><haxe_doc>An unknown watch event</haxe_doc></unknown>
-		<modify><haxe_doc>An event for when the a file is modified</haxe_doc></modify>
-		<remove><haxe_doc>An event for when the a file is removed</haxe_doc></remove>
-		<create><haxe_doc>An event for when the a file is created</haxe_doc></create>
-		<drop><haxe_doc>An event for when the a file is dropped on a window</haxe_doc></drop>
-		<meta><m n=":flatEnum"/></meta>
-	</enum>
-	<enum path="snow.types.WindowEventType" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
-		<unknown><haxe_doc>An unknown window event</haxe_doc></unknown>
-		<window_created><haxe_doc>A window is created</haxe_doc></window_created>
-		<window_shown><haxe_doc>A window is shown</haxe_doc></window_shown>
-		<window_hidden><haxe_doc>A window is hidden</haxe_doc></window_hidden>
-		<window_exposed><haxe_doc>A window is exposed</haxe_doc></window_exposed>
-		<window_moved><haxe_doc>A window is moved</haxe_doc></window_moved>
-		<window_resized><haxe_doc>A window is resized, by the user or code.</haxe_doc></window_resized>
-		<window_size_changed><haxe_doc>A window is resized, by the OS or internals.</haxe_doc></window_size_changed>
-		<window_minimized><haxe_doc>A window is minimized</haxe_doc></window_minimized>
-		<window_maximized><haxe_doc>A window is maximized</haxe_doc></window_maximized>
-		<window_restored><haxe_doc>A window is restored</haxe_doc></window_restored>
-		<window_enter><haxe_doc>A window is entered by a mouse</haxe_doc></window_enter>
-		<window_leave><haxe_doc>A window is left by a mouse</haxe_doc></window_leave>
-		<window_focus_gained><haxe_doc>A window has gained focus</haxe_doc></window_focus_gained>
-		<window_focus_lost><haxe_doc>A window has lost focus</haxe_doc></window_focus_lost>
-		<window_close><haxe_doc>A window is being closed/hidden</haxe_doc></window_close>
-		<window_destroy><haxe_doc>A window is being destroyed</haxe_doc></window_destroy>
-		<haxe_doc>A typed window event</haxe_doc>
-		<meta><m n=":flatEnum"/></meta>
-	</enum>
-	<enum path="snow.types.InputEventType" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
-		<unknown><haxe_doc>An unknown input event</haxe_doc></unknown>
-		<key><haxe_doc>An keyboard input event</haxe_doc></key>
-		<mouse><haxe_doc>An mouse input event</haxe_doc></mouse>
-		<touch><haxe_doc>An touch input event</haxe_doc></touch>
-		<joystick><haxe_doc>An joystick input event. On mobile, accellerometer is a joystick (for now)</haxe_doc></joystick>
-		<controller><haxe_doc>An controller input event. Use these instead of joystick on desktop.</haxe_doc></controller>
-		<haxe_doc>A typed input event</haxe_doc>
-		<meta><m n=":flatEnum"/></meta>
-	</enum>
 	<enum path="snow.types.TextEventType" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
 		<edit><haxe_doc>An edit text typing event</haxe_doc></edit>
 		<input><haxe_doc>An input text typing event</haxe_doc></input>
@@ -11764,93 +11722,217 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 		</a>
 		<haxe_doc>Input modifier state</haxe_doc>
 	</typedef>
-	<class path="snow.types.SystemEvents" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
-		<se_unknown public="1" line="523" static="1"><x path="Int"/></se_unknown>
-		<se_init public="1" line="524" static="1"><x path="Int"/></se_init>
-		<se_ready public="1" line="525" static="1"><x path="Int"/></se_ready>
-		<se_update public="1" line="526" static="1"><x path="Int"/></se_update>
-		<se_shutdown public="1" line="527" static="1"><x path="Int"/></se_shutdown>
-		<se_window public="1" line="528" static="1"><x path="Int"/></se_window>
-		<se_input public="1" line="529" static="1"><x path="Int"/></se_input>
-		<se_quit public="1" line="533" static="1"><x path="Int"/></se_quit>
-		<se_app_terminating public="1" line="534" static="1"><x path="Int"/></se_app_terminating>
-		<se_app_lowmemory public="1" line="535" static="1"><x path="Int"/></se_app_lowmemory>
-		<se_app_willenterbackground public="1" line="536" static="1"><x path="Int"/></se_app_willenterbackground>
-		<se_app_didenterbackground public="1" line="537" static="1"><x path="Int"/></se_app_didenterbackground>
-		<se_app_willenterforeground public="1" line="538" static="1"><x path="Int"/></se_app_willenterforeground>
-		<se_app_didenterforeground public="1" line="539" static="1"><x path="Int"/></se_app_didenterforeground>
-		<se_file public="1" line="540" static="1"><x path="Int"/></se_file>
-		<typed public="1" set="method" line="544" static="1"><f a="type">
+	<class path="snow.types.SystemEventType" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
+		<unknown public="1" get="inline" set="null" line="415" static="1">
+			<x path="Int"/>
+			<haxe_doc>An unknown system event</haxe_doc>
+		</unknown>
+		<init public="1" get="inline" set="null" line="417" static="1">
+			<x path="Int"/>
+			<haxe_doc>An internal system init event</haxe_doc>
+		</init>
+		<ready public="1" get="inline" set="null" line="419" static="1">
+			<x path="Int"/>
+			<haxe_doc>An internal system ready event</haxe_doc>
+		</ready>
+		<update public="1" get="inline" set="null" line="421" static="1">
+			<x path="Int"/>
+			<haxe_doc>An internal system update event</haxe_doc>
+		</update>
+		<shutdown public="1" get="inline" set="null" line="423" static="1">
+			<x path="Int"/>
+			<haxe_doc>An system shutdown event</haxe_doc>
+		</shutdown>
+		<window public="1" get="inline" set="null" line="425" static="1">
+			<x path="Int"/>
+			<haxe_doc>An system window event</haxe_doc>
+		</window>
+		<input public="1" get="inline" set="null" line="427" static="1">
+			<x path="Int"/>
+			<haxe_doc>An system input event</haxe_doc>
+		</input>
+		<quit public="1" get="inline" set="null" line="432" static="1">
+			<x path="Int"/>
+			<haxe_doc>An system quit event. Initiated by user, can be cancelled/ignored</haxe_doc>
+		</quit>
+		<app_terminating public="1" get="inline" set="null" line="434" static="1">
+			<x path="Int"/>
+			<haxe_doc>An system terminating event, called by the OS (mobile specific)</haxe_doc>
+		</app_terminating>
+		<app_lowmemory public="1" get="inline" set="null" line="436" static="1">
+			<x path="Int"/>
+			<haxe_doc>An system low memory event, clear memory if you can. Called by the OS (mobile specific)</haxe_doc>
+		</app_lowmemory>
+		<app_willenterbackground public="1" get="inline" set="null" line="438" static="1">
+			<x path="Int"/>
+			<haxe_doc>An event for just before the app enters the background, called by the OS (mobile specific)</haxe_doc>
+		</app_willenterbackground>
+		<app_didenterbackground public="1" get="inline" set="null" line="440" static="1">
+			<x path="Int"/>
+			<haxe_doc>An event for when the app enters the background, called by the OS (mobile specific)</haxe_doc>
+		</app_didenterbackground>
+		<app_willenterforeground public="1" get="inline" set="null" line="442" static="1">
+			<x path="Int"/>
+			<haxe_doc>An event for just before the app enters the foreground, called by the OS (mobile specific)</haxe_doc>
+		</app_willenterforeground>
+		<app_didenterforeground public="1" get="inline" set="null" line="444" static="1">
+			<x path="Int"/>
+			<haxe_doc>An event for when the app enters the foreground, called by the OS (mobile specific)</haxe_doc>
+		</app_didenterforeground>
+		<file public="1" get="inline" set="null" line="446" static="1">
+			<x path="Int"/>
+			<haxe_doc>An event for when the a file watch notification occurs</haxe_doc>
+		</file>
+		<names line="448" static="1"><c path="Array"><c path="String"/></c></names>
+		<to_string public="1" set="method" line="455" static="1"><f a="_type">
 	<x path="Int"/>
-	<e path="snow.types.SystemEventType"/>
-</f></typed>
+	<c path="String"/>
+</f></to_string>
 		<meta>
 			<m n=":keep"/>
 			<m n=":noCompletion"/>
 		</meta>
 	</class>
-	<class path="snow.types.WindowEvents" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
-		<we_unknown public="1" line="572" static="1"><x path="Int"/></we_unknown>
-		<we_created public="1" line="573" static="1"><x path="Int"/></we_created>
-		<we_shown public="1" line="574" static="1"><x path="Int"/></we_shown>
-		<we_hidden public="1" line="575" static="1"><x path="Int"/></we_hidden>
-		<we_exposed public="1" line="576" static="1"><x path="Int"/></we_exposed>
-		<we_moved public="1" line="577" static="1"><x path="Int"/></we_moved>
-		<we_resized public="1" line="578" static="1"><x path="Int"/></we_resized>
-		<we_size_changed public="1" line="579" static="1"><x path="Int"/></we_size_changed>
-		<we_minimized public="1" line="580" static="1"><x path="Int"/></we_minimized>
-		<we_maximized public="1" line="581" static="1"><x path="Int"/></we_maximized>
-		<we_restored public="1" line="582" static="1"><x path="Int"/></we_restored>
-		<we_enter public="1" line="583" static="1"><x path="Int"/></we_enter>
-		<we_leave public="1" line="584" static="1"><x path="Int"/></we_leave>
-		<we_focus_gained public="1" line="585" static="1"><x path="Int"/></we_focus_gained>
-		<we_focus_lost public="1" line="586" static="1"><x path="Int"/></we_focus_lost>
-		<we_close public="1" line="587" static="1"><x path="Int"/></we_close>
-		<we_destroy public="1" line="588" static="1"><x path="Int"/></we_destroy>
-		<typed public="1" set="method" line="593" static="1">
-			<f a="type">
-				<x path="Int"/>
-				<e path="snow.types.WindowEventType"/>
-			</f>
-			<haxe_doc>returns a typed `WindowEventType` from an integer ID, for communication between internal native + haxe code</haxe_doc>
-		</typed>
+	<class path="snow.types.WindowEventType" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
+		<unknown public="1" get="inline" set="null" line="468" static="1">
+			<x path="Int"/>
+			<haxe_doc>An unknown window event</haxe_doc>
+		</unknown>
+		<created public="1" get="inline" set="null" line="470" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is created</haxe_doc>
+		</created>
+		<shown public="1" get="inline" set="null" line="472" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is shown</haxe_doc>
+		</shown>
+		<hidden public="1" get="inline" set="null" line="474" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is hidden</haxe_doc>
+		</hidden>
+		<exposed public="1" get="inline" set="null" line="476" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is exposed</haxe_doc>
+		</exposed>
+		<moved public="1" get="inline" set="null" line="478" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is moved</haxe_doc>
+		</moved>
+		<resized public="1" get="inline" set="null" line="480" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is resized, by the user or code.</haxe_doc>
+		</resized>
+		<size_changed public="1" get="inline" set="null" line="482" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is resized, by the OS or internals.</haxe_doc>
+		</size_changed>
+		<minimized public="1" get="inline" set="null" line="484" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is minimized</haxe_doc>
+		</minimized>
+		<maximized public="1" get="inline" set="null" line="486" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is maximized</haxe_doc>
+		</maximized>
+		<restored public="1" get="inline" set="null" line="488" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is restored</haxe_doc>
+		</restored>
+		<enter public="1" get="inline" set="null" line="490" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is entered by a mouse</haxe_doc>
+		</enter>
+		<leave public="1" get="inline" set="null" line="492" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is left by a mouse</haxe_doc>
+		</leave>
+		<focus_gained public="1" get="inline" set="null" line="494" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window has gained focus</haxe_doc>
+		</focus_gained>
+		<focus_lost public="1" get="inline" set="null" line="496" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window has lost focus</haxe_doc>
+		</focus_lost>
+		<close public="1" get="inline" set="null" line="498" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is being closed/hidden</haxe_doc>
+		</close>
+		<destroy public="1" get="inline" set="null" line="500" static="1">
+			<x path="Int"/>
+			<haxe_doc>A window is being destroyed</haxe_doc>
+		</destroy>
+		<names line="502" static="1"><c path="Array"><c path="String"/></c></names>
+		<to_string public="1" set="method" line="509" static="1"><f a="_type">
+	<x path="Int"/>
+	<c path="String"/>
+</f></to_string>
 		<meta>
 			<m n=":keep"/>
 			<m n=":noCompletion"/>
 		</meta>
 	</class>
-	<class path="snow.types.InputEvents" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
-		<ie_unknown public="1" line="622" static="1"><x path="Int"/></ie_unknown>
-		<ie_key public="1" line="623" static="1"><x path="Int"/></ie_key>
-		<ie_mouse public="1" line="624" static="1"><x path="Int"/></ie_mouse>
-		<ie_touch public="1" line="625" static="1"><x path="Int"/></ie_touch>
-		<ie_joystick public="1" line="626" static="1"><x path="Int"/></ie_joystick>
-		<ie_controller public="1" line="627" static="1"><x path="Int"/></ie_controller>
-		<typed public="1" set="method" line="632" static="1">
-			<f a="type">
-				<x path="Int"/>
-				<e path="snow.types.InputEventType"/>
-			</f>
-			<haxe_doc>returns a typed `InputEventType` from an integer ID, for communication between internal native + haxe code</haxe_doc>
-		</typed>
+	<class path="snow.types.InputEventType" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
+		<unknown public="1" get="inline" set="null" line="522" static="1">
+			<x path="Int"/>
+			<haxe_doc>An unknown input event</haxe_doc>
+		</unknown>
+		<key public="1" get="inline" set="null" line="524" static="1">
+			<x path="Int"/>
+			<haxe_doc>An keyboard input event</haxe_doc>
+		</key>
+		<mouse public="1" get="inline" set="null" line="526" static="1">
+			<x path="Int"/>
+			<haxe_doc>An mouse input event</haxe_doc>
+		</mouse>
+		<touch public="1" get="inline" set="null" line="528" static="1">
+			<x path="Int"/>
+			<haxe_doc>An touch input event</haxe_doc>
+		</touch>
+		<joystick public="1" get="inline" set="null" line="530" static="1">
+			<x path="Int"/>
+			<haxe_doc>An joystick input event. On mobile, accellerometer is a joystick (for now)</haxe_doc>
+		</joystick>
+		<controller public="1" get="inline" set="null" line="532" static="1">
+			<x path="Int"/>
+			<haxe_doc>An controller input event. Use these instead of joystick on desktop.</haxe_doc>
+		</controller>
+		<names line="534" static="1"><c path="Array"><c path="String"/></c></names>
+		<to_string public="1" set="method" line="538" static="1"><f a="_type">
+	<x path="Int"/>
+	<c path="String"/>
+</f></to_string>
 		<meta>
 			<m n=":keep"/>
 			<m n=":noCompletion"/>
 		</meta>
 	</class>
-	<class path="snow.types.FileEvents" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
-		<fe_unknown public="1" line="651" static="1"><x path="Int"/></fe_unknown>
-		<fe_modify public="1" line="652" static="1"><x path="Int"/></fe_modify>
-		<fe_remove public="1" line="653" static="1"><x path="Int"/></fe_remove>
-		<fe_create public="1" line="654" static="1"><x path="Int"/></fe_create>
-		<fe_drop public="1" line="655" static="1"><x path="Int"/></fe_drop>
-		<typed public="1" set="method" line="660" static="1">
-			<f a="type">
-				<x path="Int"/>
-				<e path="snow.types.FileEventType"/>
-			</f>
-			<haxe_doc>returns a typed `FileEvent` from an integer ID, for communication between internal native + haxe code</haxe_doc>
-		</typed>
+	<class path="snow.types.FileEventType" params="" file="/Users/sven/dev/snow/snow/types/Types.hx" module="snow.types.Types">
+		<unknown public="1" get="inline" set="null" line="551" static="1">
+			<x path="Int"/>
+			<haxe_doc>An unknown watch event</haxe_doc>
+		</unknown>
+		<modify public="1" get="inline" set="null" line="553" static="1">
+			<x path="Int"/>
+			<haxe_doc>An event for when the a file is modified</haxe_doc>
+		</modify>
+		<remove public="1" get="inline" set="null" line="555" static="1">
+			<x path="Int"/>
+			<haxe_doc>An event for when the a file is removed</haxe_doc>
+		</remove>
+		<create public="1" get="inline" set="null" line="557" static="1">
+			<x path="Int"/>
+			<haxe_doc>An event for when the a file is created</haxe_doc>
+		</create>
+		<drop public="1" get="inline" set="null" line="559" static="1">
+			<x path="Int"/>
+			<haxe_doc>An event for when the a file is dropped on a window</haxe_doc>
+		</drop>
+		<names line="561" static="1"><c path="Array"><c path="String"/></c></names>
+		<to_string public="1" set="method" line="565" static="1"><f a="_type">
+	<x path="Int"/>
+	<c path="String"/>
+</f></to_string>
 		<meta>
 			<m n=":keep"/>
 			<m n=":noCompletion"/>
@@ -11912,7 +11994,7 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 	<typedef path="snow.utils.UInt16Array" params="" file="/Users/sven/dev/snow/snow/utils/UInt16Array.hx"><c path="snow.platform.native.utils.UInt16Array"/></typedef>
 	<typedef path="snow.utils.UInt32Array" params="" file="/Users/sven/dev/snow/snow/utils/UInt32Array.hx"><c path="snow.platform.native.utils.UInt32Array"/></typedef>
 	<typedef path="snow.utils.UInt8Array" params="" file="/Users/sven/dev/snow/snow/utils/UInt8Array.hx"><c path="snow.platform.native.utils.UInt8Array"/></typedef>
-	<typedef path="snow.utils.UIntClamped8Array" params="" file="/Users/sven/dev/snow/snow/utils/UInt8ClampedArray.hx" module="snow.utils.UInt8ClampedArray"><c path="snow.platform.native.utils.UInt8ClampedArray"/></typedef>
+	<typedef path="snow.utils.UInt8ClampedArray" params="" file="/Users/sven/dev/snow/snow/utils/UInt8ClampedArray.hx"><c path="snow.platform.native.utils.UInt8ClampedArray"/></typedef>
 	<enum path="snow.utils.format.png.Color" params="" file="/Users/sven/dev/snow/snow/utils/format/png/Data.hx" module="snow.utils.format.png.Data">
 		<ColGrey a="alpha"><x path="Bool"/></ColGrey>
 		<ColTrue a="alpha"><x path="Bool"/></ColTrue>
@@ -12379,38 +12461,38 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 	<t path="snow.types.WindowConfig"/>
 	<x path="Void"/>
 </f></on_window_created>
-		<on_event public="1" set="method" line="127">
+		<on_event public="1" set="method" line="131">
 			<f a="_event">
 				<t path="snow.types.WindowEvent"/>
 				<x path="Void"/>
 			</f>
 			<meta><m n=":noCompletion"/></meta>
 		</on_event>
-		<update public="1" set="method" line="179">
+		<update public="1" set="method" line="183">
 			<f a=""><x path="Void"/></f>
 			<meta><m n=":noCompletion"/></meta>
 		</update>
-		<render public="1" set="method" line="189">
+		<render public="1" set="method" line="193">
 			<f a=""><x path="Void"/></f>
 			<haxe_doc>Called for you automatically, unless auto_render is disabled.</haxe_doc>
 		</render>
-		<swap public="1" set="method" line="226">
+		<swap public="1" set="method" line="230">
 			<f a=""><x path="Void"/></f>
 			<haxe_doc>Swap the back buffer of the window, call after rendering to update the window view</haxe_doc>
 		</swap>
-		<destroy public="1" set="method" line="237">
+		<destroy public="1" set="method" line="241">
 			<f a=""><x path="Void"/></f>
 			<haxe_doc>Destroy the window. To recreate it create must be used, show will not work.</haxe_doc>
 		</destroy>
-		<close public="1" set="method" line="254">
+		<close public="1" set="method" line="258">
 			<f a=""><x path="Void"/></f>
 			<haxe_doc>Close the window, hiding it (not destroying it). Calling show() will unhide it.</haxe_doc>
 		</close>
-		<show public="1" set="method" line="267">
+		<show public="1" set="method" line="271">
 			<f a=""><x path="Void"/></f>
 			<haxe_doc>Show the window, unhiding it. If destroyed, nothing happens.</haxe_doc>
 		</show>
-		<simple_message public="1" set="method" line="280">
+		<simple_message public="1" set="method" line="284">
 			<f a="message:?title" v=":''">
 				<c path="String"/>
 				<c path="String"/>
@@ -12418,58 +12500,58 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			</f>
 			<haxe_doc>Display a cross platform message on this window</haxe_doc>
 		</simple_message>
-		<get_fullscreen set="method" line="290"><f a=""><x path="Bool"/></f></get_fullscreen>
-		<set_fullscreen set="method" line="297"><f a="_enable">
+		<get_fullscreen set="method" line="294"><f a=""><x path="Bool"/></f></get_fullscreen>
+		<set_fullscreen set="method" line="301"><f a="_enable">
 	<x path="Bool"/>
 	<x path="Bool"/>
 </f></set_fullscreen>
-		<get_bordered set="method" line="307"><f a=""><x path="Bool"/></f></get_bordered>
-		<get_grab set="method" line="313"><f a=""><x path="Bool"/></f></get_grab>
-		<get_max_size set="method" line="319"><f a=""><a>
+		<get_bordered set="method" line="311"><f a=""><x path="Bool"/></f></get_bordered>
+		<get_grab set="method" line="317"><f a=""><x path="Bool"/></f></get_grab>
+		<get_max_size set="method" line="323"><f a=""><a>
 	<y><x path="Int"/></y>
 	<x><x path="Int"/></x>
 </a></f></get_max_size>
-		<get_min_size set="method" line="325"><f a=""><a>
+		<get_min_size set="method" line="329"><f a=""><a>
 	<y><x path="Int"/></y>
 	<x><x path="Int"/></x>
 </a></f></get_min_size>
-		<get_title set="method" line="331"><f a=""><c path="String"/></f></get_title>
-		<set_title set="method" line="337"><f a="_title">
+		<get_title set="method" line="335"><f a=""><c path="String"/></f></get_title>
+		<set_title set="method" line="341"><f a="_title">
 	<c path="String"/>
 	<c path="String"/>
 </f></set_title>
-		<set_x set="method" line="347"><f a="_x">
+		<set_x set="method" line="351"><f a="_x">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></set_x>
-		<set_y set="method" line="359"><f a="_y">
+		<set_y set="method" line="363"><f a="_y">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></set_y>
-		<set_width set="method" line="371"><f a="_width">
+		<set_width set="method" line="375"><f a="_width">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></set_width>
-		<set_height set="method" line="383"><f a="_height">
+		<set_height set="method" line="387"><f a="_height">
 	<x path="Int"/>
 	<x path="Int"/>
 </f></set_height>
-		<set_cursor_position public="1" set="method" line="395"><f a="_x:_y">
+		<set_cursor_position public="1" set="method" line="399"><f a="_x:_y">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Void"/>
 </f></set_cursor_position>
-		<set_position public="1" set="method" line="403"><f a="_x:_y">
+		<set_position public="1" set="method" line="407"><f a="_x:_y">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Void"/>
 </f></set_position>
-		<set_size public="1" set="method" line="421"><f a="_width:_height">
+		<set_size public="1" set="method" line="425"><f a="_width:_height">
 	<x path="Int"/>
 	<x path="Int"/>
 	<x path="Void"/>
 </f></set_size>
-		<set_max_size set="method" line="438"><f a="_size">
+		<set_max_size set="method" line="442"><f a="_size">
 	<a>
 		<y><x path="Int"/></y>
 		<x><x path="Int"/></x>
@@ -12479,7 +12561,7 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 		<x><x path="Int"/></x>
 	</a>
 </f></set_max_size>
-		<set_min_size set="method" line="448"><f a="_size">
+		<set_min_size set="method" line="452"><f a="_size">
 	<a>
 		<y><x path="Int"/></y>
 		<x><x path="Int"/></x>
@@ -12489,11 +12571,11 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 		<x><x path="Int"/></x>
 	</a>
 </f></set_min_size>
-		<set_bordered set="method" line="458"><f a="_bordered">
+		<set_bordered set="method" line="462"><f a="_bordered">
 	<x path="Bool"/>
 	<x path="Bool"/>
 </f></set_bordered>
-		<set_grab set="method" line="468"><f a="_grab">
+		<set_grab set="method" line="472"><f a="_grab">
 	<x path="Bool"/>
 	<x path="Bool"/>
 </f></set_grab>
@@ -12517,10 +12599,7 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			<haxe_doc>The list of windows in this manager</haxe_doc>
 		</window_list>
 		<window_handles public="1">
-			<x path="Map">
-				<t path="snow.types.WindowHandle"/>
-				<x path="Int"/>
-			</x>
+			<c path="snow.window._Windowing.WindowHandleMap"/>
 			<haxe_doc>The list of window handles, pointing to id's in the `window_list`</haxe_doc>
 		</window_handles>
 		<window_count public="1">
@@ -12537,14 +12616,14 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>The concrete implementation of the window system</haxe_doc>
 		</platform>
-		<create public="1" set="method" line="41">
+		<create public="1" set="method" line="43">
 			<f a="_config">
 				<t path="snow.types.WindowConfig"/>
 				<c path="snow.window.Window"/>
 			</f>
 			<haxe_doc>Create a window with the given config.</haxe_doc>
 		</create>
-		<remove public="1" set="method" line="65">
+		<remove public="1" set="method" line="67">
 			<f a="_window">
 				<c path="snow.window.Window"/>
 				<x path="Void"/>
@@ -12553,7 +12632,7 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			<haxe_doc>Remove a window from the system, stopping events, etc.
             Called from window.destroy()! Don't use manually unless manually controlling the list.</haxe_doc>
 		</remove>
-		<window_from_handle public="1" set="method" line="80">
+		<window_from_handle public="1" set="method" line="82">
 			<f a="_handle">
 				<t path="snow.types.WindowHandle"/>
 				<c path="snow.window.Window"/>
@@ -12561,7 +12640,7 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>Get a window instance from an window handle.</haxe_doc>
 		</window_from_handle>
-		<window_from_id public="1" set="method" line="92">
+		<window_from_id public="1" set="method" line="94">
 			<f a="_id">
 				<x path="Int"/>
 				<c path="snow.window.Window"/>
@@ -12569,53 +12648,53 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>Get a window instance from an ID.</haxe_doc>
 		</window_from_id>
-		<enable_vsync public="1" set="method" line="101">
+		<enable_vsync public="1" set="method" line="103">
 			<f a="_enable">
 				<x path="Bool"/>
 				<x path="Int"/>
 			</f>
 			<haxe_doc>Toggle vertical refresh. This is not window specific but context wide</haxe_doc>
 		</enable_vsync>
-		<enable_cursor public="1" set="method" line="108">
+		<enable_cursor public="1" set="method" line="110">
 			<f a="_enable">
 				<x path="Bool"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>Toggle the OS cursor. This is not window specific but application wide, when inside a window, the OS cursor is hidden.</haxe_doc>
 		</enable_cursor>
-		<enable_cursor_lock public="1" set="method" line="115">
+		<enable_cursor_lock public="1" set="method" line="117">
 			<f a="_enable">
 				<x path="Bool"/>
 				<x path="Void"/>
 			</f>
 			<haxe_doc>Lock the OS cursor to the foreground window. This hides the cursor and prevents it from leaving, reporting relative coordinates.</haxe_doc>
 		</enable_cursor_lock>
-		<display_count public="1" set="method" line="126">
+		<display_count public="1" set="method" line="128">
 			<f a=""><x path="Int"/></f>
 			<haxe_doc>Get the number of displays present</haxe_doc>
 		</display_count>
-		<display_mode_count public="1" set="method" line="131">
+		<display_mode_count public="1" set="method" line="133">
 			<f a="display">
 				<x path="Int"/>
 				<x path="Int"/>
 			</f>
 			<haxe_doc>Get the number of display modes present</haxe_doc>
 		</display_mode_count>
-		<display_native_mode public="1" set="method" line="136">
+		<display_native_mode public="1" set="method" line="138">
 			<f a="display">
 				<x path="Int"/>
 				<t path="snow.types.DisplayMode"/>
 			</f>
 			<haxe_doc>Get the native mode information of the display by index</haxe_doc>
 		</display_native_mode>
-		<display_current_mode public="1" set="method" line="141">
+		<display_current_mode public="1" set="method" line="143">
 			<f a="display">
 				<x path="Int"/>
 				<t path="snow.types.DisplayMode"/>
 			</f>
 			<haxe_doc>Get the current mode information of the display by index</haxe_doc>
 		</display_current_mode>
-		<display_mode public="1" set="method" line="146">
+		<display_mode public="1" set="method" line="148">
 			<f a="display:mode_index">
 				<x path="Int"/>
 				<x path="Int"/>
@@ -12623,7 +12702,7 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			</f>
 			<haxe_doc>Get the information from a specific mode index, the index is obtained by iterating with a `display_mode_count` as the loop value</haxe_doc>
 		</display_mode>
-		<display_bounds public="1" set="method" line="151">
+		<display_bounds public="1" set="method" line="153">
 			<f a="display">
 				<x path="Int"/>
 				<a>
@@ -12635,14 +12714,14 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			</f>
 			<haxe_doc>Get the bounds of the display by index</haxe_doc>
 		</display_bounds>
-		<display_name public="1" set="method" line="156">
+		<display_name public="1" set="method" line="158">
 			<f a="display">
 				<x path="Int"/>
 				<c path="String"/>
 			</f>
 			<haxe_doc>Get the name of the display by index, where available</haxe_doc>
 		</display_name>
-		<on_event public="1" set="method" line="164">
+		<on_event public="1" set="method" line="166">
 			<f a="_event">
 				<t path="snow.types.SystemEvent"/>
 				<x path="Void"/>
@@ -12650,17 +12729,17 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>Called by Snow when a system event is dispatched</haxe_doc>
 		</on_event>
-		<update public="1" set="method" line="184">
+		<update public="1" set="method" line="183">
 			<f a=""><x path="Void"/></f>
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>Called by Snow, process any window handling</haxe_doc>
 		</update>
-		<destroy public="1" set="method" line="201">
+		<destroy public="1" set="method" line="200">
 			<f a=""><x path="Void"/></f>
 			<meta><m n=":noCompletion"/></meta>
 			<haxe_doc>Called by Snow, destroy everything.</haxe_doc>
 		</destroy>
-		<new public="1" set="method" line="26">
+		<new public="1" set="method" line="28">
 			<f a="_lib">
 				<c path="snow.Snow"/>
 				<x path="Void"/>
@@ -12669,6 +12748,19 @@ but they aren't specific to SDL so they are used generically</haxe_doc>
 			<haxe_doc>constructed internally, use `app.windowing`</haxe_doc>
 		</new>
 		<haxe_doc>A window manager, accessed via `app.window`</haxe_doc>
+		<meta><m n=":keep"/></meta>
+	</class>
+	<class path="snow.window._Windowing.WindowHandleMap" params="" file="/Users/sven/dev/snow/snow/window/Windowing.hx" private="1" module="snow.window.Windowing">
+		<extends path="haxe.ds.BalancedTree">
+			<t path="snow.types.WindowHandle"/>
+			<x path="Int"/>
+		</extends>
+		<compare set="method" line="218" override="1"><f a="k1:k2">
+	<t path="snow.types.WindowHandle"/>
+	<t path="snow.types.WindowHandle"/>
+	<x path="Int"/>
+</f></compare>
+		<new public="1" set="method" line="216"><f a=""><x path="Void"/></f></new>
 		<meta><m n=":keep"/></meta>
 	</class>
 	<typedef path="sys.FileStat" params="" file="/usr/lib/haxe/std/sys/FileStat.hx">

@@ -531,28 +531,6 @@
             }
          }
       },
-      "snow.utils.UIntClamped8Array": {
-         "module": "snow.utils.UInt8ClampedArray",
-         "file": "/Users/sven/dev/snow/snow/utils/UInt8ClampedArray.hx",
-         "meta": [],
-         "name": "UIntClamped8Array",
-         "path": "snow.utils.UIntClamped8Array",
-         "type": "typedef",
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "members": null,
-         "types": {
-            "cpp": {
-               "name": "snow.platform.native.utils.UInt8ClampedArray",
-               "type": "CClass",
-               "params": []
-            }
-         }
-      },
       "snow.platform.native.render.opengl.GLActiveInfo": {
          "module": "snow.platform.native.render.opengl.GL",
          "file": "/Users/sven/dev/snow/snow/platform/native/render/opengl/GL.hx",
@@ -1030,13 +1008,19 @@
                "inherited": false,
                "name": "type",
                "type": {
-                  "name": "snow.types.FileEventType",
-                  "type": "CEnum",
-                  "params": []
+                  "name": "Null",
+                  "type": "CTypedef",
+                  "params": [
+                     {
+                        "name": "Int",
+                        "type": "CAbstract",
+                        "params": []
+                     }
+                  ]
                },
                "isStatic": false,
                "params": [],
-               "doc": "The type of file watch event, modify/create/delete",
+               "doc": "The type of file watch event, modify/create/delete. Use FileEventType",
                "get": "normal",
                "set": "normal",
                "inherit_source": null,
@@ -1116,13 +1100,19 @@
                      "inherited": false,
                      "name": "type",
                      "type": {
-                        "name": "snow.types.FileEventType",
-                        "type": "CEnum",
-                        "params": []
+                        "name": "Null",
+                        "type": "CTypedef",
+                        "params": [
+                           {
+                              "name": "Int",
+                              "type": "CAbstract",
+                              "params": []
+                           }
+                        ]
                      },
                      "isStatic": false,
                      "params": [],
-                     "doc": "The type of file watch event, modify/create/delete",
+                     "doc": "The type of file watch event, modify/create/delete. Use FileEventType",
                      "get": "normal",
                      "set": "normal",
                      "inherit_source": null,
@@ -1383,7 +1373,15 @@
          "members": null,
          "types": {
             "cpp": {
-               "type": "CDynamic"
+               "name": "Null",
+               "type": "CTypedef",
+               "params": [
+                  {
+                     "name": "Float",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               ]
             }
          }
       },
@@ -4384,13 +4382,19 @@
                "inherited": false,
                "name": "type",
                "type": {
-                  "name": "snow.types.WindowEventType",
-                  "type": "CEnum",
-                  "params": []
+                  "name": "Null",
+                  "type": "CTypedef",
+                  "params": [
+                     {
+                        "name": "Int",
+                        "type": "CAbstract",
+                        "params": []
+                     }
+                  ]
                },
                "isStatic": false,
                "params": [],
-               "doc": "The type of window event this was",
+               "doc": "The type of window event this was. Use WindowEventType",
                "get": "normal",
                "set": "normal",
                "inherit_source": null,
@@ -4499,13 +4503,19 @@
                      "inherited": false,
                      "name": "type",
                      "type": {
-                        "name": "snow.types.WindowEventType",
-                        "type": "CEnum",
-                        "params": []
+                        "name": "Null",
+                        "type": "CTypedef",
+                        "params": [
+                           {
+                              "name": "Int",
+                              "type": "CAbstract",
+                              "params": []
+                           }
+                        ]
                      },
                      "isStatic": false,
                      "params": [],
-                     "doc": "The type of window event this was",
+                     "doc": "The type of window event this was. Use WindowEventType",
                      "get": "normal",
                      "set": "normal",
                      "inherit_source": null,
@@ -5482,6 +5492,28 @@
             }
          }
       },
+      "snow.utils.UInt8ClampedArray": {
+         "module": null,
+         "file": "/Users/sven/dev/snow/snow/utils/UInt8ClampedArray.hx",
+         "meta": [],
+         "name": "UInt8ClampedArray",
+         "path": "snow.utils.UInt8ClampedArray",
+         "type": "typedef",
+         "params": [],
+         "doc": null,
+         "isPrivate": false,
+         "platforms": [
+            "cpp"
+         ],
+         "members": null,
+         "types": {
+            "cpp": {
+               "name": "snow.platform.native.utils.UInt8ClampedArray",
+               "type": "CClass",
+               "params": []
+            }
+         }
+      },
       "snow.types.AssetInfo": {
          "module": "snow.types.Types",
          "file": "/Users/sven/dev/snow/snow/types/Types.hx",
@@ -6033,13 +6065,19 @@
                "inherited": false,
                "name": "type",
                "type": {
-                  "name": "snow.types.InputEventType",
-                  "type": "CEnum",
-                  "params": []
+                  "name": "Null",
+                  "type": "CTypedef",
+                  "params": [
+                     {
+                        "name": "Int",
+                        "type": "CAbstract",
+                        "params": []
+                     }
+                  ]
                },
                "isStatic": false,
                "params": [],
-               "doc": "The type of input event this was",
+               "doc": "The type of input event this was. Use InputEventType",
                "get": "normal",
                "set": "normal",
                "inherit_source": null,
@@ -6148,13 +6186,19 @@
                      "inherited": false,
                      "name": "type",
                      "type": {
-                        "name": "snow.types.InputEventType",
-                        "type": "CEnum",
-                        "params": []
+                        "name": "Null",
+                        "type": "CTypedef",
+                        "params": [
+                           {
+                              "name": "Int",
+                              "type": "CAbstract",
+                              "params": []
+                           }
+                        ]
                      },
                      "isStatic": false,
                      "params": [],
-                     "doc": "The type of input event this was",
+                     "doc": "The type of input event this was. Use InputEventType",
                      "get": "normal",
                      "set": "normal",
                      "inherit_source": null,
@@ -6276,13 +6320,19 @@
                "inherited": false,
                "name": "type",
                "type": {
-                  "name": "snow.types.SystemEventType",
-                  "type": "CEnum",
-                  "params": []
+                  "name": "Null",
+                  "type": "CTypedef",
+                  "params": [
+                     {
+                        "name": "Int",
+                        "type": "CAbstract",
+                        "params": []
+                     }
+                  ]
                },
                "isStatic": false,
                "params": [],
-               "doc": "The type of system event this event is.",
+               "doc": "The type of system event this event is. SystemEventType",
                "get": "normal",
                "set": "normal",
                "inherit_source": null,
@@ -6399,13 +6449,19 @@
                      "inherited": false,
                      "name": "type",
                      "type": {
-                        "name": "snow.types.SystemEventType",
-                        "type": "CEnum",
-                        "params": []
+                        "name": "Null",
+                        "type": "CTypedef",
+                        "params": [
+                           {
+                              "name": "Int",
+                              "type": "CAbstract",
+                              "params": []
+                           }
+                        ]
                      },
                      "isStatic": false,
                      "params": [],
-                     "doc": "The type of system event this event is.",
+                     "doc": "The type of system event this event is. SystemEventType",
                      "get": "normal",
                      "set": "normal",
                      "inherit_source": null,
@@ -6958,7 +7014,15 @@
          "members": null,
          "types": {
             "cpp": {
-               "type": "CDynamic"
+               "name": "Null",
+               "type": "CTypedef",
+               "params": [
+                  {
+                     "name": "Float",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               ]
             }
          }
       },
@@ -9136,7 +9200,15 @@
          "from": [
             {
                "t": {
-                  "type": "CDynamic"
+                  "name": "Null",
+                  "type": "CTypedef",
+                  "params": [
+                     {
+                        "name": "Float",
+                        "type": "CAbstract",
+                        "params": []
+                     }
+                  ]
                },
                "field": null
             }
@@ -9176,7 +9248,15 @@
          "to": [
             {
                "t": {
-                  "type": "CDynamic"
+                  "name": "Null",
+                  "type": "CTypedef",
+                  "params": [
+                     {
+                        "name": "Float",
+                        "type": "CAbstract",
+                        "params": []
+                     }
+                  ]
                },
                "field": null
             }
@@ -9186,7 +9266,80 @@
             "cpp"
          ],
          "athis": {
-            "type": "CDynamic"
+            "name": "Null",
+            "type": "CTypedef",
+            "params": [
+               {
+                  "name": "Float",
+                  "type": "CAbstract",
+                  "params": []
+               }
+            ]
+         }
+      },
+      "snow.platform.native.io.IOFileHandle": {
+         "module": "snow.platform.native.io.IOFile",
+         "file": "/Users/sven/dev/snow/snow/platform/native/io/IOFile.hx",
+         "from": [
+            {
+               "t": {
+                  "name": "Float",
+                  "type": "CAbstract",
+                  "params": []
+               },
+               "field": null
+            }
+         ],
+         "impl": {
+            "module": "snow.platform.native.io.IOFile",
+            "file": "/Users/sven/dev/snow/snow/platform/native/io/IOFile.hx",
+            "meta": [
+               {
+                  "name": ":keep",
+                  "params": []
+               }
+            ],
+            "name": "IOFileHandle_Impl_",
+            "path": "snow.platform.native.io._IOFile.IOFileHandle_Impl_",
+            "type": "class",
+            "properties": [],
+            "interfaces": [],
+            "params": [],
+            "doc": null,
+            "isPrivate": true,
+            "platforms": [
+               "cpp"
+            ],
+            "isInterface": false,
+            "members": [],
+            "isExtern": true,
+            "tdynamic": null,
+            "methods": [],
+            "superClass": null
+         },
+         "meta": [],
+         "name": "IOFileHandle",
+         "path": "snow.platform.native.io.IOFileHandle",
+         "type": "abstract",
+         "params": [],
+         "to": [
+            {
+               "t": {
+                  "name": "Float",
+                  "type": "CAbstract",
+                  "params": []
+               },
+               "field": null
+            }
+         ],
+         "doc": null,
+         "platforms": [
+            "cpp"
+         ],
+         "athis": {
+            "name": "Float",
+            "type": "CAbstract",
+            "params": []
          }
       },
       "snow.platform.native.audio.openal.Device": {
@@ -9195,7 +9348,15 @@
          "from": [
             {
                "t": {
-                  "type": "CDynamic"
+                  "name": "Null",
+                  "type": "CTypedef",
+                  "params": [
+                     {
+                        "name": "Float",
+                        "type": "CAbstract",
+                        "params": []
+                     }
+                  ]
                },
                "field": null
             }
@@ -9235,7 +9396,15 @@
          "to": [
             {
                "t": {
-                  "type": "CDynamic"
+                  "name": "Null",
+                  "type": "CTypedef",
+                  "params": [
+                     {
+                        "name": "Float",
+                        "type": "CAbstract",
+                        "params": []
+                     }
+                  ]
                },
                "field": null
             }
@@ -9245,7 +9414,15 @@
             "cpp"
          ],
          "athis": {
-            "type": "CDynamic"
+            "name": "Null",
+            "type": "CTypedef",
+            "params": [
+               {
+                  "name": "Float",
+                  "type": "CAbstract",
+                  "params": []
+               }
+            ]
          }
       }
    },
@@ -10786,450 +10963,6 @@
             "path": "snow.platform.native.render.opengl.GLObject",
             "params": []
          }
-      },
-      "snow.types.WindowEvents": {
-         "module": "snow.types.Types",
-         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
-         "meta": [
-            {
-               "name": ":keep",
-               "params": []
-            },
-            {
-               "name": ":noCompletion",
-               "params": []
-            }
-         ],
-         "name": "WindowEvents",
-         "path": "snow.types.WindowEvents",
-         "type": "class",
-         "properties": [],
-         "interfaces": [],
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isInterface": false,
-         "members": [
-            {
-               "isOverride": false,
-               "line": 587,
-               "meta": [],
-               "inherited": false,
-               "name": "we_close",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 573,
-               "meta": [],
-               "inherited": false,
-               "name": "we_created",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 588,
-               "meta": [],
-               "inherited": false,
-               "name": "we_destroy",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 583,
-               "meta": [],
-               "inherited": false,
-               "name": "we_enter",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 576,
-               "meta": [],
-               "inherited": false,
-               "name": "we_exposed",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 585,
-               "meta": [],
-               "inherited": false,
-               "name": "we_focus_gained",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 586,
-               "meta": [],
-               "inherited": false,
-               "name": "we_focus_lost",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 575,
-               "meta": [],
-               "inherited": false,
-               "name": "we_hidden",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 584,
-               "meta": [],
-               "inherited": false,
-               "name": "we_leave",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 581,
-               "meta": [],
-               "inherited": false,
-               "name": "we_maximized",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 580,
-               "meta": [],
-               "inherited": false,
-               "name": "we_minimized",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 577,
-               "meta": [],
-               "inherited": false,
-               "name": "we_moved",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 578,
-               "meta": [],
-               "inherited": false,
-               "name": "we_resized",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 582,
-               "meta": [],
-               "inherited": false,
-               "name": "we_restored",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 574,
-               "meta": [],
-               "inherited": false,
-               "name": "we_shown",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 579,
-               "meta": [],
-               "inherited": false,
-               "name": "we_size_changed",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 572,
-               "meta": [],
-               "inherited": false,
-               "name": "we_unknown",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            }
-         ],
-         "isExtern": false,
-         "tdynamic": null,
-         "methods": [
-            {
-               "isOverride": false,
-               "line": 593,
-               "meta": [],
-               "inherited": false,
-               "name": "typed",
-               "type": {
-                  "args": [
-                     {
-                        "name": "type",
-                        "t": {
-                           "name": "Int",
-                           "type": "CAbstract",
-                           "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     }
-                  ],
-                  "type": "CFunction",
-                  "return_type": {
-                     "name": "snow.types.WindowEventType",
-                     "type": "CEnum",
-                     "params": []
-                  }
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": "returns a typed `WindowEventType` from an integer ID, for communication between internal native + haxe code",
-               "get": "normal",
-               "set": "method",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            }
-         ],
-         "superClass": null
       },
       "snow.platform.native.assets.AssetSystem": {
          "module": null,
@@ -13239,7 +12972,7 @@
          "members": [
             {
                "isOverride": false,
-               "line": 48,
+               "line": 68,
                "meta": [],
                "inherited": true,
                "name": "snow_gamepad_close",
@@ -13274,7 +13007,7 @@
             },
             {
                "isOverride": false,
-               "line": 47,
+               "line": 67,
                "meta": [],
                "inherited": true,
                "name": "snow_gamepad_open",
@@ -13291,6 +13024,119 @@
                         "value": null
                      }
                   ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "type": "CUnknown"
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": "snow.platform.native.input.InputSystem",
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            },
+            {
+               "isOverride": false,
+               "line": 65,
+               "meta": [],
+               "inherited": true,
+               "name": "snow_input_text_rect",
+               "type": {
+                  "args": [
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "type": "CUnknown"
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": "snow.platform.native.input.InputSystem",
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            },
+            {
+               "isOverride": false,
+               "line": 63,
+               "meta": [],
+               "inherited": true,
+               "name": "snow_input_text_start",
+               "type": {
+                  "args": [],
+                  "type": "CFunction",
+                  "return_type": {
+                     "type": "CUnknown"
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": "snow.platform.native.input.InputSystem",
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            },
+            {
+               "isOverride": false,
+               "line": 64,
+               "meta": [],
+               "inherited": true,
+               "name": "snow_input_text_stop",
+               "type": {
+                  "args": [],
                   "type": "CFunction",
                   "return_type": {
                      "type": "CUnknown"
@@ -13339,7 +13185,7 @@
             },
             {
                "isOverride": true,
-               "line": 39,
+               "line": 55,
                "meta": [],
                "inherited": true,
                "name": "gamepad_add",
@@ -13376,7 +13222,7 @@
             },
             {
                "isOverride": true,
-               "line": 43,
+               "line": 59,
                "meta": [],
                "inherited": true,
                "name": "gamepad_remove",
@@ -13618,6 +13464,125 @@
                "isStatic": false,
                "params": [],
                "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": "snow.platform.native.input.InputSystem",
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            },
+            {
+               "isOverride": true,
+               "line": 51,
+               "meta": [],
+               "inherited": true,
+               "name": "text_input_rect",
+               "type": {
+                  "args": [
+                     {
+                        "name": "x",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "y",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "w",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "h",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": "In a system text input state, this determines the area that is accepting input.",
+               "get": "normal",
+               "set": "method",
+               "inherit_source": "snow.platform.native.input.InputSystem",
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            },
+            {
+               "isOverride": true,
+               "line": 41,
+               "meta": [],
+               "inherited": true,
+               "name": "text_input_start",
+               "type": {
+                  "args": [],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": "Start a system text input state, this includes soft keyboard on mobile. on some platforms like web this does nothing (yet?)",
+               "get": "normal",
+               "set": "method",
+               "inherit_source": "snow.platform.native.input.InputSystem",
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            },
+            {
+               "isOverride": true,
+               "line": 46,
+               "meta": [],
+               "inherited": true,
+               "name": "text_input_stop",
+               "type": {
+                  "args": [],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": "End a system text input state, this includes soft keyboard on mobile. on some platforms like web this does nothing (yet?)",
                "get": "normal",
                "set": "method",
                "inherit_source": "snow.platform.native.input.InputSystem",
@@ -14292,6 +14257,113 @@
          "methods": [],
          "superClass": null
       },
+      "snow.window._Windowing.WindowHandleMap": {
+         "module": "snow.window.Windowing",
+         "file": "/Users/sven/dev/snow/snow/window/Windowing.hx",
+         "meta": [
+            {
+               "name": ":keep",
+               "params": []
+            }
+         ],
+         "name": "WindowHandleMap",
+         "path": "snow.window._Windowing.WindowHandleMap",
+         "type": "class",
+         "properties": [],
+         "interfaces": [],
+         "params": [],
+         "doc": null,
+         "isPrivate": true,
+         "platforms": [
+            "cpp"
+         ],
+         "isInterface": false,
+         "members": [],
+         "isExtern": false,
+         "tdynamic": null,
+         "methods": [
+            {
+               "isOverride": true,
+               "line": 218,
+               "meta": [],
+               "inherited": false,
+               "name": "compare",
+               "type": {
+                  "args": [
+                     {
+                        "name": "k1",
+                        "t": {
+                           "name": "snow.types.WindowHandle",
+                           "type": "CTypedef",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "k2",
+                        "t": {
+                           "name": "snow.types.WindowHandle",
+                           "type": "CTypedef",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Int",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            },
+            {
+               "isOverride": false,
+               "line": 216,
+               "meta": [],
+               "inherited": false,
+               "name": "new",
+               "type": {
+                  "args": [],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            }
+         ],
+         "superClass": {
+            "path": "haxe.ds.BalancedTree",
+            "params": [
+               3,
+               7
+            ]
+         }
+      },
       "snow.platform.native.utils.Int32Array": {
          "module": null,
          "file": "/Users/sven/dev/snow/snow/platform/native/utils/Int32Array.hx",
@@ -14617,9 +14689,9 @@
             "params": []
          }
       },
-      "snow.platform.native.input.sdl.GamepadEventTypes": {
-         "module": "snow.platform.native.input.sdl.InputSystem",
-         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
+      "snow.types.WindowEventType": {
+         "module": "snow.types.Types",
+         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
          "meta": [
             {
                "name": ":keep",
@@ -14630,8 +14702,8 @@
                "params": []
             }
          ],
-         "name": "GamepadEventTypes",
-         "path": "snow.platform.native.input.sdl.GamepadEventTypes",
+         "name": "WindowEventType",
+         "path": "snow.types.WindowEventType",
          "type": "class",
          "properties": [],
          "interfaces": [],
@@ -14645,124 +14717,20 @@
          "members": [
             {
                "isOverride": false,
-               "line": 356,
+               "line": 502,
                "meta": [],
                "inherited": false,
-               "name": "ge_added",
+               "name": "names",
                "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 353,
-               "meta": [],
-               "inherited": false,
-               "name": "ge_axis",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 354,
-               "meta": [],
-               "inherited": false,
-               "name": "ge_button_down",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 355,
-               "meta": [],
-               "inherited": false,
-               "name": "ge_button_up",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 358,
-               "meta": [],
-               "inherited": false,
-               "name": "ge_remapped",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 357,
-               "meta": [],
-               "inherited": false,
-               "name": "ge_removed",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
+                  "name": "Array",
+                  "type": "CClass",
+                  "params": [
+                     {
+                        "name": "String",
+                        "type": "CClass",
+                        "params": []
+                     }
+                  ]
                },
                "isStatic": true,
                "params": [],
@@ -14781,14 +14749,14 @@
          "methods": [
             {
                "isOverride": false,
-               "line": 360,
+               "line": 509,
                "meta": [],
                "inherited": false,
-               "name": "typed",
+               "name": "to_string",
                "type": {
                   "args": [
                      {
-                        "name": "ge_type",
+                        "name": "_type",
                         "t": {
                            "name": "Int",
                            "type": "CAbstract",
@@ -14800,8 +14768,8 @@
                   ],
                   "type": "CFunction",
                   "return_type": {
-                     "name": "snow.platform.native.input.sdl.ControllerEventType",
-                     "type": "CEnum",
+                     "name": "String",
+                     "type": "CClass",
                      "params": []
                   }
                },
@@ -15280,6 +15248,202 @@
          ],
          "superClass": null
       },
+      "snow.platform.native.input.sdl.MouseEventType": {
+         "module": "snow.platform.native.input.sdl.InputSystem",
+         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
+         "meta": [
+            {
+               "name": ":keep",
+               "params": []
+            },
+            {
+               "name": ":noCompletion",
+               "params": []
+            }
+         ],
+         "name": "MouseEventType",
+         "path": "snow.platform.native.input.sdl.MouseEventType",
+         "type": "class",
+         "properties": [],
+         "interfaces": [],
+         "params": [],
+         "doc": null,
+         "isPrivate": false,
+         "platforms": [
+            "cpp"
+         ],
+         "isInterface": false,
+         "members": [
+            {
+               "isOverride": false,
+               "line": 352,
+               "meta": [],
+               "inherited": false,
+               "name": "names",
+               "type": {
+                  "name": "Array",
+                  "type": "CClass",
+                  "params": [
+                     {
+                        "name": "String",
+                        "type": "CClass",
+                        "params": []
+                     }
+                  ]
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            }
+         ],
+         "isExtern": false,
+         "tdynamic": null,
+         "methods": [
+            {
+               "isOverride": false,
+               "line": 356,
+               "meta": [],
+               "inherited": false,
+               "name": "to_string",
+               "type": {
+                  "args": [
+                     {
+                        "name": "_type",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "String",
+                     "type": "CClass",
+                     "params": []
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            }
+         ],
+         "superClass": null
+      },
+      "snow.platform.native.input.sdl.ControllerEventType": {
+         "module": "snow.platform.native.input.sdl.InputSystem",
+         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
+         "meta": [
+            {
+               "name": ":keep",
+               "params": []
+            },
+            {
+               "name": ":noCompletion",
+               "params": []
+            }
+         ],
+         "name": "ControllerEventType",
+         "path": "snow.platform.native.input.sdl.ControllerEventType",
+         "type": "class",
+         "properties": [],
+         "interfaces": [],
+         "params": [],
+         "doc": null,
+         "isPrivate": false,
+         "platforms": [
+            "cpp"
+         ],
+         "isInterface": false,
+         "members": [
+            {
+               "isOverride": false,
+               "line": 312,
+               "meta": [],
+               "inherited": false,
+               "name": "names",
+               "type": {
+                  "name": "Array",
+                  "type": "CClass",
+                  "params": [
+                     {
+                        "name": "String",
+                        "type": "CClass",
+                        "params": []
+                     }
+                  ]
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            }
+         ],
+         "isExtern": false,
+         "tdynamic": null,
+         "methods": [
+            {
+               "isOverride": false,
+               "line": 316,
+               "meta": [],
+               "inherited": false,
+               "name": "to_string",
+               "type": {
+                  "args": [
+                     {
+                        "name": "_type",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "String",
+                     "type": "CClass",
+                     "params": []
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            }
+         ],
+         "superClass": null
+      },
       "snow.window.Windowing": {
          "module": null,
          "file": "/Users/sven/dev/snow/snow/window/Windowing.hx",
@@ -15385,20 +15549,9 @@
                "inherited": false,
                "name": "window_handles",
                "type": {
-                  "name": "Map",
-                  "type": "CAbstract",
-                  "params": [
-                     {
-                        "name": "snow.types.WindowHandle",
-                        "type": "CTypedef",
-                        "params": []
-                     },
-                     {
-                        "name": "Int",
-                        "type": "CAbstract",
-                        "params": []
-                     }
-                  ]
+                  "name": "snow.window._Windowing.WindowHandleMap",
+                  "type": "CClass",
+                  "params": []
                },
                "isStatic": false,
                "params": [],
@@ -15450,7 +15603,7 @@
          "methods": [
             {
                "isOverride": false,
-               "line": 41,
+               "line": 43,
                "meta": [],
                "inherited": false,
                "name": "create",
@@ -15487,7 +15640,7 @@
             },
             {
                "isOverride": false,
-               "line": 201,
+               "line": 200,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -15518,7 +15671,7 @@
             },
             {
                "isOverride": false,
-               "line": 151,
+               "line": 153,
                "meta": [],
                "inherited": false,
                "name": "display_bounds",
@@ -15635,7 +15788,7 @@
             },
             {
                "isOverride": false,
-               "line": 126,
+               "line": 128,
                "meta": [],
                "inherited": false,
                "name": "display_count",
@@ -15661,7 +15814,7 @@
             },
             {
                "isOverride": false,
-               "line": 141,
+               "line": 143,
                "meta": [],
                "inherited": false,
                "name": "display_current_mode",
@@ -15698,7 +15851,7 @@
             },
             {
                "isOverride": false,
-               "line": 146,
+               "line": 148,
                "meta": [],
                "inherited": false,
                "name": "display_mode",
@@ -15745,7 +15898,7 @@
             },
             {
                "isOverride": false,
-               "line": 131,
+               "line": 133,
                "meta": [],
                "inherited": false,
                "name": "display_mode_count",
@@ -15782,7 +15935,7 @@
             },
             {
                "isOverride": false,
-               "line": 156,
+               "line": 158,
                "meta": [],
                "inherited": false,
                "name": "display_name",
@@ -15819,7 +15972,7 @@
             },
             {
                "isOverride": false,
-               "line": 136,
+               "line": 138,
                "meta": [],
                "inherited": false,
                "name": "display_native_mode",
@@ -15856,7 +16009,7 @@
             },
             {
                "isOverride": false,
-               "line": 108,
+               "line": 110,
                "meta": [],
                "inherited": false,
                "name": "enable_cursor",
@@ -15893,7 +16046,7 @@
             },
             {
                "isOverride": false,
-               "line": 115,
+               "line": 117,
                "meta": [],
                "inherited": false,
                "name": "enable_cursor_lock",
@@ -15930,7 +16083,7 @@
             },
             {
                "isOverride": false,
-               "line": 101,
+               "line": 103,
                "meta": [],
                "inherited": false,
                "name": "enable_vsync",
@@ -15967,7 +16120,7 @@
             },
             {
                "isOverride": false,
-               "line": 26,
+               "line": 28,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -16009,7 +16162,7 @@
             },
             {
                "isOverride": false,
-               "line": 164,
+               "line": 166,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -16051,7 +16204,7 @@
             },
             {
                "isOverride": false,
-               "line": 65,
+               "line": 67,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -16093,7 +16246,7 @@
             },
             {
                "isOverride": false,
-               "line": 184,
+               "line": 183,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -16124,7 +16277,7 @@
             },
             {
                "isOverride": false,
-               "line": 80,
+               "line": 82,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -16166,7 +16319,7 @@
             },
             {
                "isOverride": false,
-               "line": 92,
+               "line": 94,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -19392,20 +19545,9 @@
                "inherited": false,
                "name": "handles",
                "type": {
-                  "name": "Map",
-                  "type": "CAbstract",
-                  "params": [
-                     {
-                        "name": "snow.types.AudioHandle",
-                        "type": "CTypedef",
-                        "params": []
-                     },
-                     {
-                        "name": "snow.audio.Sound",
-                        "type": "CTypedef",
-                        "params": []
-                     }
-                  ]
+                  "name": "snow.audio._Audio.AudioHandleMap",
+                  "type": "CClass",
+                  "params": []
                },
                "isStatic": false,
                "params": [],
@@ -19549,7 +19691,7 @@
          "methods": [
             {
                "isOverride": false,
-               "line": 55,
+               "line": 57,
                "meta": [],
                "inherited": false,
                "name": "create",
@@ -19606,7 +19748,7 @@
             },
             {
                "isOverride": false,
-               "line": 319,
+               "line": 321,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -19637,7 +19779,7 @@
             },
             {
                "isOverride": false,
-               "line": 206,
+               "line": 208,
                "meta": [],
                "inherited": false,
                "name": "duration",
@@ -19674,7 +19816,7 @@
             },
             {
                "isOverride": false,
-               "line": 136,
+               "line": 138,
                "meta": [],
                "inherited": false,
                "name": "get",
@@ -19711,7 +19853,7 @@
             },
             {
                "isOverride": false,
-               "line": 283,
+               "line": 285,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -19753,7 +19895,7 @@
             },
             {
                "isOverride": false,
-               "line": 228,
+               "line": 230,
                "meta": [],
                "inherited": false,
                "name": "loop",
@@ -19790,7 +19932,7 @@
             },
             {
                "isOverride": false,
-               "line": 34,
+               "line": 36,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -19832,7 +19974,7 @@
             },
             {
                "isOverride": false,
-               "line": 128,
+               "line": 130,
                "meta": [],
                "inherited": false,
                "name": "off",
@@ -19904,7 +20046,7 @@
             },
             {
                "isOverride": false,
-               "line": 120,
+               "line": 122,
                "meta": [],
                "inherited": false,
                "name": "on",
@@ -19976,7 +20118,7 @@
             },
             {
                "isOverride": false,
-               "line": 292,
+               "line": 294,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -20018,7 +20160,7 @@
             },
             {
                "isOverride": false,
-               "line": 164,
+               "line": 166,
                "meta": [],
                "inherited": false,
                "name": "pan",
@@ -20065,7 +20207,7 @@
             },
             {
                "isOverride": false,
-               "line": 241,
+               "line": 243,
                "meta": [],
                "inherited": false,
                "name": "pause",
@@ -20102,7 +20244,7 @@
             },
             {
                "isOverride": false,
-               "line": 178,
+               "line": 180,
                "meta": [],
                "inherited": false,
                "name": "pitch",
@@ -20149,7 +20291,7 @@
             },
             {
                "isOverride": false,
-               "line": 215,
+               "line": 217,
                "meta": [],
                "inherited": false,
                "name": "play",
@@ -20186,7 +20328,7 @@
             },
             {
                "isOverride": false,
-               "line": 192,
+               "line": 194,
                "meta": [],
                "inherited": false,
                "name": "position",
@@ -20233,7 +20375,7 @@
             },
             {
                "isOverride": false,
-               "line": 254,
+               "line": 256,
                "meta": [],
                "inherited": false,
                "name": "stop",
@@ -20270,7 +20412,7 @@
             },
             {
                "isOverride": false,
-               "line": 267,
+               "line": 269,
                "meta": [],
                "inherited": false,
                "name": "toggle",
@@ -20307,7 +20449,7 @@
             },
             {
                "isOverride": false,
-               "line": 106,
+               "line": 108,
                "meta": [],
                "inherited": false,
                "name": "uncreate",
@@ -20344,7 +20486,7 @@
             },
             {
                "isOverride": false,
-               "line": 332,
+               "line": 334,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -20375,7 +20517,7 @@
             },
             {
                "isOverride": false,
-               "line": 150,
+               "line": 152,
                "meta": [],
                "inherited": false,
                "name": "volume",
@@ -20412,6 +20554,104 @@
                "isStatic": false,
                "params": [],
                "doc": "Get/Set the volume of a sound instance by name.\n            Leave the second argument blank to return the current value.",
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            }
+         ],
+         "superClass": null
+      },
+      "snow.platform.native.input.sdl.TouchEventType": {
+         "module": "snow.platform.native.input.sdl.InputSystem",
+         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
+         "meta": [
+            {
+               "name": ":keep",
+               "params": []
+            },
+            {
+               "name": ":noCompletion",
+               "params": []
+            }
+         ],
+         "name": "TouchEventType",
+         "path": "snow.platform.native.input.sdl.TouchEventType",
+         "type": "class",
+         "properties": [],
+         "interfaces": [],
+         "params": [],
+         "doc": null,
+         "isPrivate": false,
+         "platforms": [
+            "cpp"
+         ],
+         "isInterface": false,
+         "members": [
+            {
+               "isOverride": false,
+               "line": 331,
+               "meta": [],
+               "inherited": false,
+               "name": "names",
+               "type": {
+                  "name": "Array",
+                  "type": "CClass",
+                  "params": [
+                     {
+                        "name": "String",
+                        "type": "CClass",
+                        "params": []
+                     }
+                  ]
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            }
+         ],
+         "isExtern": false,
+         "tdynamic": null,
+         "methods": [
+            {
+               "isOverride": false,
+               "line": 335,
+               "meta": [],
+               "inherited": false,
+               "name": "to_string",
+               "type": {
+                  "args": [
+                     {
+                        "name": "_type",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "String",
+                     "type": "CClass",
+                     "params": []
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
                "get": "normal",
                "set": "method",
                "inherit_source": null,
@@ -20471,406 +20711,6 @@
                   "return_type": {
                      "name": "haxe.io.Bytes",
                      "type": "CClass",
-                     "params": []
-                  }
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "method",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            }
-         ],
-         "superClass": null
-      },
-      "snow.types.SystemEvents": {
-         "module": "snow.types.Types",
-         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
-         "meta": [
-            {
-               "name": ":keep",
-               "params": []
-            },
-            {
-               "name": ":noCompletion",
-               "params": []
-            }
-         ],
-         "name": "SystemEvents",
-         "path": "snow.types.SystemEvents",
-         "type": "class",
-         "properties": [],
-         "interfaces": [],
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isInterface": false,
-         "members": [
-            {
-               "isOverride": false,
-               "line": 537,
-               "meta": [],
-               "inherited": false,
-               "name": "se_app_didenterbackground",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 539,
-               "meta": [],
-               "inherited": false,
-               "name": "se_app_didenterforeground",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 535,
-               "meta": [],
-               "inherited": false,
-               "name": "se_app_lowmemory",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 534,
-               "meta": [],
-               "inherited": false,
-               "name": "se_app_terminating",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 536,
-               "meta": [],
-               "inherited": false,
-               "name": "se_app_willenterbackground",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 538,
-               "meta": [],
-               "inherited": false,
-               "name": "se_app_willenterforeground",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 540,
-               "meta": [],
-               "inherited": false,
-               "name": "se_file",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 524,
-               "meta": [],
-               "inherited": false,
-               "name": "se_init",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 529,
-               "meta": [],
-               "inherited": false,
-               "name": "se_input",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 533,
-               "meta": [],
-               "inherited": false,
-               "name": "se_quit",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 525,
-               "meta": [],
-               "inherited": false,
-               "name": "se_ready",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 527,
-               "meta": [],
-               "inherited": false,
-               "name": "se_shutdown",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 523,
-               "meta": [],
-               "inherited": false,
-               "name": "se_unknown",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 526,
-               "meta": [],
-               "inherited": false,
-               "name": "se_update",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 528,
-               "meta": [],
-               "inherited": false,
-               "name": "se_window",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            }
-         ],
-         "isExtern": false,
-         "tdynamic": null,
-         "methods": [
-            {
-               "isOverride": false,
-               "line": 544,
-               "meta": [],
-               "inherited": false,
-               "name": "typed",
-               "type": {
-                  "args": [
-                     {
-                        "name": "type",
-                        "t": {
-                           "name": "Int",
-                           "type": "CAbstract",
-                           "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     }
-                  ],
-                  "type": "CFunction",
-                  "return_type": {
-                     "name": "snow.types.SystemEventType",
-                     "type": "CEnum",
                      "params": []
                   }
                },
@@ -21343,164 +21183,6 @@
             "path": "snow.platform.native.render.opengl.GLObject",
             "params": []
          }
-      },
-      "snow.platform.native.input.sdl.KeyEventTypes": {
-         "module": "snow.platform.native.input.sdl.InputSystem",
-         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
-         "meta": [
-            {
-               "name": ":keep",
-               "params": []
-            },
-            {
-               "name": ":noCompletion",
-               "params": []
-            }
-         ],
-         "name": "KeyEventTypes",
-         "path": "snow.platform.native.input.sdl.KeyEventTypes",
-         "type": "class",
-         "properties": [],
-         "interfaces": [],
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isInterface": false,
-         "members": [
-            {
-               "isOverride": false,
-               "line": 333,
-               "meta": [],
-               "inherited": false,
-               "name": "ke_down",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 335,
-               "meta": [],
-               "inherited": false,
-               "name": "ke_textedit",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 336,
-               "meta": [],
-               "inherited": false,
-               "name": "ke_textinput",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 334,
-               "meta": [],
-               "inherited": false,
-               "name": "ke_up",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            }
-         ],
-         "isExtern": false,
-         "tdynamic": null,
-         "methods": [
-            {
-               "isOverride": false,
-               "line": 338,
-               "meta": [],
-               "inherited": false,
-               "name": "typed",
-               "type": {
-                  "args": [
-                     {
-                        "name": "ke_type",
-                        "t": {
-                           "name": "Int",
-                           "type": "CAbstract",
-                           "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     }
-                  ],
-                  "type": "CFunction",
-                  "return_type": {
-                     "name": "snow.platform.native.input.sdl.KeyEventType",
-                     "type": "CEnum",
-                     "params": []
-                  }
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "method",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            }
-         ],
-         "superClass": null
       },
       "snow.platform.web.audio.howlerjs.AudioSystem": {
          "module": null,
@@ -22712,6 +22394,104 @@
             "path": "snow.audio.AudioSystemBinding",
             "params": []
          }
+      },
+      "snow.types.InputEventType": {
+         "module": "snow.types.Types",
+         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
+         "meta": [
+            {
+               "name": ":keep",
+               "params": []
+            },
+            {
+               "name": ":noCompletion",
+               "params": []
+            }
+         ],
+         "name": "InputEventType",
+         "path": "snow.types.InputEventType",
+         "type": "class",
+         "properties": [],
+         "interfaces": [],
+         "params": [],
+         "doc": null,
+         "isPrivate": false,
+         "platforms": [
+            "cpp"
+         ],
+         "isInterface": false,
+         "members": [
+            {
+               "isOverride": false,
+               "line": 534,
+               "meta": [],
+               "inherited": false,
+               "name": "names",
+               "type": {
+                  "name": "Array",
+                  "type": "CClass",
+                  "params": [
+                     {
+                        "name": "String",
+                        "type": "CClass",
+                        "params": []
+                     }
+                  ]
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            }
+         ],
+         "isExtern": false,
+         "tdynamic": null,
+         "methods": [
+            {
+               "isOverride": false,
+               "line": 538,
+               "meta": [],
+               "inherited": false,
+               "name": "to_string",
+               "type": {
+                  "args": [
+                     {
+                        "name": "_type",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "String",
+                     "type": "CClass",
+                     "params": []
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            }
+         ],
+         "superClass": null
       },
       "snow.utils.format.png.Reader": {
          "module": null,
@@ -27432,7 +27212,9 @@
                "inherited": false,
                "name": "handle",
                "type": {
-                  "type": "CDynamic"
+                  "name": "snow.platform.native.io.IOFileHandle",
+                  "type": "CAbstract",
+                  "params": []
                },
                "isStatic": false,
                "params": [],
@@ -27447,7 +27229,7 @@
             },
             {
                "isOverride": false,
-               "line": 56,
+               "line": 58,
                "meta": [],
                "inherited": false,
                "name": "snow_iosrc_file_close",
@@ -27456,68 +27238,7 @@
                      {
                         "name": "",
                         "t": {
-                           "type": "CDynamic"
-                        },
-                        "opt": false,
-                        "value": null
-                     }
-                  ],
-                  "type": "CFunction",
-                  "return_type": {
-                     "type": "CUnknown"
-                  }
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 52,
-               "meta": [],
-               "inherited": false,
-               "name": "snow_iosrc_file_read",
-               "type": {
-                  "args": [
-                     {
-                        "name": "",
-                        "t": {
-                           "type": "CDynamic"
-                        },
-                        "opt": false,
-                        "value": null
-                     },
-                     {
-                        "name": "",
-                        "t": {
-                           "name": "snow.utils.ByteArray",
-                           "type": "CTypedef",
-                           "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     },
-                     {
-                        "name": "",
-                        "t": {
-                           "name": "Int",
-                           "type": "CAbstract",
-                           "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     },
-                     {
-                        "name": "",
-                        "t": {
-                           "name": "Int",
+                           "name": "snow.platform.native.io.IOFileHandle",
                            "type": "CAbstract",
                            "params": []
                         },
@@ -27546,99 +27267,15 @@
                "line": 54,
                "meta": [],
                "inherited": false,
-               "name": "snow_iosrc_file_seek",
+               "name": "snow_iosrc_file_read",
                "type": {
                   "args": [
                      {
                         "name": "",
                         "t": {
-                           "type": "CDynamic"
-                        },
-                        "opt": false,
-                        "value": null
-                     },
-                     {
-                        "name": "",
-                        "t": {
-                           "name": "Int",
+                           "name": "snow.platform.native.io.IOFileHandle",
                            "type": "CAbstract",
                            "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     },
-                     {
-                        "name": "",
-                        "t": {
-                           "name": "Int",
-                           "type": "CAbstract",
-                           "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     }
-                  ],
-                  "type": "CFunction",
-                  "return_type": {
-                     "type": "CUnknown"
-                  }
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 55,
-               "meta": [],
-               "inherited": false,
-               "name": "snow_iosrc_file_tell",
-               "type": {
-                  "args": [
-                     {
-                        "name": "",
-                        "t": {
-                           "type": "CDynamic"
-                        },
-                        "opt": false,
-                        "value": null
-                     }
-                  ],
-                  "type": "CFunction",
-                  "return_type": {
-                     "type": "CUnknown"
-                  }
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 53,
-               "meta": [],
-               "inherited": false,
-               "name": "snow_iosrc_file_write",
-               "type": {
-                  "args": [
-                     {
-                        "name": "",
-                        "t": {
-                           "type": "CDynamic"
                         },
                         "opt": false,
                         "value": null
@@ -27692,7 +27329,162 @@
             },
             {
                "isOverride": false,
-               "line": 51,
+               "line": 56,
+               "meta": [],
+               "inherited": false,
+               "name": "snow_iosrc_file_seek",
+               "type": {
+                  "args": [
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "snow.platform.native.io.IOFileHandle",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "type": "CUnknown"
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            },
+            {
+               "isOverride": false,
+               "line": 57,
+               "meta": [],
+               "inherited": false,
+               "name": "snow_iosrc_file_tell",
+               "type": {
+                  "args": [
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "snow.platform.native.io.IOFileHandle",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "type": "CUnknown"
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            },
+            {
+               "isOverride": false,
+               "line": 55,
+               "meta": [],
+               "inherited": false,
+               "name": "snow_iosrc_file_write",
+               "type": {
+                  "args": [
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "snow.platform.native.io.IOFileHandle",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "snow.utils.ByteArray",
+                           "type": "CTypedef",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "type": "CUnknown"
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            },
+            {
+               "isOverride": false,
+               "line": 53,
                "meta": [],
                "inherited": false,
                "name": "snow_iosrc_from_file",
@@ -27721,7 +27513,9 @@
                   ],
                   "type": "CFunction",
                   "return_type": {
-                     "type": "CUnknown"
+                     "name": "snow.platform.native.io.IOFileHandle",
+                     "type": "CAbstract",
+                     "params": []
                   }
                },
                "isStatic": true,
@@ -27741,7 +27535,7 @@
          "methods": [
             {
                "isOverride": false,
-               "line": 40,
+               "line": 42,
                "meta": [],
                "inherited": false,
                "name": "close",
@@ -27765,7 +27559,7 @@
             },
             {
                "isOverride": false,
-               "line": 46,
+               "line": 48,
                "meta": [],
                "inherited": false,
                "name": "from_file",
@@ -27812,7 +27606,7 @@
             },
             {
                "isOverride": false,
-               "line": 15,
+               "line": 17,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -27826,7 +27620,9 @@
                      {
                         "name": "_handle",
                         "t": {
-                           "type": "CDynamic"
+                           "name": "snow.platform.native.io.IOFileHandle",
+                           "type": "CAbstract",
+                           "params": []
                         },
                         "opt": false,
                         "value": null
@@ -27852,7 +27648,7 @@
             },
             {
                "isOverride": false,
-               "line": 20,
+               "line": 22,
                "meta": [],
                "inherited": false,
                "name": "read",
@@ -27907,7 +27703,7 @@
             },
             {
                "isOverride": false,
-               "line": 30,
+               "line": 32,
                "meta": [],
                "inherited": false,
                "name": "seek",
@@ -27952,7 +27748,7 @@
             },
             {
                "isOverride": false,
-               "line": 35,
+               "line": 37,
                "meta": [],
                "inherited": false,
                "name": "tell",
@@ -27976,7 +27772,7 @@
             },
             {
                "isOverride": false,
-               "line": 25,
+               "line": 27,
                "meta": [],
                "inherited": false,
                "name": "write",
@@ -35451,7 +35247,7 @@
          "methods": [
             {
                "isOverride": false,
-               "line": 254,
+               "line": 258,
                "meta": [],
                "inherited": false,
                "name": "close",
@@ -35477,7 +35273,7 @@
             },
             {
                "isOverride": false,
-               "line": 237,
+               "line": 241,
                "meta": [],
                "inherited": false,
                "name": "destroy",
@@ -35503,7 +35299,7 @@
             },
             {
                "isOverride": false,
-               "line": 307,
+               "line": 311,
                "meta": [],
                "inherited": false,
                "name": "get_bordered",
@@ -35529,7 +35325,7 @@
             },
             {
                "isOverride": false,
-               "line": 290,
+               "line": 294,
                "meta": [],
                "inherited": false,
                "name": "get_fullscreen",
@@ -35555,7 +35351,7 @@
             },
             {
                "isOverride": false,
-               "line": 313,
+               "line": 317,
                "meta": [],
                "inherited": false,
                "name": "get_grab",
@@ -35581,7 +35377,7 @@
             },
             {
                "isOverride": false,
-               "line": 319,
+               "line": 323,
                "meta": [],
                "inherited": false,
                "name": "get_max_size",
@@ -35647,7 +35443,7 @@
             },
             {
                "isOverride": false,
-               "line": 325,
+               "line": 329,
                "meta": [],
                "inherited": false,
                "name": "get_min_size",
@@ -35713,7 +35509,7 @@
             },
             {
                "isOverride": false,
-               "line": 331,
+               "line": 335,
                "meta": [],
                "inherited": false,
                "name": "get_title",
@@ -35786,7 +35582,7 @@
             },
             {
                "isOverride": false,
-               "line": 127,
+               "line": 131,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -35885,7 +35681,7 @@
             },
             {
                "isOverride": false,
-               "line": 189,
+               "line": 193,
                "meta": [],
                "inherited": false,
                "name": "render",
@@ -35911,7 +35707,7 @@
             },
             {
                "isOverride": false,
-               "line": 458,
+               "line": 462,
                "meta": [],
                "inherited": false,
                "name": "set_bordered",
@@ -35948,7 +35744,7 @@
             },
             {
                "isOverride": false,
-               "line": 395,
+               "line": 399,
                "meta": [],
                "inherited": false,
                "name": "set_cursor_position",
@@ -35995,7 +35791,7 @@
             },
             {
                "isOverride": false,
-               "line": 297,
+               "line": 301,
                "meta": [],
                "inherited": false,
                "name": "set_fullscreen",
@@ -36032,7 +35828,7 @@
             },
             {
                "isOverride": false,
-               "line": 468,
+               "line": 472,
                "meta": [],
                "inherited": false,
                "name": "set_grab",
@@ -36069,7 +35865,7 @@
             },
             {
                "isOverride": false,
-               "line": 383,
+               "line": 387,
                "meta": [],
                "inherited": false,
                "name": "set_height",
@@ -36106,7 +35902,7 @@
             },
             {
                "isOverride": false,
-               "line": 438,
+               "line": 442,
                "meta": [],
                "inherited": false,
                "name": "set_max_size",
@@ -36223,7 +36019,7 @@
             },
             {
                "isOverride": false,
-               "line": 448,
+               "line": 452,
                "meta": [],
                "inherited": false,
                "name": "set_min_size",
@@ -36340,7 +36136,7 @@
             },
             {
                "isOverride": false,
-               "line": 403,
+               "line": 407,
                "meta": [],
                "inherited": false,
                "name": "set_position",
@@ -36387,7 +36183,7 @@
             },
             {
                "isOverride": false,
-               "line": 421,
+               "line": 425,
                "meta": [],
                "inherited": false,
                "name": "set_size",
@@ -36434,7 +36230,7 @@
             },
             {
                "isOverride": false,
-               "line": 337,
+               "line": 341,
                "meta": [],
                "inherited": false,
                "name": "set_title",
@@ -36471,7 +36267,7 @@
             },
             {
                "isOverride": false,
-               "line": 371,
+               "line": 375,
                "meta": [],
                "inherited": false,
                "name": "set_width",
@@ -36508,7 +36304,7 @@
             },
             {
                "isOverride": false,
-               "line": 347,
+               "line": 351,
                "meta": [],
                "inherited": false,
                "name": "set_x",
@@ -36545,7 +36341,7 @@
             },
             {
                "isOverride": false,
-               "line": 359,
+               "line": 363,
                "meta": [],
                "inherited": false,
                "name": "set_y",
@@ -36582,7 +36378,7 @@
             },
             {
                "isOverride": false,
-               "line": 267,
+               "line": 271,
                "meta": [],
                "inherited": false,
                "name": "show",
@@ -36608,7 +36404,7 @@
             },
             {
                "isOverride": false,
-               "line": 280,
+               "line": 284,
                "meta": [],
                "inherited": false,
                "name": "simple_message",
@@ -36655,7 +36451,7 @@
             },
             {
                "isOverride": false,
-               "line": 226,
+               "line": 230,
                "meta": [],
                "inherited": false,
                "name": "swap",
@@ -36681,7 +36477,7 @@
             },
             {
                "isOverride": false,
-               "line": 179,
+               "line": 183,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -36702,186 +36498,6 @@
                "isStatic": false,
                "params": [],
                "doc": null,
-               "get": "normal",
-               "set": "method",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            }
-         ],
-         "superClass": null
-      },
-      "snow.types.FileEvents": {
-         "module": "snow.types.Types",
-         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
-         "meta": [
-            {
-               "name": ":keep",
-               "params": []
-            },
-            {
-               "name": ":noCompletion",
-               "params": []
-            }
-         ],
-         "name": "FileEvents",
-         "path": "snow.types.FileEvents",
-         "type": "class",
-         "properties": [],
-         "interfaces": [],
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isInterface": false,
-         "members": [
-            {
-               "isOverride": false,
-               "line": 654,
-               "meta": [],
-               "inherited": false,
-               "name": "fe_create",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 655,
-               "meta": [],
-               "inherited": false,
-               "name": "fe_drop",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 652,
-               "meta": [],
-               "inherited": false,
-               "name": "fe_modify",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 653,
-               "meta": [],
-               "inherited": false,
-               "name": "fe_remove",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 651,
-               "meta": [],
-               "inherited": false,
-               "name": "fe_unknown",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            }
-         ],
-         "isExtern": false,
-         "tdynamic": null,
-         "methods": [
-            {
-               "isOverride": false,
-               "line": 660,
-               "meta": [],
-               "inherited": false,
-               "name": "typed",
-               "type": {
-                  "args": [
-                     {
-                        "name": "type",
-                        "t": {
-                           "name": "Int",
-                           "type": "CAbstract",
-                           "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     }
-                  ],
-                  "type": "CFunction",
-                  "return_type": {
-                     "name": "snow.types.FileEventType",
-                     "type": "CEnum",
-                     "params": []
-                  }
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": "returns a typed `FileEvent` from an integer ID, for communication between internal native + haxe code",
                "get": "normal",
                "set": "method",
                "inherit_source": null,
@@ -37573,6 +37189,113 @@
             "params": []
          }
       },
+      "snow.audio._Audio.AudioHandleMap": {
+         "module": "snow.audio.Audio",
+         "file": "/Users/sven/dev/snow/snow/audio/Audio.hx",
+         "meta": [
+            {
+               "name": ":keep",
+               "params": []
+            }
+         ],
+         "name": "AudioHandleMap",
+         "path": "snow.audio._Audio.AudioHandleMap",
+         "type": "class",
+         "properties": [],
+         "interfaces": [],
+         "params": [],
+         "doc": null,
+         "isPrivate": true,
+         "platforms": [
+            "cpp"
+         ],
+         "isInterface": false,
+         "members": [],
+         "isExtern": false,
+         "tdynamic": null,
+         "methods": [
+            {
+               "isOverride": true,
+               "line": 362,
+               "meta": [],
+               "inherited": false,
+               "name": "compare",
+               "type": {
+                  "args": [
+                     {
+                        "name": "k1",
+                        "t": {
+                           "name": "snow.types.AudioHandle",
+                           "type": "CTypedef",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "k2",
+                        "t": {
+                           "name": "snow.types.AudioHandle",
+                           "type": "CTypedef",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Int",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            },
+            {
+               "isOverride": false,
+               "line": 360,
+               "meta": [],
+               "inherited": false,
+               "name": "new",
+               "type": {
+                  "args": [],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            }
+         ],
+         "superClass": {
+            "path": "haxe.ds.BalancedTree",
+            "params": [
+               3,
+               3
+            ]
+         }
+      },
       "snow.audio.AudioSystemBinding": {
          "module": "snow.audio.AudioSystem",
          "file": "/Users/sven/dev/snow/snow/audio/AudioSystem.hx",
@@ -38170,32 +37893,6 @@
             },
             {
                "isOverride": false,
-               "line": 65,
-               "meta": [],
-               "inherited": false,
-               "name": "destroyed",
-               "type": {
-                  "args": [],
-                  "type": "CFunction",
-                  "return_type": {
-                     "name": "Void",
-                     "type": "CAbstract",
-                     "params": []
-                  }
-               },
-               "isStatic": false,
-               "params": [],
-               "doc": "Your exit point. Called for you when you should shut down your application",
-               "get": "normal",
-               "set": "method",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
                "line": 56,
                "meta": [],
                "inherited": false,
@@ -38212,43 +37909,6 @@
                "isStatic": false,
                "params": [],
                "doc": "The default constructor of an App is empty, so you can override it if you want, but take note that this happens way before snow is ready for use. Use [ready](#ready) for entry point.",
-               "get": "normal",
-               "set": "method",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 67,
-               "meta": [],
-               "inherited": false,
-               "name": "on_event",
-               "type": {
-                  "args": [
-                     {
-                        "name": "event",
-                        "t": {
-                           "name": "snow.types.SystemEvent",
-                           "type": "CTypedef",
-                           "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     }
-                  ],
-                  "type": "CFunction",
-                  "return_type": {
-                     "name": "Void",
-                     "type": "CAbstract",
-                     "params": []
-                  }
-               },
-               "isStatic": false,
-               "params": [],
-               "doc": "Low level event handler from snow core. Often handled by the subsystems so check there first.",
                "get": "normal",
                "set": "method",
                "inherit_source": null,
@@ -38311,6 +37971,69 @@
                "isStatic": false,
                "params": [],
                "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            },
+            {
+               "isOverride": false,
+               "line": 65,
+               "meta": [],
+               "inherited": false,
+               "name": "ondestroy",
+               "type": {
+                  "args": [],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": "Your exit point. Called for you when you should shut down your application",
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            },
+            {
+               "isOverride": false,
+               "line": 67,
+               "meta": [],
+               "inherited": false,
+               "name": "onevent",
+               "type": {
+                  "args": [
+                     {
+                        "name": "event",
+                        "t": {
+                           "name": "snow.types.SystemEvent",
+                           "type": "CTypedef",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": "Low level event handler from snow core. Often handled by the subsystems so check there first.",
                "get": "normal",
                "set": "method",
                "inherit_source": null,
@@ -49348,6 +49071,33 @@
             "params": []
          }
       },
+      "snow.platform.native.io._IOFile.IOFileHandle_Impl_": {
+         "module": "snow.platform.native.io.IOFile",
+         "file": "/Users/sven/dev/snow/snow/platform/native/io/IOFile.hx",
+         "meta": [
+            {
+               "name": ":keep",
+               "params": []
+            }
+         ],
+         "name": "IOFileHandle_Impl_",
+         "path": "snow.platform.native.io._IOFile.IOFileHandle_Impl_",
+         "type": "class",
+         "properties": [],
+         "interfaces": [],
+         "params": [],
+         "doc": null,
+         "isPrivate": true,
+         "platforms": [
+            "cpp"
+         ],
+         "isInterface": false,
+         "members": [],
+         "isExtern": true,
+         "tdynamic": null,
+         "methods": [],
+         "superClass": null
+      },
       "snow.input.InputSystemBinding": {
          "module": "snow.input.InputSystem",
          "file": "/Users/sven/dev/snow/snow/input/InputSystem.hx",
@@ -49467,7 +49217,7 @@
             },
             {
                "isOverride": false,
-               "line": 40,
+               "line": 48,
                "meta": [],
                "inherited": false,
                "name": "gamepad_add",
@@ -49504,7 +49254,7 @@
             },
             {
                "isOverride": false,
-               "line": 42,
+               "line": 50,
                "meta": [],
                "inherited": false,
                "name": "gamepad_remove",
@@ -49567,7 +49317,7 @@
             },
             {
                "isOverride": false,
-               "line": 44,
+               "line": 52,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -49672,7 +49422,126 @@
             },
             {
                "isOverride": false,
-               "line": 46,
+               "line": 45,
+               "meta": [],
+               "inherited": false,
+               "name": "text_input_rect",
+               "type": {
+                  "args": [
+                     {
+                        "name": "x",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "y",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "w",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "h",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": "In a system text input state, this determines the area that is accepting input.",
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            },
+            {
+               "isOverride": false,
+               "line": 41,
+               "meta": [],
+               "inherited": false,
+               "name": "text_input_start",
+               "type": {
+                  "args": [],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": "Start a system text input state, this includes soft keyboard on mobile. on some platforms like web this does nothing (yet?)",
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            },
+            {
+               "isOverride": false,
+               "line": 43,
+               "meta": [],
+               "inherited": false,
+               "name": "text_input_stop",
+               "type": {
+                  "args": [],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": "End a system text input state, this includes soft keyboard on mobile. on some platforms like web this does nothing (yet?)",
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            },
+            {
+               "isOverride": false,
+               "line": 54,
                "meta": [
                   {
                      "name": ":noCompletion",
@@ -49704,6 +49573,104 @@
                "isStatic": false,
                "params": [],
                "doc": "Stop listening for input events on the given window",
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            }
+         ],
+         "superClass": null
+      },
+      "snow.types.SystemEventType": {
+         "module": "snow.types.Types",
+         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
+         "meta": [
+            {
+               "name": ":keep",
+               "params": []
+            },
+            {
+               "name": ":noCompletion",
+               "params": []
+            }
+         ],
+         "name": "SystemEventType",
+         "path": "snow.types.SystemEventType",
+         "type": "class",
+         "properties": [],
+         "interfaces": [],
+         "params": [],
+         "doc": null,
+         "isPrivate": false,
+         "platforms": [
+            "cpp"
+         ],
+         "isInterface": false,
+         "members": [
+            {
+               "isOverride": false,
+               "line": 448,
+               "meta": [],
+               "inherited": false,
+               "name": "names",
+               "type": {
+                  "name": "Array",
+                  "type": "CClass",
+                  "params": [
+                     {
+                        "name": "String",
+                        "type": "CClass",
+                        "params": []
+                     }
+                  ]
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            }
+         ],
+         "isExtern": false,
+         "tdynamic": null,
+         "methods": [
+            {
+               "isOverride": false,
+               "line": 455,
+               "meta": [],
+               "inherited": false,
+               "name": "to_string",
+               "type": {
+                  "args": [
+                     {
+                        "name": "_type",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "String",
+                     "type": "CClass",
+                     "params": []
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
                "get": "normal",
                "set": "method",
                "inherit_source": null,
@@ -59595,7 +59562,7 @@
          "members": [
             {
                "isOverride": false,
-               "line": 425,
+               "line": 374,
                "meta": [],
                "inherited": false,
                "name": "CAPS",
@@ -59617,7 +59584,7 @@
             },
             {
                "isOverride": false,
-               "line": 420,
+               "line": 369,
                "meta": [],
                "inherited": false,
                "name": "LALT",
@@ -59639,7 +59606,7 @@
             },
             {
                "isOverride": false,
-               "line": 418,
+               "line": 367,
                "meta": [],
                "inherited": false,
                "name": "LCTRL",
@@ -59661,7 +59628,7 @@
             },
             {
                "isOverride": false,
-               "line": 422,
+               "line": 371,
                "meta": [],
                "inherited": false,
                "name": "LMETA",
@@ -59683,7 +59650,7 @@
             },
             {
                "isOverride": false,
-               "line": 416,
+               "line": 365,
                "meta": [],
                "inherited": false,
                "name": "LSHIFT",
@@ -59705,7 +59672,7 @@
             },
             {
                "isOverride": false,
-               "line": 426,
+               "line": 375,
                "meta": [],
                "inherited": false,
                "name": "MODE",
@@ -59727,7 +59694,7 @@
             },
             {
                "isOverride": false,
-               "line": 415,
+               "line": 364,
                "meta": [],
                "inherited": false,
                "name": "NONE",
@@ -59749,7 +59716,7 @@
             },
             {
                "isOverride": false,
-               "line": 424,
+               "line": 373,
                "meta": [],
                "inherited": false,
                "name": "NUM",
@@ -59771,7 +59738,7 @@
             },
             {
                "isOverride": false,
-               "line": 421,
+               "line": 370,
                "meta": [],
                "inherited": false,
                "name": "RALT",
@@ -59793,7 +59760,7 @@
             },
             {
                "isOverride": false,
-               "line": 419,
+               "line": 368,
                "meta": [],
                "inherited": false,
                "name": "RCTRL",
@@ -59815,7 +59782,7 @@
             },
             {
                "isOverride": false,
-               "line": 423,
+               "line": 372,
                "meta": [],
                "inherited": false,
                "name": "RMETA",
@@ -59837,7 +59804,7 @@
             },
             {
                "isOverride": false,
-               "line": 417,
+               "line": 366,
                "meta": [],
                "inherited": false,
                "name": "RSHIFT",
@@ -62668,208 +62635,6 @@
             "params": []
          }
       },
-      "snow.types.InputEvents": {
-         "module": "snow.types.Types",
-         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
-         "meta": [
-            {
-               "name": ":keep",
-               "params": []
-            },
-            {
-               "name": ":noCompletion",
-               "params": []
-            }
-         ],
-         "name": "InputEvents",
-         "path": "snow.types.InputEvents",
-         "type": "class",
-         "properties": [],
-         "interfaces": [],
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isInterface": false,
-         "members": [
-            {
-               "isOverride": false,
-               "line": 627,
-               "meta": [],
-               "inherited": false,
-               "name": "ie_controller",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 626,
-               "meta": [],
-               "inherited": false,
-               "name": "ie_joystick",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 623,
-               "meta": [],
-               "inherited": false,
-               "name": "ie_key",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 624,
-               "meta": [],
-               "inherited": false,
-               "name": "ie_mouse",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 625,
-               "meta": [],
-               "inherited": false,
-               "name": "ie_touch",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            },
-            {
-               "isOverride": false,
-               "line": 622,
-               "meta": [],
-               "inherited": false,
-               "name": "ie_unknown",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            }
-         ],
-         "isExtern": false,
-         "tdynamic": null,
-         "methods": [
-            {
-               "isOverride": false,
-               "line": 632,
-               "meta": [],
-               "inherited": false,
-               "name": "typed",
-               "type": {
-                  "args": [
-                     {
-                        "name": "type",
-                        "t": {
-                           "name": "Int",
-                           "type": "CAbstract",
-                           "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     }
-                  ],
-                  "type": "CFunction",
-                  "return_type": {
-                     "name": "snow.types.InputEventType",
-                     "type": "CEnum",
-                     "params": []
-                  }
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": "returns a typed `InputEventType` from an integer ID, for communication between internal native + haxe code",
-               "get": "normal",
-               "set": "method",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            }
-         ],
-         "superClass": null
-      },
       "snow.platform.web.audio.Sound": {
          "module": null,
          "file": "/Users/sven/dev/snow/snow/platform/web/audio/Sound.hx",
@@ -62947,142 +62712,6 @@
             "path": "snow.audio.SoundBinding",
             "params": []
          }
-      },
-      "snow.platform.native.input.sdl.TouchEventTypes": {
-         "module": "snow.platform.native.input.sdl.InputSystem",
-         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
-         "meta": [
-            {
-               "name": ":keep",
-               "params": []
-            },
-            {
-               "name": ":noCompletion",
-               "params": []
-            }
-         ],
-         "name": "TouchEventTypes",
-         "path": "snow.platform.native.input.sdl.TouchEventTypes",
-         "type": "class",
-         "properties": [],
-         "interfaces": [],
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isInterface": false,
-         "members": [
-            {
-               "isOverride": false,
-               "line": 377,
-               "meta": [],
-               "inherited": false,
-               "name": "te_down",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 379,
-               "meta": [],
-               "inherited": false,
-               "name": "te_move",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 378,
-               "meta": [],
-               "inherited": false,
-               "name": "te_up",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            }
-         ],
-         "isExtern": false,
-         "tdynamic": null,
-         "methods": [
-            {
-               "isOverride": false,
-               "line": 381,
-               "meta": [],
-               "inherited": false,
-               "name": "typed",
-               "type": {
-                  "args": [
-                     {
-                        "name": "te_type",
-                        "t": {
-                           "name": "Int",
-                           "type": "CAbstract",
-                           "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     }
-                  ],
-                  "type": "CFunction",
-                  "return_type": {
-                     "name": "snow.platform.native.input.sdl.TouchState",
-                     "type": "CEnum",
-                     "params": []
-                  }
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "method",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            }
-         ],
-         "superClass": null
       },
       "snow.assets.AssetSystemBinding": {
          "module": "snow.assets.AssetSystem",
@@ -77357,7 +76986,7 @@
          "methods": [
             {
                "isOverride": false,
-               "line": 373,
+               "line": 370,
                "meta": [],
                "inherited": false,
                "name": "default_asset_list",
@@ -77389,7 +77018,7 @@
             },
             {
                "isOverride": false,
-               "line": 344,
+               "line": 341,
                "meta": [],
                "inherited": false,
                "name": "default_runtime_config",
@@ -77413,7 +77042,7 @@
             },
             {
                "isOverride": false,
-               "line": 407,
+               "line": 404,
                "meta": [],
                "inherited": false,
                "name": "default_window_config",
@@ -77518,7 +77147,7 @@
             },
             {
                "isOverride": false,
-               "line": 441,
+               "line": 438,
                "meta": [],
                "inherited": false,
                "name": "get_uniqueid",
@@ -77596,7 +77225,7 @@
             },
             {
                "isOverride": false,
-               "line": 448,
+               "line": 445,
                "meta": [],
                "inherited": false,
                "name": "load",
@@ -77682,7 +77311,7 @@
             },
             {
                "isOverride": false,
-               "line": 458,
+               "line": 455,
                "meta": [],
                "inherited": false,
                "name": "next",
@@ -77880,164 +77509,6 @@
                "isStatic": false,
                "params": [],
                "doc": "Shutdown the engine and quit",
-               "get": "normal",
-               "set": "method",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": true
-            }
-         ],
-         "superClass": null
-      },
-      "snow.platform.native.input.sdl.MouseEventTypes": {
-         "module": "snow.platform.native.input.sdl.InputSystem",
-         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
-         "meta": [
-            {
-               "name": ":keep",
-               "params": []
-            },
-            {
-               "name": ":noCompletion",
-               "params": []
-            }
-         ],
-         "name": "MouseEventTypes",
-         "path": "snow.platform.native.input.sdl.MouseEventTypes",
-         "type": "class",
-         "properties": [],
-         "interfaces": [],
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isInterface": false,
-         "members": [
-            {
-               "isOverride": false,
-               "line": 396,
-               "meta": [],
-               "inherited": false,
-               "name": "me_down",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 395,
-               "meta": [],
-               "inherited": false,
-               "name": "me_move",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 397,
-               "meta": [],
-               "inherited": false,
-               "name": "me_up",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            },
-            {
-               "isOverride": false,
-               "line": 398,
-               "meta": [],
-               "inherited": false,
-               "name": "me_wheel",
-               "type": {
-                  "name": "Int",
-                  "type": "CAbstract",
-                  "params": []
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
-               "get": "normal",
-               "set": "normal",
-               "inherit_source": null,
-               "platforms": [
-                  "cpp"
-               ],
-               "isPublic": null
-            }
-         ],
-         "isExtern": false,
-         "tdynamic": null,
-         "methods": [
-            {
-               "isOverride": false,
-               "line": 400,
-               "meta": [],
-               "inherited": false,
-               "name": "typed",
-               "type": {
-                  "args": [
-                     {
-                        "name": "me_type",
-                        "t": {
-                           "name": "Int",
-                           "type": "CAbstract",
-                           "params": []
-                        },
-                        "opt": false,
-                        "value": null
-                     }
-                  ],
-                  "type": "CFunction",
-                  "return_type": {
-                     "name": "snow.platform.native.input.sdl.MouseEventType",
-                     "type": "CEnum",
-                     "params": []
-                  }
-               },
-               "isStatic": true,
-               "params": [],
-               "doc": null,
                "get": "normal",
                "set": "method",
                "inherit_source": null,
@@ -87374,6 +86845,202 @@
          ],
          "superClass": null
       },
+      "snow.platform.native.input.sdl.KeyEventType": {
+         "module": "snow.platform.native.input.sdl.InputSystem",
+         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
+         "meta": [
+            {
+               "name": ":keep",
+               "params": []
+            },
+            {
+               "name": ":noCompletion",
+               "params": []
+            }
+         ],
+         "name": "KeyEventType",
+         "path": "snow.platform.native.input.sdl.KeyEventType",
+         "type": "class",
+         "properties": [],
+         "interfaces": [],
+         "params": [],
+         "doc": null,
+         "isPrivate": false,
+         "platforms": [
+            "cpp"
+         ],
+         "isInterface": false,
+         "members": [
+            {
+               "isOverride": false,
+               "line": 287,
+               "meta": [],
+               "inherited": false,
+               "name": "names",
+               "type": {
+                  "name": "Array",
+                  "type": "CClass",
+                  "params": [
+                     {
+                        "name": "String",
+                        "type": "CClass",
+                        "params": []
+                     }
+                  ]
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            }
+         ],
+         "isExtern": false,
+         "tdynamic": null,
+         "methods": [
+            {
+               "isOverride": false,
+               "line": 291,
+               "meta": [],
+               "inherited": false,
+               "name": "to_string",
+               "type": {
+                  "args": [
+                     {
+                        "name": "_type",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "String",
+                     "type": "CClass",
+                     "params": []
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            }
+         ],
+         "superClass": null
+      },
+      "snow.types.FileEventType": {
+         "module": "snow.types.Types",
+         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
+         "meta": [
+            {
+               "name": ":keep",
+               "params": []
+            },
+            {
+               "name": ":noCompletion",
+               "params": []
+            }
+         ],
+         "name": "FileEventType",
+         "path": "snow.types.FileEventType",
+         "type": "class",
+         "properties": [],
+         "interfaces": [],
+         "params": [],
+         "doc": null,
+         "isPrivate": false,
+         "platforms": [
+            "cpp"
+         ],
+         "isInterface": false,
+         "members": [
+            {
+               "isOverride": false,
+               "line": 561,
+               "meta": [],
+               "inherited": false,
+               "name": "names",
+               "type": {
+                  "name": "Array",
+                  "type": "CClass",
+                  "params": [
+                     {
+                        "name": "String",
+                        "type": "CClass",
+                        "params": []
+                     }
+                  ]
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            }
+         ],
+         "isExtern": false,
+         "tdynamic": null,
+         "methods": [
+            {
+               "isOverride": false,
+               "line": 565,
+               "meta": [],
+               "inherited": false,
+               "name": "to_string",
+               "type": {
+                  "args": [
+                     {
+                        "name": "_type",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "String",
+                     "type": "CClass",
+                     "params": []
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            }
+         ],
+         "superClass": null
+      },
       "snow.platform.native.Core": {
          "module": null,
          "file": "/Users/sven/dev/snow/snow/platform/native/Core.hx",
@@ -89147,7 +88814,7 @@
          "members": [
             {
                "isOverride": false,
-               "line": 48,
+               "line": 68,
                "meta": [],
                "inherited": false,
                "name": "snow_gamepad_close",
@@ -89182,7 +88849,7 @@
             },
             {
                "isOverride": false,
-               "line": 47,
+               "line": 67,
                "meta": [],
                "inherited": false,
                "name": "snow_gamepad_open",
@@ -89199,6 +88866,119 @@
                         "value": null
                      }
                   ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "type": "CUnknown"
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            },
+            {
+               "isOverride": false,
+               "line": 65,
+               "meta": [],
+               "inherited": false,
+               "name": "snow_input_text_rect",
+               "type": {
+                  "args": [
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "type": "CUnknown"
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            },
+            {
+               "isOverride": false,
+               "line": 63,
+               "meta": [],
+               "inherited": false,
+               "name": "snow_input_text_start",
+               "type": {
+                  "args": [],
+                  "type": "CFunction",
+                  "return_type": {
+                     "type": "CUnknown"
+                  }
+               },
+               "isStatic": true,
+               "params": [],
+               "doc": null,
+               "get": "normal",
+               "set": "normal",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": null
+            },
+            {
+               "isOverride": false,
+               "line": 64,
+               "meta": [],
+               "inherited": false,
+               "name": "snow_input_text_stop",
+               "type": {
+                  "args": [],
                   "type": "CFunction",
                   "return_type": {
                      "type": "CUnknown"
@@ -89247,7 +89027,7 @@
             },
             {
                "isOverride": true,
-               "line": 39,
+               "line": 55,
                "meta": [],
                "inherited": false,
                "name": "gamepad_add",
@@ -89284,7 +89064,7 @@
             },
             {
                "isOverride": true,
-               "line": 43,
+               "line": 59,
                "meta": [],
                "inherited": false,
                "name": "gamepad_remove",
@@ -89494,6 +89274,125 @@
                "isStatic": false,
                "params": [],
                "doc": null,
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            },
+            {
+               "isOverride": true,
+               "line": 51,
+               "meta": [],
+               "inherited": false,
+               "name": "text_input_rect",
+               "type": {
+                  "args": [
+                     {
+                        "name": "x",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "y",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "w",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     },
+                     {
+                        "name": "h",
+                        "t": {
+                           "name": "Int",
+                           "type": "CAbstract",
+                           "params": []
+                        },
+                        "opt": false,
+                        "value": null
+                     }
+                  ],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": "In a system text input state, this determines the area that is accepting input.",
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            },
+            {
+               "isOverride": true,
+               "line": 41,
+               "meta": [],
+               "inherited": false,
+               "name": "text_input_start",
+               "type": {
+                  "args": [],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": "Start a system text input state, this includes soft keyboard on mobile. on some platforms like web this does nothing (yet?)",
+               "get": "normal",
+               "set": "method",
+               "inherit_source": null,
+               "platforms": [
+                  "cpp"
+               ],
+               "isPublic": true
+            },
+            {
+               "isOverride": true,
+               "line": 46,
+               "meta": [],
+               "inherited": false,
+               "name": "text_input_stop",
+               "type": {
+                  "args": [],
+                  "type": "CFunction",
+                  "return_type": {
+                     "name": "Void",
+                     "type": "CAbstract",
+                     "params": []
+                  }
+               },
+               "isStatic": false,
+               "params": [],
+               "doc": "End a system text input state, this includes soft keyboard on mobile. on some platforms like web this does nothing (yet?)",
                "get": "normal",
                "set": "method",
                "inherit_source": null,
@@ -90005,68 +89904,6 @@
       }
    },
    "enums": {
-      "snow.platform.native.input.sdl.TouchState": {
-         "module": "snow.platform.native.input.sdl.InputSystem",
-         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
-         "meta": [
-            {
-               "name": ":flatEnum",
-               "params": []
-            },
-            {
-               "name": ":noCompletion",
-               "params": []
-            }
-         ],
-         "name": "TouchState",
-         "path": "snow.platform.native.input.sdl.TouchState",
-         "type": "enum",
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isExtern": false,
-         "constructors": [
-            {
-               "args": [],
-               "meta": [],
-               "name": "unknown",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "down",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "up",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "move",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            }
-         ]
-      },
       "snow.utils.format.tools._InflateImpl.State": {
          "module": "snow.utils.format.tools.InflateImpl",
          "file": "/Users/sven/dev/snow/snow/utils/format/tools/InflateImpl.hx",
@@ -90250,341 +90087,6 @@
             }
          ]
       },
-      "snow.types.WindowEventType": {
-         "module": "snow.types.Types",
-         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
-         "meta": [
-            {
-               "name": ":flatEnum",
-               "params": []
-            }
-         ],
-         "name": "WindowEventType",
-         "path": "snow.types.WindowEventType",
-         "type": "enum",
-         "params": [],
-         "doc": "A typed window event",
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isExtern": false,
-         "constructors": [
-            {
-               "args": [],
-               "meta": [],
-               "name": "unknown",
-               "doc": "An unknown window event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_created",
-               "doc": "A window is created",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_shown",
-               "doc": "A window is shown",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_hidden",
-               "doc": "A window is hidden",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_exposed",
-               "doc": "A window is exposed",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_moved",
-               "doc": "A window is moved",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_resized",
-               "doc": "A window is resized, by the user or code.",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_size_changed",
-               "doc": "A window is resized, by the OS or internals.",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_minimized",
-               "doc": "A window is minimized",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_maximized",
-               "doc": "A window is maximized",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_restored",
-               "doc": "A window is restored",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_enter",
-               "doc": "A window is entered by a mouse",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_leave",
-               "doc": "A window is left by a mouse",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_focus_gained",
-               "doc": "A window has gained focus",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_focus_lost",
-               "doc": "A window has lost focus",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_close",
-               "doc": "A window is being closed/hidden",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window_destroy",
-               "doc": "A window is being destroyed",
-               "platforms": [
-                  "cpp"
-               ]
-            }
-         ]
-      },
-      "snow.platform.native.input.sdl.MouseEventType": {
-         "module": "snow.platform.native.input.sdl.InputSystem",
-         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
-         "meta": [
-            {
-               "name": ":flatEnum",
-               "params": []
-            },
-            {
-               "name": ":noCompletion",
-               "params": []
-            }
-         ],
-         "name": "MouseEventType",
-         "path": "snow.platform.native.input.sdl.MouseEventType",
-         "type": "enum",
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isExtern": false,
-         "constructors": [
-            {
-               "args": [],
-               "meta": [],
-               "name": "unknown",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "move",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "down",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "up",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "wheel",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            }
-         ]
-      },
-      "snow.platform.native.input.sdl.ControllerEventType": {
-         "module": "snow.platform.native.input.sdl.InputSystem",
-         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
-         "meta": [
-            {
-               "name": ":flatEnum",
-               "params": []
-            },
-            {
-               "name": ":noCompletion",
-               "params": []
-            }
-         ],
-         "name": "ControllerEventType",
-         "path": "snow.platform.native.input.sdl.ControllerEventType",
-         "type": "enum",
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isExtern": false,
-         "constructors": [
-            {
-               "args": [],
-               "meta": [],
-               "name": "unknown",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "button_up",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "button_down",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "axis",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "added",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "removed",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "remapped",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            }
-         ]
-      },
       "snow.platform.native.utils.Compression": {
          "module": "snow.platform.native.utils.ByteArray",
          "file": "/Users/sven/dev/snow/snow/platform/native/utils/ByteArray.hx",
@@ -90637,82 +90139,6 @@
                "meta": [],
                "name": "GZIP",
                "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            }
-         ]
-      },
-      "snow.types.InputEventType": {
-         "module": "snow.types.Types",
-         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
-         "meta": [
-            {
-               "name": ":flatEnum",
-               "params": []
-            }
-         ],
-         "name": "InputEventType",
-         "path": "snow.types.InputEventType",
-         "type": "enum",
-         "params": [],
-         "doc": "A typed input event",
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isExtern": false,
-         "constructors": [
-            {
-               "args": [],
-               "meta": [],
-               "name": "unknown",
-               "doc": "An unknown input event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "key",
-               "doc": "An keyboard input event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "mouse",
-               "doc": "An mouse input event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "touch",
-               "doc": "An touch input event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "joystick",
-               "doc": "An joystick input event. On mobile, accellerometer is a joystick (for now)",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "controller",
-               "doc": "An controller input event. Use these instead of joystick on desktop.",
                "platforms": [
                   "cpp"
                ]
@@ -91050,301 +90476,6 @@
             }
          ]
       },
-      "snow.types.SystemEventType": {
-         "module": "snow.types.Types",
-         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
-         "meta": [
-            {
-               "name": ":flatEnum",
-               "params": []
-            }
-         ],
-         "name": "SystemEventType",
-         "path": "snow.types.SystemEventType",
-         "type": "enum",
-         "params": [],
-         "doc": "A typed system event",
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isExtern": false,
-         "constructors": [
-            {
-               "args": [],
-               "meta": [],
-               "name": "unknown",
-               "doc": "An unknown system event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "init",
-               "doc": "An internal system init event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "ready",
-               "doc": "An internal system ready event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "update",
-               "doc": "An internal system update event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "shutdown",
-               "doc": "An system shutdown event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "window",
-               "doc": "An system window event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "input",
-               "doc": "An system input event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "quit",
-               "doc": "An system quit event. Initiated by user, can be cancelled/ignored",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "app_terminating",
-               "doc": "An system terminating event, called by the OS (mobile specific)",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "app_lowmemory",
-               "doc": "An system low memory event, clear memory if you can. Called by the OS (mobile specific)",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "app_willenterbackground",
-               "doc": "An event for just before the app enters the background, called by the OS (mobile specific)",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "app_didenterbackground",
-               "doc": "An event for when the app enters the background, called by the OS (mobile specific)",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "app_willenterforeground",
-               "doc": "An event for just before the app enters the foreground, called by the OS (mobile specific)",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "app_didenterforeground",
-               "doc": "An event for when the app enters the foreground, called by the OS (mobile specific)",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "file",
-               "doc": "An event for when the a file watch notification occurs",
-               "platforms": [
-                  "cpp"
-               ]
-            }
-         ]
-      },
-      "snow.platform.native.input.sdl.KeyEventType": {
-         "module": "snow.platform.native.input.sdl.InputSystem",
-         "file": "/Users/sven/dev/snow/snow/platform/native/input/sdl/InputSystem.hx",
-         "meta": [
-            {
-               "name": ":flatEnum",
-               "params": []
-            },
-            {
-               "name": ":noCompletion",
-               "params": []
-            }
-         ],
-         "name": "KeyEventType",
-         "path": "snow.platform.native.input.sdl.KeyEventType",
-         "type": "enum",
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isExtern": false,
-         "constructors": [
-            {
-               "args": [],
-               "meta": [],
-               "name": "unknown",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "down",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "up",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "textedit",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "textinput",
-               "doc": null,
-               "platforms": [
-                  "cpp"
-               ]
-            }
-         ]
-      },
-      "snow.types.FileEventType": {
-         "module": "snow.types.Types",
-         "file": "/Users/sven/dev/snow/snow/types/Types.hx",
-         "meta": [
-            {
-               "name": ":flatEnum",
-               "params": []
-            }
-         ],
-         "name": "FileEventType",
-         "path": "snow.types.FileEventType",
-         "type": "enum",
-         "params": [],
-         "doc": null,
-         "isPrivate": false,
-         "platforms": [
-            "cpp"
-         ],
-         "isExtern": false,
-         "constructors": [
-            {
-               "args": [],
-               "meta": [],
-               "name": "unknown",
-               "doc": "An unknown watch event",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "modify",
-               "doc": "An event for when the a file is modified",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "remove",
-               "doc": "An event for when the a file is removed",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "create",
-               "doc": "An event for when the a file is created",
-               "platforms": [
-                  "cpp"
-               ]
-            },
-            {
-               "args": [],
-               "meta": [],
-               "name": "drop",
-               "doc": "An event for when the a file is dropped on a window",
-               "platforms": [
-                  "cpp"
-               ]
-            }
-         ]
-      },
       "snow.types.AudioFormatType": {
          "module": "snow.types.Types",
          "file": "/Users/sven/dev/snow/snow/types/Types.hx",
@@ -91425,6 +90556,7 @@
       "snow.audio.Sound",
       "snow.audio.SoundBinding",
       "snow.audio.SoundStream",
+      "snow.audio._Audio.AudioHandleMap",
       "snow.audio.openal.AL",
       "snow.audio.openal.ALC",
       "snow.audio.openal.Context",
@@ -91457,17 +90589,15 @@
       "snow.platform.native.audio.openal._AL.Device_Impl_",
       "snow.platform.native.input.InputSystem",
       "snow.platform.native.input.sdl.ControllerEventType",
-      "snow.platform.native.input.sdl.GamepadEventTypes",
       "snow.platform.native.input.sdl.InputSystem",
       "snow.platform.native.input.sdl.KeyEventType",
-      "snow.platform.native.input.sdl.KeyEventTypes",
       "snow.platform.native.input.sdl.ModValue",
       "snow.platform.native.input.sdl.MouseEventType",
-      "snow.platform.native.input.sdl.MouseEventTypes",
-      "snow.platform.native.input.sdl.TouchEventTypes",
-      "snow.platform.native.input.sdl.TouchState",
+      "snow.platform.native.input.sdl.TouchEventType",
       "snow.platform.native.io.IOFile",
+      "snow.platform.native.io.IOFileHandle",
       "snow.platform.native.io.IOSystem",
+      "snow.platform.native.io._IOFile.IOFileHandle_Impl_",
       "snow.platform.native.render.opengl.GL",
       "snow.platform.native.render.opengl.GLActiveInfo",
       "snow.platform.native.render.opengl.GLBuffer",
@@ -91535,25 +90665,21 @@
       "snow.types.DisplayMode",
       "snow.types.FileEvent",
       "snow.types.FileEventType",
-      "snow.types.FileEvents",
       "snow.types.FileFilter",
       "snow.types.GamepadDeviceEventType",
       "snow.types.ImageInfo",
       "snow.types.InputEvent",
       "snow.types.InputEventType",
-      "snow.types.InputEvents",
       "snow.types.Key",
       "snow.types.ModState",
       "snow.types.Scan",
       "snow.types.SnowConfig",
       "snow.types.SystemEvent",
       "snow.types.SystemEventType",
-      "snow.types.SystemEvents",
       "snow.types.TextEventType",
       "snow.types.WindowConfig",
       "snow.types.WindowEvent",
       "snow.types.WindowEventType",
-      "snow.types.WindowEvents",
       "snow.types.WindowHandle",
       "snow.utils.AbstractClass",
       "snow.utils.AbstractClassBuilder",
@@ -91571,7 +90697,7 @@
       "snow.utils.UInt16Array",
       "snow.utils.UInt32Array",
       "snow.utils.UInt8Array",
-      "snow.utils.UIntClamped8Array",
+      "snow.utils.UInt8ClampedArray",
       "snow.utils._AbstractClass.StringMap",
       "snow.utils.format.png.Chunk",
       "snow.utils.format.png.Color",
@@ -91592,7 +90718,8 @@
       "snow.window.Window",
       "snow.window.WindowSystem",
       "snow.window.WindowSystemBinding",
-      "snow.window.Windowing"
+      "snow.window.Windowing",
+      "snow.window._Windowing.WindowHandleMap"
    ],
    "packages": {
       "snow.utils.format.tools": {
@@ -91681,19 +90808,14 @@
          "abstracts": [],
          "name": "sdl",
          "classes": [
-            "snow.platform.native.input.sdl.GamepadEventTypes",
-            "snow.platform.native.input.sdl.InputSystem",
-            "snow.platform.native.input.sdl.KeyEventTypes",
-            "snow.platform.native.input.sdl.ModValue",
-            "snow.platform.native.input.sdl.MouseEventTypes",
-            "snow.platform.native.input.sdl.TouchEventTypes"
-         ],
-         "enums": [
             "snow.platform.native.input.sdl.ControllerEventType",
+            "snow.platform.native.input.sdl.InputSystem",
             "snow.platform.native.input.sdl.KeyEventType",
+            "snow.platform.native.input.sdl.ModValue",
             "snow.platform.native.input.sdl.MouseEventType",
-            "snow.platform.native.input.sdl.TouchState"
+            "snow.platform.native.input.sdl.TouchEventType"
          ],
+         "enums": [],
          "isPrivate": false,
          "packages": []
       },
@@ -91808,7 +90930,9 @@
          ],
          "enums": [],
          "isPrivate": false,
-         "packages": []
+         "packages": [
+            "snow.window._Windowing"
+         ]
       },
       "_empty_": {
          "full": "_empty_",
@@ -91968,6 +91092,18 @@
             "snow.platform.native.render.opengl"
          ]
       },
+      "snow.platform.native.io._IOFile": {
+         "full": "snow.platform.native.io._IOFile",
+         "typedefs": [],
+         "abstracts": [],
+         "name": "_IOFile",
+         "classes": [
+            "snow.platform.native.io._IOFile.IOFileHandle_Impl_"
+         ],
+         "enums": [],
+         "isPrivate": true,
+         "packages": []
+      },
       "snow.platform.native": {
          "full": "snow.platform.native",
          "typedefs": [],
@@ -92013,6 +91149,18 @@
          ],
          "enums": [],
          "isPrivate": false,
+         "packages": []
+      },
+      "snow.audio._Audio": {
+         "full": "snow.audio._Audio",
+         "typedefs": [],
+         "abstracts": [],
+         "name": "_Audio",
+         "classes": [
+            "snow.audio._Audio.AudioHandleMap"
+         ],
+         "enums": [],
+         "isPrivate": true,
          "packages": []
       },
       "snow.utils.format": {
@@ -92103,7 +91251,9 @@
       "snow.platform.native.io": {
          "full": "snow.platform.native.io",
          "typedefs": [],
-         "abstracts": [],
+         "abstracts": [
+            "snow.platform.native.io.IOFileHandle"
+         ],
          "name": "io",
          "classes": [
             "snow.platform.native.io.IOFile",
@@ -92111,7 +91261,9 @@
          ],
          "enums": [],
          "isPrivate": false,
-         "packages": []
+         "packages": [
+            "snow.platform.native.io._IOFile"
+         ]
       },
       "snow.types": {
          "full": "snow.types",
@@ -92145,20 +91297,16 @@
          "abstracts": [],
          "name": "types",
          "classes": [
-            "snow.types.FileEvents",
-            "snow.types.InputEvents",
-            "snow.types.SystemEvents",
-            "snow.types.WindowEvents"
+            "snow.types.FileEventType",
+            "snow.types.InputEventType",
+            "snow.types.SystemEventType",
+            "snow.types.WindowEventType"
          ],
          "enums": [
             "snow.types.AssetType",
             "snow.types.AudioFormatType",
-            "snow.types.FileEventType",
             "snow.types.GamepadDeviceEventType",
-            "snow.types.InputEventType",
-            "snow.types.SystemEventType",
-            "snow.types.TextEventType",
-            "snow.types.WindowEventType"
+            "snow.types.TextEventType"
          ],
          "isPrivate": false,
          "packages": []
@@ -92227,6 +91375,7 @@
          "enums": [],
          "isPrivate": false,
          "packages": [
+            "snow.audio._Audio",
             "snow.audio.openal"
          ]
       },
@@ -92255,7 +91404,7 @@
             "snow.utils.UInt16Array",
             "snow.utils.UInt32Array",
             "snow.utils.UInt8Array",
-            "snow.utils.UIntClamped8Array"
+            "snow.utils.UInt8ClampedArray"
          ],
          "abstracts": [],
          "name": "utils",
@@ -92287,6 +91436,18 @@
          "packages": [
             "snow.platform.native.window.sdl"
          ]
+      },
+      "snow.window._Windowing": {
+         "full": "snow.window._Windowing",
+         "typedefs": [],
+         "abstracts": [],
+         "name": "_Windowing",
+         "classes": [
+            "snow.window._Windowing.WindowHandleMap"
+         ],
+         "enums": [],
+         "isPrivate": true,
+         "packages": []
       }
    }
 }
