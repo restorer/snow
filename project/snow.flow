@@ -15,7 +15,7 @@
     },
 
     if:{
-        "android": {
+        "android || linux": {
             build:{ 
                 defines:['snow_dynamic_link'] 
             }

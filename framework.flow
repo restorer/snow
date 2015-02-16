@@ -125,7 +125,6 @@
 
     android : {
       build: {
-        defines : ['snow_dynamic_link'],
         files : {
           project : { path:"flow/android/ => project/", template:'project' }
         }
@@ -169,7 +168,7 @@
       }
     },
 
-    linux : {
+    "android || linux" : {
       build : {
         defines : ['snow_dynamic_link']
       }
