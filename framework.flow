@@ -125,6 +125,7 @@
 
     android : {
       build: {
+        defines : ['snow_dynamic_link'],
         files : {
           project : { path:"flow/android/ => project/", template:'project' }
         }
@@ -156,24 +157,23 @@
       }
     },
 
-    "android || linux" : {
-      build : {
-        defines : ['snow_dynamic_link']
-      }
-    },
-
-
     "mac || windows || linux || android || ios" : {
       build: {
         defines : ['snow_native']
       }
     },
+
     web : {
       build: {
         defines : ['snow_web']
       }
     },
 
+    linux : {
+      build : {
+        defines : ['snow_dynamic_link']
+      }
+    },
 
 
     snow_web : {
@@ -197,7 +197,7 @@
       }
     },
 
-    "snow_web_psd" : {
+    "snow_web && snow_web_psd" : {
       app : {
         web : {
           libs : {

@@ -2,7 +2,7 @@ package snow.platform.native.audio.openal;
 
 import snow.audio.Audio;
 import snow.types.Types;
-import snow.utils.Float32Array;
+import snow.io.typedarray.Float32Array;
 
 import snow.audio.openal.AL;
 import snow.platform.native.audio.openal.OpenALHelper;
