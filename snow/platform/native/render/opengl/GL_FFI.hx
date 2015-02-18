@@ -90,13 +90,19 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function bufferData(target:Int, data:ArrayBufferView, usage:Int):Void
     {
-        snow_gl_buffer_data(target, data.buffer.getData(), data.byteOffset, data.byteLength, usage);
+        if(data != null)
+            snow_gl_buffer_data(target, data.buffer.getData(), data.byteOffset, data.byteLength, usage);
+        else
+            snow_gl_buffer_data(target, null, 0, 0, usage);
     }
 
     #if !no_gl_ffi_inline inline #end
     public static function bufferSubData(target:Int, offset:Int, data:ArrayBufferView ):Void
     {
-        snow_gl_buffer_sub_data( target, offset, data.buffer.getData(), data.byteOffset, data.byteLength );
+        if(data != null)
+            snow_gl_buffer_sub_data( target, offset, data.buffer.getData(), data.byteOffset, data.byteLength );
+        else
+            snow_gl_buffer_sub_data( target, offset, null, 0, 0 );
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -144,13 +150,19 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function compressedTexImage2D(target:Int, level:Int, internalformat:Int, width:Int, height:Int, border:Int, data:ArrayBufferView):Void
     {
-        snow_gl_compressed_tex_image_2d(target, level, internalformat, width, height, border, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_compressed_tex_image_2d(target, level, internalformat, width, height, border, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_compressed_tex_image_2d(target, level, internalformat, width, height, border, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
     public static function compressedTexSubImage2D(target:Int, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:Int, data:ArrayBufferView):Void
     {
-        snow_gl_compressed_tex_sub_image_2d(target, level, xoffset, yoffset, width, height, format, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_compressed_tex_sub_image_2d(target, level, xoffset, yoffset, width, height, format, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_compressed_tex_sub_image_2d(target, level, xoffset, yoffset, width, height, format, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -566,7 +578,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function readPixels(x:Int, y:Int, width:Int, height:Int, format:Int, type:Int, data:ArrayBufferView):Void
     {
-        snow_gl_read_pixels(x, y, width, height, format, type, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_read_pixels(x, y, width, height, format, type, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_read_pixels(x, y, width, height, format, type, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -632,7 +647,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function texImage2D(target:Int, level:Int, internalformat:Int, width:Int, height:Int, border:Int, format:Int, type:Int, data:ArrayBufferView):Void
     {
-        snow_gl_tex_image_2d(target, level, internalformat, width, height, border, format, type, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_tex_image_2d(target, level, internalformat, width, height, border, format, type, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_tex_image_2d(target, level, internalformat, width, height, border, format, type, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -650,7 +668,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function texSubImage2D(target:Int, level:Int, xoffset:Int, yoffset:Int, width:Int, height:Int, format:Int, type:Int, data:ArrayBufferView):Void
     {
-        snow_gl_tex_sub_image_2d(target, level, xoffset, yoffset, width, height, format, type, data.buffer.getData(), data.byteOffset, data.byteLength );
+        if(data != null)
+            snow_gl_tex_sub_image_2d(target, level, xoffset, yoffset, width, height, format, type, data.buffer.getData(), data.byteOffset, data.byteLength );
+        else
+            snow_gl_tex_sub_image_2d(target, level, xoffset, yoffset, width, height, format, type, null, 0, 0 );
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -662,7 +683,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function uniform1fv(location:GLUniformLocation, data:Float32Array):Void
     {
-        snow_gl_uniform1fv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_uniform1fv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_uniform1fv(location, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -674,7 +698,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function uniform1iv(location:GLUniformLocation, data:Int32Array):Void
     {
-        snow_gl_uniform1iv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_uniform1iv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_uniform1iv(location, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -686,7 +713,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function uniform2fv(location:GLUniformLocation, data:Float32Array):Void
     {
-        snow_gl_uniform2fv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_uniform2fv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_uniform2fv(location, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -698,7 +728,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function uniform2iv(location:GLUniformLocation, data:Int32Array):Void
     {
-        snow_gl_uniform2iv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_uniform2iv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_uniform2iv(location, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -710,7 +743,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function uniform3fv(location:GLUniformLocation, data:Float32Array):Void
     {
-        snow_gl_uniform3fv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_uniform3fv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_uniform3fv(location, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -722,7 +758,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function uniform3iv(location:GLUniformLocation, data:Int32Array):Void
     {
-        snow_gl_uniform3iv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_uniform3iv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_uniform3iv(location, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -734,7 +773,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function uniform4fv(location:GLUniformLocation, data:Float32Array):Void
     {
-        snow_gl_uniform4fv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_uniform4fv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_uniform4fv(location, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -746,25 +788,37 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function uniform4iv(location:GLUniformLocation, data:Int32Array):Void
     {
-        snow_gl_uniform4iv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_uniform4iv(location, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_uniform4iv(location, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
     public static function uniformMatrix2fv(location:GLUniformLocation, transpose:Bool, data:Float32Array):Void
     {
-        snow_gl_uniform_matrix(location, transpose, data.buffer.getData(), data.byteOffset, data.byteLength, 2);
+        if(data != null)
+            snow_gl_uniform_matrix(location, transpose, data.buffer.getData(), data.byteOffset, data.byteLength, 2);
+        else
+            snow_gl_uniform_matrix(location, transpose, null, 0, 0, 2);
     }
 
     #if !no_gl_ffi_inline inline #end
     public static function uniformMatrix3fv(location:GLUniformLocation, transpose:Bool, data:Float32Array):Void
     {
-        snow_gl_uniform_matrix(location, transpose, data.buffer.getData(), data.byteOffset, data.byteLength, 3);
+        if(data != null)
+            snow_gl_uniform_matrix(location, transpose, data.buffer.getData(), data.byteOffset, data.byteLength, 3);
+        else
+            snow_gl_uniform_matrix(location, transpose, null, 0, 0, 3);
     }
 
     #if !no_gl_ffi_inline inline #end
     public static function uniformMatrix4fv(location:GLUniformLocation, transpose:Bool, data:Float32Array):Void
     {
-        snow_gl_uniform_matrix(location, transpose, data.buffer.getData(), data.byteOffset, data.byteLength, 4);
+        if(data != null)
+            snow_gl_uniform_matrix(location, transpose, data.buffer.getData(), data.byteOffset, data.byteLength, 4);
+        else
+            snow_gl_uniform_matrix(location, transpose, null, 0, 0, 4);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -788,7 +842,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function vertexAttrib1fv(indx:Int, data:Float32Array):Void
     {
-        snow_gl_vertex_attrib1fv(indx, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_vertex_attrib1fv(indx, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_vertex_attrib1fv(indx, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -800,7 +857,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function vertexAttrib2fv(indx:Int, data:Float32Array):Void
     {
-        snow_gl_vertex_attrib2fv(indx, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_vertex_attrib2fv(indx, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_vertex_attrib2fv(indx, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -812,7 +872,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function vertexAttrib3fv(indx:Int, data:Float32Array):Void
     {
-        snow_gl_vertex_attrib3fv(indx, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_vertex_attrib3fv(indx, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_vertex_attrib3fv(indx, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
@@ -824,7 +887,10 @@ class GL_FFI {
     #if !no_gl_ffi_inline inline #end
     public static function vertexAttrib4fv(indx:Int, data:Float32Array):Void
     {
-        snow_gl_vertex_attrib4fv(indx, data.buffer.getData(), data.byteOffset, data.byteLength);
+        if(data != null)
+            snow_gl_vertex_attrib4fv(indx, data.buffer.getData(), data.byteOffset, data.byteLength);
+        else
+            snow_gl_vertex_attrib4fv(indx, null, 0, 0);
     }
 
     #if !no_gl_ffi_inline inline #end
