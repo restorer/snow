@@ -29,6 +29,7 @@
 #define _SNOW_HX_H_
 
 #include <stdint.h>
+#include <string> //memcpy
 
 namespace snow {
 
@@ -41,13 +42,13 @@ namespace snow {
         }
 
         template <class T>
-        inline value to_hx( T* _instance ) {
-            return alloc_float( (uintptr_t) _instance );
+        inline value to_hx( T* _value ) {
+            return alloc_float( (uintptr_t) _value );
         }
 
     //convert haxe.io.BytesData to and from unsigned char*
 
-        inline const unsigned char* to_bytes( value bytes ) {
+        inline const unsigned char* bytes_from_hx( value bytes ) {
 
             if (val_is_string(bytes)) {
                 return (unsigned char *)val_string(bytes);
@@ -55,6 +56,8 @@ namespace snow {
 
             buffer buf = val_to_buffer(bytes);
 
+                //null is allowed for things like passing null
+                //to GL or AL etc to allocate storages
             if (buf == 0) {
                 return NULL;
             }
@@ -63,7 +66,8 @@ namespace snow {
 
         } //const to_bytes
 
-        inline unsigned char* to_bytes_rw( value bytes ) {
+            //non-const read/write bytes
+        inline unsigned char* bytes_from_hx_rw( value bytes ) {
 
             if (val_is_string(bytes)) {
                 return (unsigned char *)val_string(bytes);
@@ -79,6 +83,30 @@ namespace snow {
 
         } //non-const to_bytes_rw
 
+
+            //take note that the from_bytes function copies the memory into a newly allocated
+            //haxe byte Array before returning the value to it! clean up your original if you don't need it
+
+        inline value bytes_to_hx( const unsigned char* bytes, int byteLength ) {
+
+            buffer buf = alloc_buffer_len(byteLength);
+            char* dest = buffer_data(buf);
+            memcpy(dest, bytes, byteLength);
+
+            return buffer_val(buf);
+
+        } //bytes_to_hx with const unsigned char*
+
+        inline value bytes_to_hx( unsigned char* bytes, int byteLength ) {
+
+            buffer buf = alloc_buffer_len(byteLength);
+            char* dest = buffer_data(buf);
+            memcpy(dest, bytes, byteLength);
+
+            return buffer_val(buf);
+
+
+        }  //bytes_to_hx with unsigned char*
 
 } //snow namespace
 
