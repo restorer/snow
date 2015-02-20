@@ -19,6 +19,7 @@
 #include <android/log.h>
 #endif
 
+#include "common/snow_hx.h"
 #include "snow_hx_bindings.h"
 #include "snow_core.h"
 
@@ -809,39 +810,6 @@ namespace snow {
 
 
 
-    const unsigned char* val_to_bytes( value bytes ) {
-
-        if (val_is_string(bytes)) {
-            return (unsigned char *)val_string(bytes);
-        }
-
-        buffer buf = val_to_buffer(bytes);
-
-        if (buf == 0) {
-            val_throw(alloc_string("val_to_bytes, invalid byte data!"));
-        }
-
-        return (unsigned char*)buffer_data(buf);
-
-    } //const val_to_bytes
-
-    unsigned char* val_to_bytes_rw( value bytes ) {
-
-        if (val_is_string(bytes)) {
-            return (unsigned char *)val_string(bytes);
-        }
-
-        buffer buf = val_to_buffer(bytes);
-
-        if (buf == 0) {
-            val_throw(alloc_string("val_to_bytes, invalid byte data!"));
-        }
-
-        return (unsigned char*)buffer_data(buf);
-
-    } //non-const val_to_bytes
-
-
         //only float arrays accepted
         //passe the full arrays instead of single element
         //if double should be accepted, it is highly important that whole arrays are passed
@@ -856,7 +824,7 @@ namespace snow {
         int byteOffset = val_int(arg[aByteOffset]);
         bool transpose = val_bool(arg[aTranspose]);
 
-        const GLfloat* data = (GLfloat*)val_to_bytes(arg[aBytes]);
+        const GLfloat* data = (GLfloat*)snow::to_bytes(arg[aBytes]);
         int nbElems = byteLength / sizeof(float);
 
         switch(count){
@@ -912,7 +880,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLint* data = (GLint*)val_to_bytes(inBytes);
+        const GLint* data = (GLint*)snow::to_bytes(inBytes);
         int nbElems = byteLength / sizeof(int);
 
         glUniform1iv(location, nbElems, data + byteOffset);
@@ -928,7 +896,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLint* data = (GLint*)val_to_bytes(inBytes);
+        const GLint* data = (GLint*)snow::to_bytes(inBytes);
         int nbElems = byteLength / sizeof(int);
 
         glUniform2iv(location, nbElems>>1, data + byteOffset);
@@ -944,7 +912,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLint* data = (GLint*)val_to_bytes(inBytes);
+        const GLint* data = (GLint*)snow::to_bytes(inBytes);
         int nbElems = byteLength / sizeof(int);
 
         glUniform3iv(location, nbElems/3, data + byteOffset);
@@ -960,7 +928,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLint* data = (GLint*)val_to_bytes(inBytes);
+        const GLint* data = (GLint*)snow::to_bytes(inBytes);
         int nbElems = byteLength / sizeof(int);
 
         glUniform4iv(location, nbElems>>2, data + byteOffset);
@@ -976,7 +944,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLfloat* data = (GLfloat*)val_to_bytes(inBytes);
+        const GLfloat* data = (GLfloat*)snow::to_bytes(inBytes);
         int nbElems = byteLength / sizeof(float);
 
         glUniform1fv(location, nbElems, data + byteOffset);
@@ -992,7 +960,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLfloat* data = (GLfloat*)val_to_bytes(inBytes);
+        const GLfloat* data = (GLfloat*)snow::to_bytes(inBytes);
         int nbElems = byteLength / sizeof(float);
 
         glUniform2fv(location, nbElems>>1, data + byteOffset);
@@ -1008,7 +976,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLfloat* data = (GLfloat*)val_to_bytes(inBytes);
+        const GLfloat* data = (GLfloat*)snow::to_bytes(inBytes);
         int nbElems = byteLength / sizeof(float);
 
         glUniform3fv(location, nbElems/3, data + byteOffset);
@@ -1024,7 +992,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLfloat* data = (GLfloat*)val_to_bytes(inBytes);
+        const GLfloat* data = (GLfloat*)snow::to_bytes(inBytes);
         int nbElems = byteLength / sizeof(float);
 
         glUniform4fv(location, nbElems>>2, data + byteOffset);
@@ -1077,7 +1045,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLfloat* data = (GLfloat*)val_to_bytes(inBytes);
+        const GLfloat* data = (GLfloat*)snow::to_bytes(inBytes);
 
         glVertexAttrib1fv(location, data + byteOffset);
 
@@ -1092,7 +1060,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLfloat* data = (GLfloat*)val_to_bytes(inBytes);
+        const GLfloat* data = (GLfloat*)snow::to_bytes(inBytes);
 
         glVertexAttrib2fv(location, data + byteOffset);
 
@@ -1107,7 +1075,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLfloat* data = (GLfloat*)val_to_bytes(inBytes);
+        const GLfloat* data = (GLfloat*)snow::to_bytes(inBytes);
 
         glVertexAttrib3fv(location, data + byteOffset);
 
@@ -1122,7 +1090,7 @@ namespace snow {
         int byteOffset = val_int(inByteOffset);
         int byteLength = val_int(inByteLength);
 
-        const GLfloat* data = (GLfloat*)val_to_bytes(inBytes);
+        const GLfloat* data = (GLfloat*)snow::to_bytes(inBytes);
 
         glVertexAttrib4fv(location, data + byteOffset);
 
@@ -1304,7 +1272,7 @@ namespace snow {
         int byteLength = val_int(inByteLength);
         int byteOffset = val_int(inByteOffset);
 
-        const unsigned char* data = val_to_bytes(inBuffer);
+        const unsigned char* data = snow::to_bytes(inBuffer);
 
         glBufferData( val_int(inTarget), byteLength, data + byteOffset, val_int(inUsage) );
 
@@ -1318,7 +1286,7 @@ namespace snow {
         int byteLength = val_int(inByteLength);
         int byteOffset = val_int(inByteOffset);
 
-        const unsigned char* data = val_to_bytes(inBuffer);
+        const unsigned char* data = snow::to_bytes(inBuffer);
 
         glBufferSubData(val_int(inTarget), val_int(inOffset), byteLength, data + byteOffset );
 
@@ -1722,7 +1690,7 @@ namespace snow {
 
         int byteOffset = val_int(arg[aByteOffset]);
         int byteLength = val_int(arg[aByteLength]);
-        unsigned char* data = val_to_bytes_rw(arg[aBytes]);
+        unsigned char* data = snow::to_bytes_rw(arg[aBytes]);
 
         glReadPixels( val_int(arg[aX]),
                       val_int(arg[aY]),
@@ -1803,7 +1771,7 @@ namespace snow {
 
         enum { aTarget, aLevel, aInternal, aWidth, aHeight, aBorder, aFormat, aType, aBytes, aByteOffset, aByteLength };
 
-        const unsigned char* data = val_to_bytes(arg[aBytes]);
+        const unsigned char* data = snow::to_bytes(arg[aBytes]);
         int byteOffset = val_int( arg[aByteOffset] );
         int byteLength = val_int( arg[aByteLength] );
 
@@ -1827,7 +1795,7 @@ namespace snow {
 
         enum { aTarget, aLevel, aXOffset, aYOffset, aWidth, aHeight, aFormat, aType, aBytes, aByteOffset, aByteLength };
 
-        const unsigned char* data = val_to_bytes(arg[aBytes]);
+        const unsigned char* data = snow::to_bytes(arg[aBytes]);
         int byteOffset = val_int( arg[aByteOffset] );
         int byteLength = val_int( arg[aByteLength] );
 
@@ -1850,7 +1818,7 @@ namespace snow {
 
         enum { aTarget, aLevel, aInternal, aWidth, aHeight, aBorder, aBytes, aByteOffset, aByteLength };
 
-        const unsigned char* data = val_to_bytes(arg[aBytes]);
+        const unsigned char* data = snow::to_bytes(arg[aBytes]);
         int byteOffset = val_int( arg[aByteOffset] );
         int byteLength = val_int( arg[aByteLength] );
 
@@ -1873,7 +1841,7 @@ namespace snow {
 
         enum { aTarget, aLevel, aXOffset, aYOffset, aWidth, aHeight, aFormat, aBytes, aByteOffset, aByteLength };
 
-        const unsigned char* data = val_to_bytes(arg[aBytes]);
+        const unsigned char* data = snow::to_bytes(arg[aBytes]);
         int byteOffset = val_int( arg[aByteOffset] );
         int byteLength = val_int( arg[aByteLength] );
 

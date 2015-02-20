@@ -917,9 +917,9 @@ extern double timestamp();
 
                 if(!val_is_null(_dest)) {
 
-                    ByteArray dest(_dest);
+                    unsigned char* dest = snow::to_bytes_rw(_dest);
 
-                    int res = snow::io::read(iosrc->file_source, dest.Bytes(), val_int(_size), val_int(_maxnum));
+                    int res = snow::io::read(iosrc->file_source, dest, val_int(_size), val_int(_maxnum));
 
                     return alloc_int(res);
                 }
@@ -939,17 +939,13 @@ extern double timestamp();
 
                 if(!val_is_null(_data)) {
 
-                    ByteArray data(_data);
+                    const unsigned char* data = snow::to_bytes(_data);
 
                     long size = val_int(_size);
                     long num = val_int(_num);
                     long len = size * num;
 
-                    if(data.Size() != len) {
-                        data.Resize(len);
-                    }
-
-                    int res = snow::io::write(iosrc->file_source, data.Bytes(), size, num);
+                    int res = snow::io::write(iosrc->file_source, data, size, num);
 
                     return alloc_int(res);
 
