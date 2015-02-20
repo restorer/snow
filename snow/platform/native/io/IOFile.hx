@@ -1,9 +1,15 @@
 package snow.platform.native.io;
 
-import snow.utils.ByteArray;
+import snow.io.typedarray.ArrayBufferView;
 import snow.utils.Libs;
 
 #if snow_native
+
+    @:enum abstract IOSeek(Int) from Int to Int {
+        var set = 0;
+        var cur = 1;
+        var end = 2;
+    }
 
     abstract IOFileHandle(Float) from Float to Float { }
 
@@ -19,13 +25,13 @@ import snow.utils.Libs;
         } //new
 
             /** Read a `maxnum` of items of `size` in bytes, into `dest`. Same signature/returns as `fread` */
-        public function read( dest:ByteArray, size:Int, maxnum:Int ) {
-            return snow_iosrc_file_read(handle, dest, size, maxnum);
+        public function read( dest:ArrayBufferView, size:Int, maxnum:Int ) {
+            return snow_iosrc_file_read(handle, dest.buffer.getData(), size, maxnum);
         } //read
 
             /** Write `num` of items of `size` in bytes, from `src` into this file. Same signature/returns as `fwrite` */
-        public function write( src:ByteArray, size:Int, num:Int ) {
-            return snow_iosrc_file_write(handle, src, size, num);
+        public function write( src:ArrayBufferView, size:Int, num:Int ) {
+            return snow_iosrc_file_write(handle, src.buffer.getData(), size, num);
         } //write
 
             /** Seek `offset` from `whence`, where whence is an int matching `set=0`, `cur=1`, `end=2`. Same signature/returns as `fseek` */
