@@ -2,7 +2,6 @@ package snow.assets;
 
 import snow.io.IO;
 import snow.types.Types;
-import snow.utils.ByteArray;
 import snow.utils.Libs;
 import snow.assets.AssetSystem;
 

@@ -1,10 +1,10 @@
 package snow.assets;
 
+import snow.io.typedarray.Uint8Array;
 import snow.Snow;
 import snow.assets.Assets;
 import snow.types.Types;
 
-import snow.utils.ByteArray;
 import snow.utils.AbstractClass;
 
 
@@ -31,8 +31,8 @@ import snow.utils.AbstractClass;
 
         /** Image info load from file path. Use `app.assets` */
     public function image_load_info( _path:String, ?_components:Int = 4, ?_onload:?ImageInfo->Void ) : ImageInfo;
-        /** Image info load from `ByteArray`. Use `app.assets` */
-    public function image_info_from_bytes( _path:String, _bytes:ByteArray, ?_components:Int = 4 ) : ImageInfo;
+        /** Image info load from `snow.io.typedarray.Uint8Array`. Use `app.assets` */
+    public function image_info_from_bytes( _path:String, _bytes:Uint8Array, ?_components:Int = 4 ) : ImageInfo;
 
 //audio
 

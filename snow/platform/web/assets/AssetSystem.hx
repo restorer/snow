@@ -3,7 +3,6 @@ package snow.platform.web.assets;
 import snow.assets.Assets;
 import snow.assets.AssetSystem;
 import snow.types.Types;
-import snow.utils.ByteArray;
 
 import snow.io.typedarray.*;
 
@@ -119,7 +118,7 @@ import snow.Log._verboser;
                 var info : ImageInfo = null;
 
 
-                    ByteArray.readFile(_path, { async:true }, function(data:ByteArray) {
+                    snow.utils.ByteArray.readFile(_path, { async:true }, function(data:ByteArray) {
 
                         var uint : Uint8Array = data.byteView;
                         var image = new TGA();
@@ -239,7 +238,7 @@ import snow.Log._verboser;
 
             } //image_load_info_psd
 
-        override public function image_info_from_bytes( _path:String, _bytes:ByteArray, ?_components:Int = 4 ) : ImageInfo {
+        override public function image_info_from_bytes( _path:String, _bytes:Uint8Array, ?_components:Int = 4 ) : ImageInfo {
 
             #if !snow_no_format_png
 
@@ -249,7 +248,7 @@ import snow.Log._verboser;
                 }
 
                     //Then we need it to be a BytesInput haxe.io.Input
-                var _raw_bytes : haxe.io.Bytes = ByteArray.toBytes(_bytes);
+                var _raw_bytes : haxe.io.Bytes = _bytes.buffer;
                     //now a byte input for format.png
                 var byte_input = new haxe.io.BytesInput(_raw_bytes, 0, _raw_bytes.length);
                     //get the raw data

@@ -2,8 +2,6 @@ package snow.platform.web.render.opengl;
 
 #if snow_web
 
-import snow.utils.ByteArray;
-
 import js.html.webgl.RenderingContext;
 
 import snow.io.typedarray.ArrayBuffer;

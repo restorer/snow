@@ -77,7 +77,7 @@ typedef AssetImageOptions = {
     ? strict : Bool,
     ? components : Int,
     ? onload : AssetImage -> Void,
-    ? bytes : ByteArray
+    ? bytes : Uint8Array
 } //AssetImageOptions
 
 /** The options for an `AssetAudio` asset */
@@ -236,7 +236,7 @@ typedef ImageInfo = {
             /** bits per sample, 8 / 16 */
         var bits_per_sample : Int;
             /** sound raw data */
-        var bytes : ByteArray;
+        var bytes : Uint8Array;
 
     } //AudioDataInfo
 
@@ -260,7 +260,7 @@ typedef AudioInfo = {
 typedef AudioDataBlob = {
 
         /** True if the file has reached the end of the data in this blob */
-    var bytes : ByteArray;
+    var bytes : Uint8Array;
         /** The data stored in this blob */
     var complete : Bool;
 

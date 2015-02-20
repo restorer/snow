@@ -3,7 +3,6 @@ package snow;
 
 import snow.App;
 import snow.types.Types;
-import snow.utils.ByteArray;
 import snow.utils.Timer;
 
 import snow.io.IO;
@@ -412,7 +411,7 @@ class Snow {
         var list_path : String = assets.assets_root + assets.manifest_path;
         var manifest_data = null;
 
-        manifest_data = ByteArray.readFile( list_path, { async:false, binary:false });
+        manifest_data = snow.utils.ByteArray.readFile( list_path, { async:false, binary:false });
 
         if(manifest_data != null && manifest_data.length != 0) {
 

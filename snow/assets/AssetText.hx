@@ -2,7 +2,6 @@ package snow.assets;
 
 import snow.io.IO;
 import snow.types.Types;
-import snow.utils.ByteArray;
 import snow.utils.Libs;
 import snow.assets.AssetSystem;
 
@@ -34,7 +33,7 @@ class AssetText extends Asset {
             //clear any old data in case
         text = null;
             //load the new data
-        ByteArray.readFile( info.path, { async:async, binary:false }, function( result:ByteArray ) {
+        snow.utils.ByteArray.readFile( info.path, { async:async, binary:false }, function( result:snow.utils.ByteArray ) {
 
             if(result != null) {
                 text = result.toString();

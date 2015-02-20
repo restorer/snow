@@ -3,7 +3,6 @@ import snow.Snow;
 
 import snow.render.opengl.GL;
 
-import snow.utils.ByteArray;
 import snow.io.typedarray.Uint8Array;
 import snow.io.typedarray.Float32Array;
 
