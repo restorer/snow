@@ -1,3 +1,6 @@
+#!/bin/bash
+#fail on errors
+set -e
 
 #This file is used for continuous integration only and shouldn't be called directly.
 #To build manually read the snow docs and run `flow build --options` as usual.
