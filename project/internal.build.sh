@@ -9,9 +9,9 @@ git submodule update --init
 #jump to correct folder for builds
 cd project
 #build host arch, static
-flow build --d static_link
+haxelib run flow build --d static_link
 #build dynamic
-flow build --d snow_dynamic_link
+haxelib run flow build --d snow_dynamic_link
 
 #revert to play nice
 cd ..
