@@ -9,16 +9,14 @@ set -e
 #ensure dependencies are down
 git submodule update --init
 
-#jump to correct folder for builds
-cd project
 
 #64 bit if specified
 if [ -n "$SNOW_BUILD_ARCH_64" ]
     then
 
     echo "snow; build; running arch 64..."
-    haxelib run flow build --arch 64 --d static_link --log "$SNOW_BUILD_LOG_LEVEL"
-    haxelib run flow build --arch 64 --d snow_dynamic_link --log "$SNOW_BUILD_LOG_LEVEL"
+    haxelib run flow build --project project/snow.flow --arch 64 --d static_link --log "$SNOW_BUILD_LOG_LEVEL"
+    haxelib run flow build --project project/snow.flow --arch 64 --d snow_dynamic_link --log "$SNOW_BUILD_LOG_LEVEL"
 
 fi
 
@@ -26,8 +24,8 @@ if [ -n "$SNOW_BUILD_ARCH_32" ]
 then
 
     echo "snow; build; running arch 32..."
-    haxelib run flow build --arch 32 --d static_link --log "$SNOW_BUILD_LOG_LEVEL"
-    haxelib run flow build --arch 32 --d snow_dynamic_link --log "$SNOW_BUILD_LOG_LEVEL"
+    haxelib run flow build --project project/snow.flow --arch 32 --d static_link --log "$SNOW_BUILD_LOG_LEVEL"
+    haxelib run flow build --project project/snow.flow --arch 32 --d snow_dynamic_link --log "$SNOW_BUILD_LOG_LEVEL"
 
 fi
 
@@ -35,9 +33,9 @@ if [ -n "$SNOW_BUILD_ANDROID" ]
 then
 
     echo "snow; build; running android archs armv6, armv7, x86 ..."
-    haxelib run flow build android --arch armv6 --d snow_dynamic_link --log "$SNOW_BUILD_LOG_LEVEL"
-    haxelib run flow build android --arch armv7 --d snow_dynamic_link --log "$SNOW_BUILD_LOG_LEVEL"
-    haxelib run flow build android --arch x86 --d snow_dynamic_link --log "$SNOW_BUILD_LOG_LEVEL"
+    haxelib run flow build android --project project/snow.flow --arch armv6 --d snow_dynamic_link --log "$SNOW_BUILD_LOG_LEVEL"
+    haxelib run flow build android --project project/snow.flow --arch armv7 --d snow_dynamic_link --log "$SNOW_BUILD_LOG_LEVEL"
+    haxelib run flow build android --project project/snow.flow --arch x86 --d snow_dynamic_link --log "$SNOW_BUILD_LOG_LEVEL"
 
 fi
 
@@ -49,5 +47,18 @@ then
 
 fi
 
-#revert to play nice
-cd ..
+#zip artifacts
+
+case "$SNOW_BUILD_TARGET" in
+    "linux" ) zip -r ndll/latest.linux.zip ndll/Linux/ ndll/Linux64 -x ".*" -x "*/.*"
+        ;;
+    "mac" ) zip -r ndll/latest.mac.zip ndll/Mac/ ndll/Mac64 -x ".*" -x "*/.*"
+        ;;
+    "windows" ) zip -r ndll/latest.windows.zip ndll/Windows/ -x ".*" -x "*/.*"
+        ;;
+    "android" ) zip -r ndll/latest.android.zip ndll/Android/ -x ".*" -x "*/.*"
+        ;;
+    "ios" ) zip -r ndll/latest.ios.zip ndll/iPhone/ -x ".*" -x "*/.*"
+        ;;
+    *) echo "build target is unknown : $SNOW_BUILD_TARGET"
+esac
