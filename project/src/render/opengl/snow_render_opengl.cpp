@@ -25,7 +25,7 @@
 
 #include "render/opengl/snow_opengl.h"
 
-#include <string>
+#include <string.h>
 
 namespace snow {
 
