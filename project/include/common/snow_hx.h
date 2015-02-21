@@ -29,7 +29,7 @@
 #define _SNOW_HX_H_
 
 #include <stdint.h>
-#include <string> //memcpy
+#include <string.h> //memcpy
 
 namespace snow {
 
