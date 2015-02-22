@@ -62,3 +62,11 @@ case "$SNOW_BUILD_TARGET" in
         ;;
     *) echo "build target is unknown : $SNOW_BUILD_TARGET"
 esac
+
+if [ -n "$SNOW_BUILD_PACKAGE_BINARY" ]
+then
+
+    buildbox-artifact download "ndll/latest.*.zip" ndll/
+
+fi
+
