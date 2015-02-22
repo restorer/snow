@@ -43,8 +43,6 @@ class AssetText extends Asset {
 
     public function load_from_string( _string:String, ?onload:AssetText->Void ) {
 
-        trace(_string);
-
         loaded = false;
         text = _string;
         loaded = true;
