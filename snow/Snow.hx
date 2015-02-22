@@ -2,8 +2,11 @@ package snow;
 
 
 import snow.App;
+import snow.io.typedarray.Uint8Array;
 import snow.types.Types;
 import snow.utils.Timer;
+
+import snow.utils.promhx.Promise;
 
 import snow.io.IO;
 import snow.input.Input;
@@ -141,7 +144,7 @@ class Snow {
 
     function on_snow_init() {
 
-        _debug('initializing - ');
+        _debug('init / initializing');
 
             //ensure that we are in the correct location for asset loading
 
@@ -152,12 +155,12 @@ class Snow {
 
             Sys.setCwd( app_path );
 
-            _debug('setting up app path $app_path');
-            _debug('setting up pref path: $pref_path');
+            _debug('init / setting up app path $app_path');
+            _debug('init / setting up pref path: $pref_path');
 
         #end //snow_native
 
-        _debug('pre ready, init host');
+        _debug('init / pre ready, init host');
 
             //any app pre ready init can be handled in here
         host.on_internal_init();
@@ -167,13 +170,10 @@ class Snow {
     function on_snow_ready() {
 
         if(was_ready) {
-            log("firing ready event repeatedly is not ideal...");
-            return;
+            throw Error.error('firing ready event more than once is invalid usage');
         }
 
-
-        _debug('ready, setting up additional systems...');
-
+        _debug('init / setting up additional systems...');
 
                 //create the sub systems
             io = new IO( this );
@@ -182,64 +182,24 @@ class Snow {
             assets = new Assets( this );
             windowing = new Windowing( this );
 
-
-        if(!snow_config.config_custom_assets){
-
-                //load the correct asset path from the snow config
-            assets.manifest_path = snow_config.config_assets_path;
-
-                //
-            _debug('fetching asset list "${assets.manifest_path}"');
-
-                //we fetch the a list from the manifest
-            config.assets = default_asset_list();
-                //then we add the list for the asset manager
-            assets.add( config.assets );
-
-        } //custom assets
-
-        if(!snow_config.config_custom_runtime) {
-                //fetch from a config file, the custom
-            config.runtime = default_runtime_config();
-        }
-
-        config.window = default_window_config();
-        config.render = default_render_config();
-
-        _debug('fetching user config');
-
-            //request config changes, if any
-        config = host.config( config );
-
-            //force fullscreen on mobile to get better
-            //behavior from the window for now.
-            //borderless will control the status bar
-        #if mobile
-            config.window.fullscreen = true;
-        #end //mobile
-
             //disllow re-entry
         was_ready = true;
 
-        _debug('creating default window');
+        setup_default_assets().then(function(_){
 
-            //now if they requested a window, let's open one
-        if(config.has_window == true) {
+            setup_configs();
+            setup_default_window();
 
-            window = windowing.create( config.window );
+            _debug('init / calling host ready');
 
-                //failed to create?
-            if(window.handle == null) {
-                throw "requested default window cannot be created. Cannot continue.";
-            }
+            is_ready = true;
+            host.ready();
 
-        } //has_window
+        }).catchError(function(e) {
 
-            //now ready
-        is_ready = true;
+            throw Error.init('snow / cannot recover from error: $e');
 
-            //tell the host app we are done
-        host.ready();
+        });
 
     } //on_snow_ready
 
@@ -262,9 +222,7 @@ class Snow {
 
     function on_snow_update() {
 
-        if(!is_ready || freeze) {
-            return;
-        }
+        if(freeze) return;
 
             //first update timers
         Timer.update();
@@ -283,6 +241,10 @@ class Snow {
             next_list.splice(0, _pre_next_length);
 
         } //next_list.length
+
+        if(!is_ready) return;
+
+            //handle promise executions
 
             //handle any internal updates
         host.on_internal_update();
@@ -311,11 +273,11 @@ class Snow {
             _event.type != SystemEventType.input
 
         ) {
-            _debug( "system event : " + _event + ' / ' + _event.type );
+            _debug( 'event / system event / ${_event.type} / $_event');
         }
 
         if( _event.type != SystemEventType.update ) {
-            _verboser( "system event : " + _event );
+            _verboser( 'event / system event / $_event');
         }
 
             //all systems should get these basically...
@@ -372,6 +334,89 @@ class Snow {
 
     } //set_freeze
 
+    function setup_default_assets() {
+
+        return new Promise<Int>(function(resolve, reject){
+
+            if(!snow_config.config_custom_assets) {
+
+                    //load the correct asset path from the snow config
+                assets.manifest_path = snow_config.config_assets_path;
+
+                    //
+                _debug('assets / fetching list "${assets.manifest_path}"');
+
+                    //we fetch the a list from the manifest
+                default_asset_list().then(function(list) {
+
+                        //then we add the list for the asset manager
+                    config.assets = list;
+                    assets.add( config.assets );
+
+                    resolve(0);
+
+                }).catchError(function(e:Dynamic) {
+
+                    //default asset manifest is not critical
+                    //and will leave logs so we just continue with
+                    //making a note of the state
+                    config.assets = [];
+                    resolve(1);
+
+                });
+
+            } //custom assets
+
+        });
+
+    } //ready_default_assets
+
+    function setup_configs() {
+
+        if(!snow_config.config_custom_runtime) {
+                //fetch from a config file, the custom
+            config.runtime = default_runtime_config();
+        }
+
+        config.window = default_window_config();
+        config.render = default_render_config();
+
+        _debug('config / fetching user config');
+
+            //request config changes, if any
+        config = host.config( config );
+
+        return Promise.promise(0);
+
+    } //setup_configs
+
+
+    function setup_default_window() {
+
+        _debug('windowing / creating default window');
+
+            //force fullscreen on mobile to get better
+            //behavior from the window for now.
+            //borderless will control the status bar
+        #if mobile
+            config.window.fullscreen = true;
+        #end //mobile
+
+            //now if they requested a window, let's open one
+        if(config.has_window == true) {
+
+            window = windowing.create( config.window );
+
+                //failed to create?
+            if(window.handle == null) {
+                throw Error.windowing('requested default window cannot be created. cannot continue');
+            }
+
+        } //has_window
+
+        return Promise.promise(0);
+
+    } //create_default_window
 
 
         /** handles the default method of parsing a runtime config json,
@@ -388,14 +433,14 @@ class Snow {
 
                 var json = haxe.Json.parse( config_data.text );
 
-                _debug('config / ok / default runtime config');
+                _debug('config / ok / loaded runtime config');
 
                 return json;
 
             } catch(e:Dynamic) {
 
-                log('config / failed / default runtime config failed to parse as JSON. cannot recover.');
-                throw e;
+                log('config / json parse error ');
+                throw Error.init('config / failed / default runtime config failed to parse as JSON. cannot recover. $e');
 
             }
         }
@@ -405,38 +450,52 @@ class Snow {
     } //default_runtime_config
 
         /** handles the default method of parsing the file manifest list as json, stored in an array and returned. */
-    function default_asset_list() : Array<AssetInfo> {
+    function default_asset_list() : Promise< Array<AssetInfo> > {
 
-        var asset_list : Array<AssetInfo> = [];
-        var list_path : String = assets.assets_root + assets.manifest_path;
-        var manifest_data = null;
+        return new Promise< Array<AssetInfo> >(function(resolve,reject){
 
-        manifest_data = snow.utils.ByteArray.readFile( list_path, { async:false, binary:false });
+            var list_path : String = assets.assets_root + assets.manifest_path;
+            var load = io.data_load( list_path, { binary:false });
 
-        if(manifest_data != null && manifest_data.length != 0) {
+            load.then(function(_data:Uint8Array) {
 
-                var _list:Array<String> = haxe.Json.parse(manifest_data.toString());
+                var _filedata = _data.buffer.toString();
+                if(_filedata != null && _filedata.length != 0) {
 
-                for(asset in _list) {
+                    var _list:Array<String> = haxe.Json.parse(_filedata.toString());
+                    var asset_list : Array<AssetInfo> = [];
 
-                    asset_list.push({
-                        id : asset,
-                        path : haxe.io.Path.join([assets.assets_root, asset]),
-                        type : haxe.io.Path.extension(asset),
-                        ext : haxe.io.Path.extension(asset)
-                    });
+                    for(asset in _list) {
 
-                } //for each asset
+                        asset_list.push({
+                            id : asset,
+                            path : haxe.io.Path.join([assets.assets_root, asset]),
+                            type : haxe.io.Path.extension(asset),
+                            ext : haxe.io.Path.extension(asset)
+                        });
 
-            _debug('assets / ok / loaded default asset manifest.');
+                    } //for each asset
 
-        } else { //manifest_data != null
+                    _debug('assets / ok / loaded asset manifest.');
+                    _debug('assets / list loaded as $asset_list');
 
-            log('assets / info / default asset manifest not found.');
+                    resolve( asset_list );
 
-        }
+                } else { //manifest_data != null
 
-        return asset_list;
+                    log('assets / info / default asset manifest is empty?');
+                    reject('default asset manifest is empty');
+
+                }
+
+            }).catchError(function(e:Dynamic) {
+
+                log('assets / info / default asset manifest not found at $list_path');
+                reject('default asset manifest error: $e');
+
+            });
+
+        }); //new promise
 
     } //default_asset_list
 
@@ -474,7 +533,7 @@ class Snow {
             y                   : 0x1FFF0000,
             width               : 960,
             height              : 640,
-            title               : "snow app"
+            title               : 'snow app'
         };
 
             #if mobile
