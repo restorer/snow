@@ -4,6 +4,10 @@ import haxe.io.Path;
 import haxe.macro.Context;
 import haxe.macro.Expr;
 
+private enum LogError {
+    RequireString(detail:String);
+}
+
 class Log {
 
         //default to `log`
@@ -81,7 +85,7 @@ class Log {
             if(meta.name == ':log_as') {
                 var _str = switch(meta.params[0].expr) {
                     case EConst(CString(str)): _context = str;
-                    default: throw 'type should be string constant like "name" for log_as meta flag';
+                    default: throw LogError.RequireString('log_as meta requires a string constant like "name"');
                 }
             }
         } //for each meta
@@ -114,7 +118,7 @@ class Log {
             if(meta.name == ':log_as') {
                 var _str = switch(meta.params[0].expr) {
                     case EConst(CString(str)): _context = str;
-                    default: throw 'type should be string constant like "name" for log_as meta flag';
+                    default: throw LogError.RequireString('log_as meta requires a string constant like "name"');
                 }
             }
         } //for each meta
@@ -147,7 +151,7 @@ class Log {
             if(meta.name == ':log_as') {
                 var _str = switch(meta.params[0].expr) {
                     case EConst(CString(str)): _context = str;
-                    default: throw 'type should be string constant like "name" for log_as meta flag';
+                    default: throw LogError.RequireString('log_as meta requires a string constant like "name"');
                 }
             }
         } //for each meta
@@ -180,7 +184,7 @@ class Log {
             if(meta.name == ':log_as') {
                 var _str = switch(meta.params[0].expr) {
                     case EConst(CString(str)): _context = str;
-                    default: throw 'type should be string constant like "name" for log_as meta flag';
+                    default: throw LogError.RequireString('log_as meta requires a string constant like "name"');
                 }
             }
         } //for each meta

@@ -12,6 +12,11 @@ import snow.assets.AssetAudio;
 typedef Key = snow.input.Keycodes.Keycodes;
 typedef Scan = snow.input.Keycodes.Scancodes;
 
+enum Error {
+    error(value:Dynamic);
+    init(value:Dynamic);
+    windowing(value:Dynamic);
+}
 
 /** Information for a single asset */
 typedef AssetInfo = {
@@ -36,6 +41,12 @@ typedef AssetInfo = {
     var audio   = 3;
 
 } //AssetType
+
+typedef IODataOptions = {
+
+    @:optional var binary:Bool;
+
+}
 
 /** Options for the ByteArray.readFile function */
 typedef ByteArrayReadOptions = {
