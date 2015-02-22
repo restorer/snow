@@ -50,9 +50,9 @@ fi
 #zip artifacts
 
 case "$SNOW_BUILD_TARGET" in
-    "linux32" ) zip -r ndll/latest.linux32.zip ndll/Linux64 -x ".*" -x "*/.*"
+    "linux32" ) zip -r ndll/latest.linux32.zip ndll/Linux/ -x ".*" -x "*/.*"
         ;;
-    "linux64" ) zip -r ndll/latest.linux64.zip ndll/Linux/ -x ".*" -x "*/.*"
+    "linux64" ) zip -r ndll/latest.linux64.zip ndll/Linux64/ -x ".*" -x "*/.*"
         ;;
     "mac" ) zip -r ndll/latest.mac.zip ndll/Mac/ ndll/Mac64 -x ".*" -x "*/.*"
         ;;
