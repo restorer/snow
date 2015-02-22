@@ -69,6 +69,8 @@ if [ -n "$SNOW_BUILD_PACKAGE_BINARY" ]
 then
 
     buildbox-artifact download "ndll/latest.*.zip" ndll/
+    unzip -o -d ndll/all "ndll/latest.*.zip"
+    zip -r ndll/latest.all.zip ndll/all/ -x ".*" -x "*/.*"
 
 fi
 
