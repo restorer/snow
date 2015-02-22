@@ -73,6 +73,7 @@ then
     cd ndll/all
     zip -r latest.all.zip ndll/ -x ".*" -x "*/.*"
     cd ../../
+    cp ndll/all/latest.all.zip /usr/share/nginx/html/snow/latest.all.zip
 
     echo "snow; build; done package"
 
