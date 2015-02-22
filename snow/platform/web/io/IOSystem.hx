@@ -4,6 +4,9 @@ import snow.types.Types;
 import snow.io.IOSystem;
 import snow.io.IO;
 
+import snow.io.typedarray.Uint8Array;
+import snow.utils.promhx.Promise;
+
 #if snow_web
 
 
@@ -25,6 +28,56 @@ import snow.io.IO;
             }
 
         } //url_open
+
+            /** Load bytes from the file path/url given.
+                On web a request is sent for the data */
+        override public function data_load( _path:String, ?_options:IODataOptions ) : Promise<Uint8Array> {
+
+            return new Promise<Uint8Array>(function(resolve,reject) {
+
+                    //defaults
+                var _async = true;
+                var _binary = true;
+
+                if(_options != null) {
+                    if(_options.binary != null) _binary = _options.binary;
+                }
+
+                var request = new js.html.XMLHttpRequest();
+                    request.open("GET", _path, _async);
+
+                if(_binary) {
+                    request.overrideMimeType('text/plain; charset=x-user-defined');
+                } else {
+                    request.overrideMimeType('text/plain; charset=UTF-8');
+                }
+
+                    //only _async can set the type it seems
+                if(_async) {
+                    request.responseType = 'arraybuffer';
+                }
+
+                request.onload = function(data) {
+
+                    if(request.status == 200) {
+                        resolve( new Uint8Array(request.response) );
+                    } else {
+                        reject('request status was ${request.status} / ${request.statusText}');
+                    }
+
+                } //onload
+
+                request.send();
+
+            });
+
+        } //data_load
+
+        override public function data_save( _path:String, _data:Uint8Array, ?_options:IODataOptions ) : Bool {
+
+            return false;
+
+        } //data_save
 
     //Internal API
 

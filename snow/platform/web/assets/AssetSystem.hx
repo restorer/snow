@@ -118,7 +118,7 @@ import snow.Log._verboser;
                 var info : ImageInfo = null;
 
 
-                    snow.utils.ByteArray.readFile(_path, { async:true }, function(data:ByteArray) {
+                    snow.utils.ByteArray.readFile(_path, { async:true }, function(data:snow.utils.ByteArray) {
 
                         var uint : Uint8Array = data.byteView;
                         var image = new TGA();
@@ -248,7 +248,7 @@ import snow.Log._verboser;
                 }
 
                     //Then we need it to be a BytesInput haxe.io.Input
-                var _raw_bytes : haxe.io.Bytes = _bytes.buffer;
+                var _raw_bytes = haxe.io.Bytes.ofData(cast _bytes.buffer);
                     //now a byte input for format.png
                 var byte_input = new haxe.io.BytesInput(_raw_bytes, 0, _raw_bytes.length);
                     //get the raw data
