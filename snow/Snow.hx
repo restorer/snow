@@ -76,6 +76,12 @@ class Snow {
 
     @:noCompletion public function new() {
 
+        if(snow.Log.get_level() > 1) {
+            log('log / level to ${snow.Log.get_level()}' );
+            log('log / filter : ${snow.Log.get_filter()}');
+            log('log / exclude : ${snow.Log.get_exclude()}');
+        }
+
             //We create the core as a concrete platform version of the core
         core = new Core( this );
         next_list = [];
@@ -187,13 +193,16 @@ class Snow {
 
         setup_default_assets().then(function(_){
 
-            setup_configs();
-            setup_default_window();
+            setup_configs().then(function(_){
 
-            _debug('init / calling host ready');
+                setup_default_window();
 
-            is_ready = true;
-            host.ready();
+                _debug('init / calling host ready');
+
+                is_ready = true;
+                host.ready();
+
+            });
 
         }).catchError(function(e) {
 
@@ -373,22 +382,44 @@ class Snow {
 
     function setup_configs() {
 
-        if(!snow_config.config_custom_runtime) {
-                //fetch from a config file, the custom
-            config.runtime = default_runtime_config();
-        }
-
+            //sync configs
         config.window = default_window_config();
         config.render = default_render_config();
 
-        _debug('config / fetching user config');
+        return new Promise<Int>(function(resolve, reject){
 
-            //request config changes, if any
-        config = host.config( config );
+            if(!snow_config.config_custom_runtime) {
 
-        return Promise.promise(0);
+                _debug('config / fetching runtime config');
+
+                default_runtime_config().then(function(_runtime_conf:Dynamic) {
+
+                    config.runtime = _runtime_conf;
+                    setup_host_config();
+                    resolve(0);
+
+                });
+
+            } else {
+
+                    //if default config is disabled
+                    //we still need the user config
+                setup_host_config();
+                resolve(0);
+
+            } //disabled
+
+        }); //promise
 
     } //setup_configs
+
+    function setup_host_config() {
+
+        _debug('config / fetching user config');
+
+        config = host.config( config );
+
+    } //setup_host_config
 
 
     function setup_default_window() {
@@ -421,38 +452,38 @@ class Snow {
 
         /** handles the default method of parsing a runtime config json,
             To change this behavior override `get_runtime_config`. This is called by default in get_runtime_config. */
-    function default_runtime_config() : Dynamic {
+    function default_runtime_config() : Promise<Dynamic> {
 
-            //we want to load the runtime config from a json file by default
-        var config_data = assets.text( snow_config.config_runtime_path, { silent:true });
+        return new Promise<Dynamic>(function(resolve, reject) {
 
-            //only care if there is a config
-        if(config_data != null && config_data.text != null) {
+                //we want to load the runtime config from a json file by default
+            var onload = function(asset:snow.assets.AssetText) {
+                if(asset.text != null) {
+                    try {
 
-            try {
+                        var json = haxe.Json.parse( asset.text );
+                        _debug('config / ok / loaded runtime config');
 
-                var json = haxe.Json.parse( config_data.text );
+                        resolve(json);
 
-                _debug('config / ok / loaded runtime config');
-
-                return json;
-
-            } catch(e:Dynamic) {
-
-                log('config / json parse error ');
-                throw Error.init('config / failed / default runtime config failed to parse as JSON. cannot recover. $e');
-
+                    } catch(e:Dynamic) {
+                        log('config / json parse error ');
+                        throw Error.init('config / failed / default runtime config failed to parse as JSON. cannot recover. $e');
+                    }
+                }
             }
-        }
 
-        return {};
+            var found = assets.text( snow_config.config_runtime_path, { silent:true, onload:onload });
+            if(found == null) resolve({});
+
+        }); //promise
 
     } //default_runtime_config
 
         /** handles the default method of parsing the file manifest list as json, stored in an array and returned. */
     function default_asset_list() : Promise< Array<AssetInfo> > {
 
-        return new Promise< Array<AssetInfo> >(function(resolve,reject){
+        return new Promise< Array<AssetInfo> >(function(resolve, reject){
 
             var list_path : String = assets.assets_root + assets.manifest_path;
             var load = io.data_load( list_path, { binary:false });
@@ -503,6 +534,8 @@ class Snow {
         /** Returns a default configured render config */
     function default_render_config() : RenderConfig {
 
+        _debug('config / fetching default render config');
+
         return {
             depth : false,
             stencil : false,
@@ -523,6 +556,8 @@ class Snow {
 
         /** Returns a default configured window config */
     function default_window_config() : WindowConfig {
+
+        _debug('config / fetching default window config');
 
         var conf =  {
             fullscreen_desktop  : true,

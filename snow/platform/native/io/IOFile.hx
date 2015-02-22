@@ -47,7 +47,9 @@ import snow.utils.Libs;
             /** Close the file handle and releases the internal handle. 
                 After calling this the file is no longer usable. */
         public function close() {
-            return snow_iosrc_file_close(handle);
+            var res : Int = snow_iosrc_file_close(handle);
+                handle = null;
+            return res;
         } //close
 
 

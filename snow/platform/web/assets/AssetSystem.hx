@@ -117,10 +117,11 @@ import snow.Log._verboser;
 
                 var info : ImageInfo = null;
 
+                    // snow.utils.ByteArray.readFile(_path, { async:true }, function(data:snow.utils.ByteArray) {
 
-                    snow.utils.ByteArray.readFile(_path, { async:true }, function(data:snow.utils.ByteArray) {
+                    var load = io.data_load( list_path, { binary:false });
+                    load.then(function(uint:Uint8Array) {
 
-                        var uint : Uint8Array = data.byteView;
                         var image = new TGA();
                             image.load( uint );
 
@@ -144,17 +145,18 @@ import snow.Log._verboser;
                             //cleanup
                         image_bytes = null;
 
-                            //append the listener
+                        if(_onload != null) {
+                            _onload( info );
+                        }
+
+                    }).catchError(function(e){
+
                         if(_onload != null) {
                             _onload( info );
                         }
 
                     });
 
-                        //this uses something firefox doesn't like
-                    // image.open(_path, function(data){
-
-                    // });
 
                 return info;
 

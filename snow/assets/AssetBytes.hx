@@ -33,22 +33,13 @@ class AssetBytes extends Asset {
         loaded = false;
             //clear any old data in case
         bytes = null;
-            //load the new data
-        snow.utils.ByteArray.readFile( info.path, { async:async }, function( result:snow.utils.ByteArray ) {
 
-            var b : haxe.io.Bytes = result;
+        var p = assets.lib.io.data_load( info.path, { binary:true });
+        p.then(function(data:Uint8Array){
 
-            bytes = new Uint8Array( b );
+            load_from_bytes(data, onload);
 
-            loaded = true;
-
-            if(onload != null) {
-                // Snow.next(function(){
-                    onload( this );
-                // });
-            }
-
-        }); //readFile
+        });
 
     } //load
 

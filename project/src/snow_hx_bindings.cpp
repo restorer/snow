@@ -73,7 +73,7 @@ extern double timestamp();
         snow::log_level = property_int(_init_config, id_log_level, 1);
 
         if(snow::log_level > 1) {
-            printf("/ snow / log level set to %d\n", snow::log_level);
+            snow::log(1, "/ snow / native / log level set to %d\n", snow::log_level);
         }
 
             //now init the core
@@ -1019,7 +1019,11 @@ extern double timestamp();
 
                 int res = snow::io::close(iosrc->file_source);
 
+                    //close should free the filesource
+                iosrc->file_source = NULL;
+
                 delete iosrc;
+                iosrc = NULL;
 
                 return alloc_int(res);
 
