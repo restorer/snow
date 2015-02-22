@@ -912,9 +912,15 @@ extern double timestamp();
 
         value snow_iosrc_from_file(value _id, value _mode) {
 
+            snow::io::iosrc* src = snow::io::iosrc_fromfile( val_string(_id), val_string(_mode) );
+
+            if(!src) {
+                return alloc_null();
+            }
+
             snow::io::iosrc_file* iosrc = new snow::io::iosrc_file();
 
-            iosrc->file_source = snow::io::iosrc_fromfile( val_string(_id), val_string(_mode) );
+                iosrc->file_source = src;
 
             return snow::to_hx<snow::io::iosrc_file>( iosrc );
 
@@ -1012,6 +1018,8 @@ extern double timestamp();
             if( iosrc ) {
 
                 int res = snow::io::close(iosrc->file_source);
+
+                delete iosrc;
 
                 return alloc_int(res);
 
