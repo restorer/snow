@@ -70,7 +70,11 @@ then
 
     buildbox-artifact download "ndll/latest.*.zip" ndll/
     unzip -o -d ndll/all "ndll/latest.*.zip"
-    zip -r ndll/latest.all.zip ndll/all/ -x ".*" -x "*/.*"
+    cd ndll/all
+    zip -r latest.all.zip ndll/ -x ".*" -x "*/.*"
+    cd ../../
+
+    echo "snow; build; done package"
 
 fi
 
