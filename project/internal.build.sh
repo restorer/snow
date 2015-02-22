@@ -43,7 +43,7 @@ if [ -n "$SNOW_BUILD_IOS" ]
 then
 
     echo "snow; build; running android archs armv6, armv7, armv7s, arm64, sim, sim64 ..."
-    haxelib run flow build ios --archs armv6,armv7,armv7s,arm64,sim,sim64 --d static_link --log "$SNOW_BUILD_LOG_LEVEL"
+    haxelib run flow build ios --project project/snow.flow --archs armv6,armv7,armv7s,arm64,sim,sim64 --d static_link --log "$SNOW_BUILD_LOG_LEVEL"
 
 fi
 
