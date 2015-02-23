@@ -8,12 +8,13 @@ package snow.io.typedarray;
         from js.html.Uint8Array
         to js.html.Uint8Array {
 
+
         @:generic
         public inline function new<T>(
             ?elements:Int,
             ?array:Array<T>,
             ?view:ArrayBufferView,
-            ?buffer:ArrayBuffer, ?byteoffset:Int = 0, ?len:Null<Int>
+            ?buffer:snow.io.typedarray.ArrayBuffer, ?byteoffset:Int = 0, ?len:Null<Int>
         ) {
             if(elements != null) {
                 this = new js.html.Uint8Array( elements );
@@ -28,6 +29,9 @@ package snow.io.typedarray;
                 this = null;
             }
         }
+
+        public var buffer (get, never) : haxe.io.Bytes;
+        inline function get_buffer() return haxe.io.Bytes.ofData(cast this);
 
         @:arrayAccess inline function __set(idx:Int, val:UInt) return this[idx] = val;
         @:arrayAccess inline function __get(idx:Int) : UInt return this[idx];
