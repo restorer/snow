@@ -48,29 +48,10 @@ then
 
 fi
 
-#zip artifacts
-
-case "$SNOW_BUILD_TARGET" in
-    "linux32" ) zip -r ndll/latest.linux32.zip ndll/Linux/ -x ".*" -x "*/.*"
-        ;;
-    "linux64" ) zip -r ndll/latest.linux64.zip ndll/Linux64/ -x ".*" -x "*/.*"
-        ;;
-    "mac" ) zip -r ndll/latest.mac.zip ndll/Mac/ ndll/Mac64 -x ".*" -x "*/.*"
-        ;;
-    "windows" ) zip -r ndll/latest.windows.zip ndll/Windows/ -x ".*" -x "*/.*"
-        ;;
-    "android" ) zip -r ndll/latest.android.zip ndll/Android/ -x ".*" -x "*/.*"
-        ;;
-    "ios" ) zip -r ndll/latest.ios.zip ndll/iPhone/ -x ".*" -x "*/.*"
-        ;;
-    *) echo "build target is unknown : $SNOW_BUILD_TARGET"
-esac
-
 if [ -n "$SNOW_BUILD_PACKAGE_BINARY" ]
 then
 
-    buildbox-artifact download "ndll/latest.*.zip" ndll/
-    unzip -o -d ndll/all "ndll/latest.*.zip"
+    buildbox-artifact download "ndll/*" ndll/all/ndll
     cd ndll/all
     zip -r latest.all.zip ndll/ -x ".*" -x "*/.*"
     cd ../../
