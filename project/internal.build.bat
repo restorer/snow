@@ -13,5 +13,3 @@ if defined SNOW_BUILD_ARCH_32 (
     haxelib run flow build --project project/snow.flow --arch 32 --d snow_dynamic_link --log %SNOW_BUILD_LOG_LEVEL%
 
 )
-
-
