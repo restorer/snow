@@ -7,10 +7,6 @@ echo "snow; Don't run this script directly, read inside the file for why."
 #To build manually read the snow docs and run `flow build --options` as usual.
 # https://underscorediscovery.github.io/snow/guide/native-layer.html
 
-#ensure dependencies are down
-git submodule update --init
-
-
 #64 bit if specified
 if [ -n "$SNOW_BUILD_ARCH_64" ]
     then
