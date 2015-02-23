@@ -47,7 +47,7 @@ fi
 if [ -n "$SNOW_BUILD_PACKAGE_BINARY" ]
 then
 
-    buildkite-artifact download "ndll/*" ndll/all/ndll
+    buildkite-agent build-artifact download "ndll/*" ndll/all/ndll
     cd ndll/all
     zip -r latest.all.zip ndll/ -x ".*" -x "*/.*"
     cd ../../
