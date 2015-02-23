@@ -64,21 +64,24 @@ class EventLoop {
     static function continueOnNextLoop(){
         if (nextLoop != null) nextLoop(f);
         else {
-#if flash
-            haxe.Timer.delay(f,0);
-#elseif (js && (noEmbedJs || noEmbedSetImmediate) && !nodejs)
-            // fallback to setTimeout
-            untyped __js__("(typeof setImmediate === 'function' ? setImmediate : setTimeout)")(f);
-#elseif js
-            // use polyfill or native node
-            untyped __js__("setImmediate")(f);
-#elseif snow
-            #if !macro
-            Snow.next(f);
+
+            #if snow
+                #if !macro Snow.next(f); #end
+            #else
+
+                #if flash
+                            haxe.Timer.delay(f,0);
+                #elseif (js && (noEmbedJs || noEmbedSetImmediate) && !nodejs)
+                            // fallback to setTimeout
+                            untyped __js__("(typeof setImmediate === 'function' ? setImmediate : setTimeout)")(f);
+                #elseif js
+                            // use polyfill or native node
+                            untyped __js__("setImmediate")(f);
+                #else
+                            f();
+                #end
             #end
-#else
-            f();
-#end
+
         }
     }
 }
