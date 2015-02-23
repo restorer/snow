@@ -49,7 +49,7 @@ then
 
     mkdir -p ndll/all/ndll
     buildkite-agent build-artifact download "ndll/*" ndll/all/ndll
-    buildkite-agent build-artifact download "ndll\*" ndll/all/ndll
+    buildkite-agent build-artifact download "ndll\\*" ndll/all/ndll
     cd ndll/all
     zip -r latest.all.zip ndll/ -x ".*" -x "*/.*"
     zip -r latest.windows.zip ndll/Windows -x ".*" -x "*/.*"
