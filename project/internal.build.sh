@@ -49,20 +49,21 @@ then
 
     mkdir -p ndll/all/ndll
     buildkite-agent build-artifact download "ndll/*" ndll/all/ndll
+    buildkite-agent build-artifact download "ndll\*" ndll/all/ndll
     cd ndll/all
     zip -r latest.all.zip ndll/ -x ".*" -x "*/.*"
-    zip -r latest.windows.zip ndll/Windows -x ".*" -x "*/.*"
     zip -r latest.mac.zip ndll/Mac ndll/Mac64 -x ".*" -x "*/.*"
     zip -r latest.linux.zip ndll/Linux ndll/Linux64 -x ".*" -x "*/.*"
     zip -r latest.android.zip ndll/Android -x ".*" -x "*/.*"
     zip -r latest.ios.zip ndll/iPhone -x ".*" -x "*/.*"
+    zip -r latest.windows.zip ndll/Windows -x ".*" -x "*/.*"
     cd ../../
     cp ndll/all/latest.all.zip /usr/share/nginx/html/snow/latest.all.zip
-    cp ndll/all/latest.windows.zip /usr/share/nginx/html/snow/latest.windows.zip
     cp ndll/all/latest.mac.zip /usr/share/nginx/html/snow/latest.mac.zip
     cp ndll/all/latest.linux.zip /usr/share/nginx/html/snow/latest.linux.zip
     cp ndll/all/latest.android.zip /usr/share/nginx/html/snow/latest.android.zip
     cp ndll/all/latest.ios.zip /usr/share/nginx/html/snow/latest.ios.zip
+    cp ndll/all/latest.windows.zip /usr/share/nginx/html/snow/latest.windows.zip
 
     echo "snow; build; done package"
 
