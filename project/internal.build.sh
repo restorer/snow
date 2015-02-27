@@ -48,9 +48,23 @@ if [ -n "$SNOW_BUILD_PACKAGE_BINARY" ]
 then
 
     mkdir -p ndll/all/ndll
+    mkdir -p ndll/all/ndll/Android
+    mkdir -p ndll/all/ndll/iPhone
+    mkdir -p ndll/all/ndll/Mac
+    mkdir -p ndll/all/ndll/Mac64
+    mkdir -p ndll/all/ndll/Linux
+    mkdir -p ndll/all/ndll/Linux64
+    mkdir -p ndll/all/ndll/Windows
+    mkdir -p ndll/all/ndll/Windows64
+
     buildkite-agent build-artifact download "ndll/*" ndll/all/ndll
     buildkite-agent build-artifact download "ndll\*" ndll/all/ndll
+
     cd ndll/all
+
+    mv ndll\\Windows\\libsnow.lib Windows/libsnow.lib
+    mv ndll\\Windows\\snow.ndll Windows/snow.ndll
+
     zip -r latest.all.zip ndll/ -x ".*" -x "*/.*"
     zip -r latest.mac.zip ndll/Mac ndll/Mac64 -x ".*" -x "*/.*"
     zip -r latest.linux.zip ndll/Linux ndll/Linux64 -x ".*" -x "*/.*"
