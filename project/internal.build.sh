@@ -60,10 +60,13 @@ then
     buildkite-agent build-artifact download "ndll/*" ndll/all/ndll
     buildkite-agent build-artifact download "ndll\*" ndll/all/ndll
 
-    cd ndll/all
+    cd ndll/all/ndll
+    ls
 
     mv ndll\\Windows\\libsnow.lib Windows/libsnow.lib
     mv ndll\\Windows\\snow.ndll Windows/snow.ndll
+
+    cd ..
 
     zip -r latest.all.zip ndll/ -x ".*" -x "*/.*"
     zip -r latest.mac.zip ndll/Mac ndll/Mac64 -x ".*" -x "*/.*"
